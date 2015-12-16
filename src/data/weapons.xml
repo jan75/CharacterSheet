@@ -1,0 +1,564 @@
+<file weapons>
+	<name Club>
+		<price>1 SP</price>
+		<damage>1d4 bludgeoning</damage>
+		<weight>3 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Mace</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Greatclub>
+		<price>2 SP</price>
+		<damage>1d8 bludgeoning</damage>
+		<weight>15 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Mace</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Handaxe>
+		<price>5 GP</price>
+		<damage>1d4 slashing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>Range 30/120</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Improvised Object>
+		<price>-</price>
+		<damage>1d4 bludgeoning</damage>
+		<weight>-</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>-</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Improvised Object>
+		<price>-</price>
+		<damage>1d6 bludgeoning</damage>
+		<weight>-</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>-</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Mace>
+		<price>5 GP</price>
+		<damage>1d6 bludgeoning</damage>
+		<weight>8 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Mace</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Scythe>
+		<price>5 SP</price>
+		<damage>1d8 slashing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Sickle>
+		<price>2 SP</price>
+		<damage>1d6 slashing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Spear>
+		<price>1 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Trident>
+		<price>5 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>6 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Unarmed Strike>
+		<price>-</price>
+		<damage>1d4 bludgeoning</damage>
+		<weight>-</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Unarmed</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name War Pick>
+		<price>5 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>6 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Pick</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+
+	<name Dagger>
+		<price>2 GP</price>
+		<damage>1d4 piercing</damage>
+		<weight>1 lbs</weight>
+		<properties>
+			<property>Range 20/80</property>
+		</properties>
+		<group>Dagger</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Katana>
+		<price>35 GP</price>
+		<damage>1d8 slashing</damage>
+		<weight>3 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Quarterstaff>
+		<price>2 SP</price>
+		<damage>1d8 bludgeoning</damage>
+		<weight>4 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Staff</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Rapier>
+		<price>25 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>2 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Scimitar>
+		<price>25 GP</price>
+		<damage>1d6 slashing</damage>
+		<weight>4 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Short Sword>
+		<price>10 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>3 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Spiked Chain>
+		<price>15 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>Reach</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Whip</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Whip>
+		<price>2 GP</price>
+		<damage>1d4 slashing</damage>
+		<weight>2 lbs</weight>
+		<properties>
+			<property>Reach</property>
+		</properties>
+		<group>Whip</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Bastard Sword>
+		<price>35 GP</price>
+		<damage>1d10 slashing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Battleaxe>
+		<price>10 GP</price>
+		<damage>1d8 slashing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Flail>
+		<price>10 GP</price>
+		<damage>1d8 bludgeoning</damage>
+		<weight>2 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Flail</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Longsword>
+		<price>15 GP</price>
+		<damage>1d8 slashing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Morningstar>
+		<price>15 GP</price>
+		<damage>1d8 bludgeoning & piercing</damage>
+		<weight>12 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Mace</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Shield>
+		<price>10 GP</price>
+		<damage>1d6 bludgeoning</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Shield</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Throwing-Axe>
+		<price>5 GP</price>
+		<damage>1d6 slashing</damage>
+		<weight>7 lbs</weight>
+		<properties>
+			<property>Range 20/80</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Warhammer>
+		<price>15 GP</price>
+		<damage>1d8 bludgeoning</damage>
+		<weight>8 lbs</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>Hammer</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Glaive>
+		<price>10 GP</price>
+		<damage>1d10 slashing</damage>
+		<weight>15 lbs</weight>
+		<properties>
+			<property>Reach</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Greataxe>
+		<price>30 GP</price>
+		<damage>1d12 slashing</damage>
+		<weight>15 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Greatsword>
+		<price>50 GP</price>
+		<damage>1d12 slashing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Sword</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Lance>
+		<price>10 GP</price>
+		<damage>1d12 piercing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>Reach</property>
+			<property>Two-Handed</property>
+			<property>Special</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Longspear>
+		<price>5 GP</price>
+		<damage>1d10 piercing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>Reach</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Halberd>
+		<price>10 GP</price>
+		<damage>1d10 slashing</damage>
+		<weight>15 lbs</weight>
+		<properties>
+			<property>Reach</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Axe</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Maul>
+		<price>10 GP</price>
+		<damage>1d12 bludgeoning</damage>
+		<weight>25 lbs</weight>
+		<properties>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Hammer</group>
+		<modifiers>
+			<modifier>Strength</modifier>
+		</modifiers>
+	</name>
+	<name Crossbow, Hand>
+		<price>10 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>3 lbs</weight>
+		<properties>
+			<property>Range 30/120</property>
+			<property>Special</property>
+		</properties>
+		<group>Crossbow</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Dart>
+		<price>5 CP, each</price>
+		<damage>1d4 piercing</damage>
+		<weight>1/2 lbs</weight>
+		<properties>
+			<property>Range 30/120</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Improvised Object>
+		<price>-</price>
+		<damage>1d2 bludgeoning</damage>
+		<weight>-</weight>
+		<properties>
+			<property>-</property>
+		</properties>
+		<group>-</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Sling>
+		<price>1 SP</price>
+		<damage>1d4 bludgeoning</damage>
+		<weight>1/2 lbs</weight>
+		<properties>
+			<property>Range 30/120</property>
+		</properties>
+		<group>Sling</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Crossbow, Light>
+		<price>25 GP</price>
+		<damage>1d8 piercing</damage>
+		<weight>6 lbs</weight>
+		<properties>
+			<property>Range 80/320</property>
+			<property>Two-Handed</property>
+			<property>Special</property>
+		</properties>
+		<group>Crossbow</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Javelin>
+		<price>5 SP</price>
+		<damage>1d6 piercing</damage>
+		<weight>5 lbs</weight>
+		<properties>
+			<property>Range 30/120</property>
+		</properties>
+		<group>Spear</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Shortbow>
+		<price>25 GP</price>
+		<damage>1d6 piercing</damage>
+		<weight>2 lbs</weight>
+		<properties>
+			<property>Range 80/320</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Bow</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Throwing Hammer>
+		<price>2 GP</price>
+		<damage>1d6 bludgeoning</damage>
+		<weight>7 lbs</weight>
+		<properties>
+			<property>Range 20/80</property>
+		</properties>
+		<group>Hammer</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Crossbow, Heavy>
+		<price>50 GP</price>
+		<damage>1d10 piercing</damage>
+		<weight>10 lbs</weight>
+		<properties>
+			<property>Range 100/400</property>
+			<property>Two-Handed</property>
+			<property>Special</property>
+		</properties>
+		<group>Crossbow</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+	<name Longbow>
+		<price>50 GP</price>
+		<damage>1d8 piercing</damage>
+		<weight>3 lbs</weight>
+		<properties>
+			<property>Range 150/600</property>
+			<property>Two-Handed</property>
+		</properties>
+		<group>Bow</group>
+		<modifiers>
+			<modifier>Dexterity</modifier>
+		</modifiers>
+	</name>
+</file>
