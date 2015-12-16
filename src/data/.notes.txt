@@ -1,0 +1,4 @@
+Source="http://5edndwiki.wikidot.com/equipment-weapons">
+
+^([a-zA-Z &.-/\,_]*) \|\| ([a-zA-Z0-9 \-\/]*) \|\| ([a-zA-Z0-9 \-\/]*) \|\| ([a-zA-Z0-9 \-\/]*) \|\| ([a-zA-Z0-9 \-\/\,\&]*) \|\| ([a-zA-Z0-9 \-\/]*) \|\|
+<name \1>\n\t<price>\2</price>\n\t<damage>\3</damage>\n\t<weight>\4</weight>\n\t<properties>\5</properties>\n\t<group>\6</group>\n</name>
