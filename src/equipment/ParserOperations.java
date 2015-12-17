@@ -9,9 +9,9 @@ class ParserOperations {
     public static void main(String[] args) {        
         parseString("data/weapons.xml");
     }
-    
+
     public static String parseString(String path) {		
-		Weapon weapon = new Weapon("bla1","bla2","bla3","bla4","bla5","bla6");
+		Weapon weapon = new Weapon(); // "bla1","bla2","bla3","bla4","bla5","bla6"
 		weapon.print();
 		/*
 		File file = new File(path);
@@ -26,5 +26,4 @@ class ParserOperations {
 		*/
 		return path;
 	}
-	
 }

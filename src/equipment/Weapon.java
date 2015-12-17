@@ -3,7 +3,7 @@ package equipment;
 class Weapon extends Equipment {
 	String weaponName, weaponWeight, weaponPrice, weaponProperty, weaponGroup, weaponModifier;
 	
-	public Weapon(String weaponName, String weaponWeight, String weaponPrice, String weaponProperty, String weaponGroup, String weaponModifier) {
+	Weapon(String weaponName, String weaponWeight, String weaponPrice, String weaponProperty, String weaponGroup, String weaponModifier) {
 		this.weaponName = weaponName;
 		this.weaponWeight = weaponWeight;
 		this.weaponPrice = weaponPrice;
