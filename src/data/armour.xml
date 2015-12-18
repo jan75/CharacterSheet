@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<armour>
+	<name armourname="Leather">
+		<price>10 GP</price>
+		<modifier>11+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>15 lbs</weight>
+		<class>Light Armor</class>
+	</name>
+	<name armourname="Displacer Beast Hide">
+		<price>500 GP</price>
+		<modifier>12+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>25 lbs</weight>
+		<class>Light Armor</class>
+	</name>
+	<name armourname="Mithral Chain">
+		<price>5,000 GP</price>
+		<modifier>13+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>10 lbs</weight>
+		<class>Light Armor</class>
+	</name>
+	<name armourname="Studded Leather">
+		<price>25 GP</price>
+		<modifier>13+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>20 lbs</weight>
+		<class>Medium Armor</class>
+	</name>
+	<name armourname="Scale Mail">
+		<price>500 GP</price>
+		<modifier>14+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>30 lbs</weight>
+		<class>Medium Armor</class>
+	</name>
+	<name armourname="Dragon Scale">
+		<price>5,000 GP</price>
+		<modifier>15+Dex Modifier</modifier>
+		<speed>-</speed>
+		<stealth>-</stealth>
+		<weight>45 lbs</weight>
+		<class>Medium Armor</class>
+	</name>
+	<name armourname="Ringmail">
+		<price>30 GP</price>
+		<modifier>14</modifier>
+		<speed>-5 feet</speed>
+		<stealth>Disadvantage</stealth>
+		<weight>40 lbs</weight>
+		<class>Heavy Armor</class>
+	</name>
+	<name armourname="Chainmail">
+		<price>75 GP</price>
+		<modifier>16</modifier>
+		<speed>-5 feet</speed>
+		<stealth>Disadvantage</stealth>
+		<weight>40 lbs</weight>
+		<class>Heavy Armor</class>
+	</name>
+	<name armourname="Banded">
+		<price>500 GP</price>
+		<modifier>17</modifier>
+		<speed>-5 feet</speed>
+		<stealth>Disadvantage</stealth>
+		<weight>45 lbs</weight>
+		<class>Heavy Armor</class>
+	</name>
+	<name armourname="Splint">
+		<price>500 GP</price>
+		<modifier>17</modifier>
+		<speed>-5 feet</speed>
+		<stealth>Disadvantage</stealth>
+		<weight>45 lbs</weight>
+		<class>Heavy Armor</class>
+	</name>
+	<name armourname="Plate">
+		<price>5,000 GP</price>
+		<modifier>18</modifier>
+		<speed>-5 feet</speed>
+		<stealth>Disadvantage</stealth>
+		<weight>50 lbs</weight>
+		<class>Heavy Armor</class>
+	</name>
+</armour>
+<!-- 
+#Shield
+Shield || 10 GP || +1 AC || - || - || 5 lbs ||
+-->
