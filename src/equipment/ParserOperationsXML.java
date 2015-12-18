@@ -1,3 +1,5 @@
+// add spells / armour
+
 package equipment;
 
 import org.w3c.dom.*;
@@ -9,9 +11,9 @@ import java.util.Map;
 class ParserOperationsXML {
 	
     public static void main(String[] args) {        
-        Map<String, Weapon> myMap = parseWeapons("src/data/weapons.xml");
+        Map<String, Equipment> myMap = parseWeapons("src/data/weapons.xml");
 		//
-		Weapon test = myMap.get("Club");
+		Equipment test = myMap.get("Club");
 		test.print();
     }
 
