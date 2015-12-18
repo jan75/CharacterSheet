@@ -9,8 +9,10 @@ import java.util.Map;
 class ParserOperationsXML {
 	
     public static void main(String[] args) {        
-        Map myMap = parseWeapons("src/data/weapons.xml");
+        Map<String, Weapon> myMap = parseWeapons("src/data/weapons.xml");
 		//
+		Weapon test = myMap.get("Club");
+		test.print();
     }
 
 	/**
