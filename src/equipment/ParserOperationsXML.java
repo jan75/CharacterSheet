@@ -5,16 +5,18 @@ package equipment;
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 class ParserOperationsXML {
 	
     public static void main(String[] args) {        
-        Map<String, Equipment> myMap = parseWeapons("src/data/weapons.xml");
+        Map<String, Equipment> weaponMap = parseWeapons("src/data/weapons.xml");
+		Map<String, Armor> armorMap = parseArmor("src/data/armour.xml");
 		//
-		Equipment test = myMap.get("Club");
-		test.print();
+		//Equipment test = armorMap.get("Dragon Scale");
+		//test.print();
     }
 
 	/**
@@ -23,8 +25,6 @@ class ParserOperationsXML {
 	 * @return Map
 	 */
     public static Map parseWeapons(String path) {
-		//Weapon weapon = new Weapon("Greatsword","10 lbs","5S","1d6 piercing","bla5","bla6");
-		// weapon.print();
 		Map<String, Weapon> weaponMap = new HashMap<>();
 		//
 		File file = new File(path);
@@ -35,8 +35,6 @@ class ParserOperationsXML {
 			//
 			document.getDocumentElement().normalize(); // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
 			//
-			//System.out.println("Root element: " + document.getDocumentElement().getNodeName());
-			//System.out.println("----------------------------");
 			//
 			NodeList nList = document.getElementsByTagName("name");
 			//
@@ -52,7 +50,23 @@ class ParserOperationsXML {
 					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
 					String tmpGroup = eElement.getElementsByTagName("group").item(0).getTextContent();
 
-					Weapon tmpWeaponObject = new Weapon(tmpWeapon, tmpPrice, tmpDamage, tmpWeight, tmpGroup);
+					NodeList nListProperties = document.getElementsByTagName("properties");
+					for(int j = 0; j < nListProperties.getLength(); j++) {
+						ArrayList<String> arrayWeaponProperties = new ArrayList();
+
+						Node nNodeProperties = nListProperties.item(j);
+						Element eElementProperties = (Element) nNodeProperties;
+						//
+
+						NodeList weaponProperties = eElementProperties.getElementsByTagName("property");
+						for (int k = 0; k < weaponProperties.getLength(); k++) {
+							//System.out.println(weaponProperties.item(k).getTextContent());
+							arrayWeaponProperties.add(weaponProperties.item(k).getTextContent());
+						}
+						//System.out.println(tmpProperties);
+					}
+
+					Weapon tmpWeaponObject = new Weapon(tmpWeapon, tmpDamage, tmpWeight, tmpPrice, tmpGroup);
 					//tmpWeaponObject.print();
 					//
 					weaponMap.put(tmpWeapon, tmpWeaponObject);
@@ -64,5 +78,51 @@ class ParserOperationsXML {
 		}
 		//
 		return weaponMap;
+	}
+	/**
+	 * The Method "parseArmor" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Armor). A Map is returned.
+	 * @param path
+	 * @return Map
+	 */
+	public static Map parseArmor(String path) {
+		Map<String, Armor> armorMap = new HashMap<>();
+		//
+		File file = new File(path);
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document document = dBuilder.parse(path);
+			//
+			document.getDocumentElement().normalize(); // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+			//
+			//
+			NodeList nList = document.getElementsByTagName("name");
+			//
+			for(int i = 0; i < nList.getLength(); i++) {
+				Node nNode = nList.item(i);
+				//
+				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					//
+					String tmpArmor = eElement.getAttribute("armorname");
+					String tmpPrice = eElement.getElementsByTagName("price").item(0).getTextContent();
+					String tmpModifier = eElement.getElementsByTagName("modifier").item(0).getTextContent();
+					String tmpSpeed = eElement.getElementsByTagName("speed").item(0).getTextContent();
+					String tmpStealth = eElement.getElementsByTagName("stealth").item(0).getTextContent();
+					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
+					String tmpClass = eElement.getElementsByTagName("class").item(0).getTextContent();
+
+					Armor tmpArmorObject = new Armor(tmpArmor, tmpPrice, tmpModifier, tmpSpeed, tmpStealth, tmpWeight, tmpClass);
+					//tmpArmorObject.print();
+					//
+					armorMap.put(tmpArmor, tmpArmorObject);
+					//
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//
+		return armorMap;
 	}
 }

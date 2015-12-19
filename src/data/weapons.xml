@@ -562,4 +562,17 @@
 			<modifier>Dexterity</modifier>
 		</modifiers>
 	</name>
+	<name weaponname="TEST">
+		<price>TEST</price>
+		<damage>TEST</damage>
+		<weight>TEST</weight>
+		<properties>
+			<property>TEST01</property>
+			<property>TEST02</property>
+		</properties>
+		<group>TEST</group>
+		<modifiers>
+			<modifier>TEST</modifier>
+		</modifiers>
+	</name>
 </weapons>
