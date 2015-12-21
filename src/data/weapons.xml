@@ -5,7 +5,7 @@
 		<damage>1d4 bludgeoning</damage>
 		<weight>3 lbs</weight>
 		<properties>
-			<property>fish</property>
+			<property>-</property>
 		</properties>
 		<group>Mace</group>
 		<modifiers>
