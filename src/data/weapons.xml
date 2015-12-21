@@ -5,7 +5,7 @@
 		<damage>1d4 bludgeoning</damage>
 		<weight>3 lbs</weight>
 		<properties>
-			<property>-</property>
+			<property>fish</property>
 		</properties>
 		<group>Mace</group>
 		<modifiers>
@@ -560,19 +560,6 @@
 		<group>Bow</group>
 		<modifiers>
 			<modifier>Dexterity</modifier>
-		</modifiers>
-	</name>
-	<name weaponname="TEST">
-		<price>TEST</price>
-		<damage>TEST</damage>
-		<weight>TEST</weight>
-		<properties>
-			<property>TEST01</property>
-			<property>TEST02</property>
-		</properties>
-		<group>TEST</group>
-		<modifiers>
-			<modifier>TEST</modifier>
 		</modifiers>
 	</name>
 </weapons>
