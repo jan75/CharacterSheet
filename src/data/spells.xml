@@ -1,3690 +1,3691 @@
-<file spells>
-	<name Acid Splash>
+<?xml version="1.0" encoding="UTF-8"?>
+<spells>
+	<name spellname="Acid Splash">
 		<level>0</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>211</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Aid>
+	<name spellname="Aid">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>211</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Alarm>
+	<name spellname="Alarm">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>Yes</ritual>
 		<page>211</page>
 		<classes>
-			<ranger>Yes</ranger>
-			<wizard>Yes</wizard>
+			<ranger></ranger>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Alter Self>
+	<name spellname="Alter Self">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>211</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Animal Friendship>
+	<name spellname="Animal Friendship">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>212</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Animal Messenger>
+	<name spellname="Animal Messenger">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>Yes</ritual>
 		<page>212</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Animal Shapes>
+	<name spellname="Animal Shapes">
 		<level>8</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>212</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Animate Dead>
+	<name spellname="Animate Dead">
 		<level>3</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>212</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Animate Objects>
+	<name spellname="Animate Objects">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>213</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Antilife Shell>
+	<name spellname="Antilife Shell">
 		<level>5</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>213</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Antimagic Field>
+	<name spellname="Antimagic Field">
 		<level>8</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>213</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Antipathy/Sympathy>
+	<name spellname="Antipathy/Sympathy">
 		<level>8</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>214</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Arcane Eye>
+	<name spellname="Arcane Eye">
 		<level>4</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>214</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Arcane Gate>
+	<name spellname="Arcane Gate">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>214</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Arcane Lock>
+	<name spellname="Arcane Lock">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>215</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Armor of Agathys>
+	<name spellname="Armor of Agathys">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>215</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Arms of Hadar>
+	<name spellname="Arms of Hadar">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>215</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Astral Projection>
+	<name spellname="Astral Projection">
 		<level>9</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>215</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Augury>
+	<name spellname="Augury">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>215</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Aura of Life>
+	<name spellname="Aura of Life">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Aura of Purity>
+	<name spellname="Aura of Purity">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Auta of Vitality>
+	<name spellname="Auta of Vitality">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Awaken>
+	<name spellname="Awaken">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
+			<bard></bard>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Bane>
+	<name spellname="Bane">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
+			<bard></bard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Banishing Smite>
+	<name spellname="Banishing Smite">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>216</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Banishment>
+	<name spellname="Banishment">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>217</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<paladin></paladin>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Barkskin>
+	<name spellname="Barkskin">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>217</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<ranger></ranger>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Beacon of Hope>
+	<name spellname="Beacon of Hope">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>217</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Beast Sense>
+	<name spellname="Beast Sense">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>217</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Bestow Curse>
+	<name spellname="Bestow Curse">
 		<level>3</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>218</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Bigby's Hand>
+	<name spellname="Bigby's Hand">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>218</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Blade Barrier>
+	<name spellname="Blade Barrier">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>218</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Blade Ward>
+	<name spellname="Blade Ward">
 		<level>0</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>218</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Bless>
+	<name spellname="Bless">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Blight>
+	<name spellname="Blight">
 		<level>4</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<druid>Yes</druid>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Blinding Smite>
+	<name spellname="Blinding Smite">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Blindness/Deafness>
+	<name spellname="Blindness/Deafness">
 		<level>2</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Blink>
+	<name spellname="Blink">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Blur>
+	<name spellname="Blur">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Branding Smite>
+	<name spellname="Branding Smite">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>219</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Burning Hands>
+	<name spellname="Burning Hands">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>220</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Call Lightning>
+	<name spellname="Call Lightning">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>220</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Calm Emotions>
+	<name spellname="Calm Emotions">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
+			<bard></bard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Chain Lightning>
+	<name spellname="Chain Lightning">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Charm Person>
+	<name spellname="Charm Person">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Chill Touch>
+	<name spellname="Chill Touch">
 		<level>0</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Chromatic Orb>
+	<name spellname="Chromatic Orb">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Circle of Death>
+	<name spellname="Circle of Death">
 		<level>6</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Circle of Power>
+	<name spellname="Circle of Power">
 		<level>5</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>221</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Clairvoyance>
+	<name spellname="Clairvoyance">
 		<level>3</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>222</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Clone>
+	<name spellname="Clone">
 		<level>8</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>222</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Cloud of Daggers>
+	<name spellname="Cloud of Daggers">
 		<level>2</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>222</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Cloudkill>
+	<name spellname="Cloudkill">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>222</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Color Spray>
+	<name spellname="Color Spray">
 		<level>1</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>222</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Command>
+	<name spellname="Command">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>223</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Commune>
+	<name spellname="Commune">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>223</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Commune with Nature>
+	<name spellname="Commune with Nature">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>224</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Compelled Duel>
+	<name spellname="Compelled Duel">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>224</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Comprehend Languages>
+	<name spellname="Comprehend Languages">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>224</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Compulsion>
+	<name spellname="Compulsion">
 		<level>4</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>224</page>
 		<classes>
-			<bard>Yes</bard>
+			<bard></bard>
 		</classes>
 	</name>
-	<name Cone of Cold>
+	<name spellname="Cone of Cold">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>224</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Confusion>
+	<name spellname="Confusion">
 		<level>4</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>224</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Conjure Animals>
+	<name spellname="Conjure Animals">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>225</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Conjure Barrage>
+	<name spellname="Conjure Barrage">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>225</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Conjure Celestial>
+	<name spellname="Conjure Celestial">
 		<level>7</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>225</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Conjure Elemental>
+	<name spellname="Conjure Elemental">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>225</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Conjure Fey>
+	<name spellname="Conjure Fey">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>226</page>
 		<classes>
-			<druid>Yes</druid>
-			<warlock>Yes</warlock>
+			<druid></druid>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Conjure MInor Elementals>
+	<name spellname="Conjure MInor Elementals">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>226</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Conjure Volley>
+	<name spellname="Conjure Volley">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>226</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Conjure Woodland Beings>
+	<name spellname="Conjure Woodland Beings">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>226</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Contact Other Plane>
+	<name spellname="Contact Other Plane">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>226</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Contagion>
+	<name spellname="Contagion">
 		<level>5</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>227</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Contingency>
+	<name spellname="Contingency">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>227</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Continual Flame>
+	<name spellname="Continual Flame">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>227</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Control Water>
+	<name spellname="Control Water">
 		<level>4</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>227</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Control Weather>
+	<name spellname="Control Weather">
 		<level>8</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>228</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Cordon of Arrows>
+	<name spellname="Cordon of Arrows">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>228</page>
 		<classes>
-			<ranger>Yes</ranger>
-			<wizard>Yes</wizard>
+			<ranger></ranger>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Counterspell>
+	<name spellname="Counterspell">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>228</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Create Food and Water>
+	<name spellname="Create Food and Water">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>229</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Create or Destroy Water>
+	<name spellname="Create or Destroy Water">
 		<level>1</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>229</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Create Undead>
+	<name spellname="Create Undead">
 		<level>6</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>229</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Creation>
+	<name spellname="Creation">
 		<level>5</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>229</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Crown of Madness>
+	<name spellname="Crown of Madness">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>229</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Crusader's Mantle>
+	<name spellname="Crusader's Mantle">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Cure Wounds>
+	<name spellname="Cure Wounds">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Dancing Lights>
+	<name spellname="Dancing Lights">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Darkness>
+	<name spellname="Darkness">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Darkvision>
+	<name spellname="Darkvision">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Daylight>
+	<name spellname="Daylight">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
+			<cleric></cleric>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Death Ward>
+	<name spellname="Death Ward">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Delayed Blast Fireball>
+	<name spellname="Delayed Blast Fireball">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>230</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Demiplane>
+	<name spellname="Demiplane">
 		<level>8</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>231</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Destructive Wave/Destructive Smite>
+	<name spellname="Destructive Wave/Destructive Smite">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>231</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Detect Evil and Good>
+	<name spellname="Detect Evil and Good">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>231</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Detect Magic>
+	<name spellname="Detect Magic">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>231</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Detect Poison and Disease>
+	<name spellname="Detect Poison and Disease">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>231</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<ranger>Yes</ranger>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Detect Thoughts>
+	<name spellname="Detect Thoughts">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>231</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dimension Door>
+	<name spellname="Dimension Door">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>233</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Disguise Self>
+	<name spellname="Disguise Self">
 		<level>1</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>233</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Disintegrate>
+	<name spellname="Disintegrate">
 		<level>6</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>233</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dispell Evil and Good>
+	<name spellname="Dispell Evil and Good">
 		<level>5</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>233</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Dispell Magic>
+	<name spellname="Dispell Magic">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dissonant Whispers>
+	<name spellname="Dissonant Whispers">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<bard>Yes</bard>
+			<bard></bard>
 		</classes>
 	</name>
-	<name Divination>
+	<name spellname="Divination">
 		<level>4</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>234</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Divine Favor>
+	<name spellname="Divine Favor">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Divine Word>
+	<name spellname="Divine Word">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dominate Beast>
+	<name spellname="Dominate Beast">
 		<level>4</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
+			<druid></druid>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Dominate Monster>
+	<name spellname="Dominate Monster">
 		<level>8</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>234</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dominate Person>
+	<name spellname="Dominate Person">
 		<level>5</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>235</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Drawmij's Instant Summons>
+	<name spellname="Drawmij's Instant Summons">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>Yes</ritual>
 		<page>235</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Dream>
+	<name spellname="Dream">
 		<level>5</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>236</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Druidcraft>
+	<name spellname="Druidcraft">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>236</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Earthquake>
+	<name spellname="Earthquake">
 		<level>8</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>235</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Eldritch Blast>
+	<name spellname="Eldritch Blast">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>236</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Elemental Weapon>
+	<name spellname="Elemental Weapon">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>236</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Enhance Ability>
+	<name spellname="Enhance Ability">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>237</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
+			<bard></bard>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Enlarge/Reduce>
+	<name spellname="Enlarge/Reduce">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>237</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Ensnaring Strike>
+	<name spellname="Ensnaring Strike">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>237</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Entangle>
+	<name spellname="Entangle">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Enthrall>
+	<name spellname="Enthrall">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
+			<bard></bard>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Etherealness>
+	<name spellname="Etherealness">
 		<level>7</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Evard's Black Tentacles>
+	<name spellname="Evard's Black Tentacles">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Expeditious Retreat>
+	<name spellname="Expeditious Retreat">
 		<level>1</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Eyebite>
+	<name spellname="Eyebite">
 		<level>6</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>238</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fabricate>
+	<name spellname="Fabricate">
 		<level>4</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Faerie Fire>
+	<name spellname="Faerie Fire">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
+			<bard></bard>
+			<druid></druid>
 		</classes>
 	</name>
-	<name False Life>
+	<name spellname="False Life">
 		<level>1</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fear>
+	<name spellname="Fear">
 		<level>3</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Feather Fall>
+	<name spellname="Feather Fall">
 		<level>1</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Feeblemind>
+	<name spellname="Feeblemind">
 		<level>8</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>239</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Feign Death>
+	<name spellname="Feign Death">
 		<level>3</level>
 		<school>Necromancy</school>
 		<ritual>Yes</ritual>
 		<page>240</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Find Familiar>
+	<name spellname="Find Familiar">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>Yes</ritual>
 		<page>240</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Find Steed>
+	<name spellname="Find Steed">
 		<level>2</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>240</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Find the Path>
+	<name spellname="Find the Path">
 		<level>6</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>240</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Find Traps>
+	<name spellname="Find Traps">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>241</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Finger of Death>
+	<name spellname="Finger of Death">
 		<level>7</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>241</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fire Bolt>
+	<name spellname="Fire Bolt">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fire Shield>
+	<name spellname="Fire Shield">
 		<level>4</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fire Storm>
+	<name spellname="Fire Storm">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Fireball>
+	<name spellname="Fireball">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>241</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Flame Blade>
+	<name spellname="Flame Blade">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Flame Strike>
+	<name spellname="Flame Strike">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Flaming Sphere>
+	<name spellname="Flaming Sphere">
 		<level>2</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>242</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Flesh to Stone>
+	<name spellname="Flesh to Stone">
 		<level>6</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>243</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fly>
+	<name spellname="Fly">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>243</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Fog Cloud>
+	<name spellname="Fog Cloud">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>243</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Forbiddance>
+	<name spellname="Forbiddance">
 		<level>6</level>
 		<school>Abjuration</school>
 		<ritual>Yes</ritual>
 		<page>243</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Forcecage>
+	<name spellname="Forcecage">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>243</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Foresight>
+	<name spellname="Foresight">
 		<level>9</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<druid></druid>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Freedom of Movement>
+	<name spellname="Freedom of Movement">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Friends>
+	<name spellname="Friends">
 		<level>0</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Gaseous Form>
+	<name spellname="Gaseous Form">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Gate>
+	<name spellname="Gate">
 		<level>9</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Geas>
+	<name spellname="Geas">
 		<level>5</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>244</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Gentle Repose>
+	<name spellname="Gentle Repose">
 		<level>2</level>
 		<school>Necromancy</school>
 		<ritual>Yes</ritual>
 		<page>245</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Giant Insect>
+	<name spellname="Giant Insect">
 		<level>4</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>245</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Glibness>
+	<name spellname="Glibness">
 		<level>8</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>245</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
+			<bard></bard>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Globe of Invulnerability>
+	<name spellname="Globe of Invulnerability">
 		<level>6</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>245</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Glyph of Warding>
+	<name spellname="Glyph of Warding">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>245</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Goodberry>
+	<name spellname="Goodberry">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Grasping Vine>
+	<name spellname="Grasping Vine">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Grease>
+	<name spellname="Grease">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Greater Invisibility>
+	<name spellname="Greater Invisibility">
 		<level>4</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Greater Restoration>
+	<name spellname="Greater Restoration">
 		<level>5</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Guardian of Faith>
+	<name spellname="Guardian of Faith">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>246</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Guards and Wards>
+	<name spellname="Guards and Wards">
 		<level>6</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>248</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Guidance>
+	<name spellname="Guidance">
 		<level>0</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>248</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Guiding Bolt>
+	<name spellname="Guiding Bolt">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>248</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Gust of Wind>
+	<name spellname="Gust of Wind">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>248</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Hail of Thorns>
+	<name spellname="Hail of Thorns">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>249</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Hallow>
+	<name spellname="Hallow">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>249</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Hallucinatory Terrain>
+	<name spellname="Hallucinatory Terrain">
 		<level>4</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>249</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<druid></druid>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Harn>
+	<name spellname="Harn">
 		<level>6</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>249</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Haste>
+	<name spellname="Haste">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Heal>
+	<name spellname="Heal">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Healing Word>
+	<name spellname="Healing Word">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Heat Metal>
+	<name spellname="Heat Metal">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
+			<bard></bard>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Hellish Rebuke>
+	<name spellname="Hellish Rebuke">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Heroes' Feast>
+	<name spellname="Heroes' Feast">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Heroism>
+	<name spellname="Heroism">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>250</page>
 		<classes>
-			<bard>Yes</bard>
-			<paladin>Yes</paladin>
+			<bard></bard>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Hex>
+	<name spellname="Hex">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Hold Monster>
+	<name spellname="Hold Monster">
 		<level>5</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Hold Person>
+	<name spellname="Hold Person">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Holy Aura>
+	<name spellname="Holy Aura">
 		<level>8</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Hunger of Hadar>
+	<name spellname="Hunger of Hadar">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<warlock>Yes</warlock>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Hunter's Mark>
+	<name spellname="Hunter's Mark">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>251</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Hypnotic Pattern>
+	<name spellname="Hypnotic Pattern">
 		<level>3</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>252</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Ice Storm>
+	<name spellname="Ice Storm">
 		<level>4</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>252</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Identify>
+	<name spellname="Identify">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>252</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Illusory Script>
+	<name spellname="Illusory Script">
 		<level>1</level>
 		<school>Illusion</school>
 		<ritual>Yes</ritual>
 		<page>252</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Imprisonment>
+	<name spellname="Imprisonment">
 		<level>9</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>252</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Incendiary Cloud>
+	<name spellname="Incendiary Cloud">
 		<level>8</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>253</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Inflict Wounds>
+	<name spellname="Inflict Wounds">
 		<level>1</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>253</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<warlock>Yes</warlock>
+			<cleric></cleric>
+			<warlock></warlock>
 		</classes>
 	</name>
-	<name Insect Plague>
+	<name spellname="Insect Plague">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Invisibility>
+	<name spellname="Invisibility">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Jump>
+	<name spellname="Jump">
 		<level>1</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Knock>
+	<name spellname="Knock">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Legend Lore>
+	<name spellname="Legend Lore">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Leomund's Secret Chest>
+	<name spellname="Leomund's Secret Chest">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>254</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Leomund's Tiny Hut>
+	<name spellname="Leomund's Tiny Hut">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>Yes</ritual>
 		<page>255</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Lesser Restoration>
+	<name spellname="Lesser Restoration">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>255</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Levitate>
+	<name spellname="Levitate">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>255</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Light>
+	<name spellname="Light">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>255</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Lightning Arrow>
+	<name spellname="Lightning Arrow">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>255</page>
 		<classes>
-			<ranger>Yes</ranger>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Lightning Bolt>
+	<name spellname="Lightning Bolt">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>255</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Locate Animals or Plants>
+	<name spellname="Locate Animals or Plants">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>256</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Locate Creature>
+	<name spellname="Locate Creature">
 		<level>4</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<ranger></ranger>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Locate Object>
+	<name spellname="Locate Object">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
+			<bard></bard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Longstrider>
+	<name spellname="Longstrider">
 		<level>1</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Mage Armor>
+	<name spellname="Mage Armor">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mage Hand>
+	<name spellname="Mage Hand">
 		<level>0</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Magic Circle>
+	<name spellname="Magic Circle">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>256</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<paladin></paladin>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Magic Jar>
+	<name spellname="Magic Jar">
 		<level>6</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>257</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Magic Missile>
+	<name spellname="Magic Missile">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>257</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Magic Mouth>
+	<name spellname="Magic Mouth">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>Yes</ritual>
 		<page>257</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Magic Weapon>
+	<name spellname="Magic Weapon">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>257</page>
 		<classes>
-			<paladin>Yes</paladin>
-			<wizard>Yes</wizard>
+			<paladin></paladin>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Major Image>
+	<name spellname="Major Image">
 		<level>3</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>258</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mass Cure Wounds>
+	<name spellname="Mass Cure Wounds">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>258</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Mass Healing Word>
+	<name spellname="Mass Healing Word">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>258</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Mass Suggestion>
+	<name spellname="Mass Suggestion">
 		<level>6</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>258</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Maze>
+	<name spellname="Maze">
 		<level>8</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>258</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Meld into Stone>
+	<name spellname="Meld into Stone">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>Yes</ritual>
 		<page>259</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Melf's Acid Arrow>
+	<name spellname="Melf's Acid Arrow">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>259</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mending>
+	<name spellname="Mending">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>259</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Message>
+	<name spellname="Message">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>259</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Meteor Swarm>
+	<name spellname="Meteor Swarm">
 		<level>9</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>259</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mind Blank>
+	<name spellname="Mind Blank">
 		<level>8</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>259</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Minor Illusion>
+	<name spellname="Minor Illusion">
 		<level>0</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>260</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mirage Arcane>
+	<name spellname="Mirage Arcane">
 		<level>7</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>260</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mirror Image>
+	<name spellname="Mirror Image">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>260</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mislead>
+	<name spellname="Mislead">
 		<level>5</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>260</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Misty Step>
+	<name spellname="Misty Step">
 		<level>2</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>260</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Modify Memory>
+	<name spellname="Modify Memory">
 		<level>5</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>261</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Moonbeam>
+	<name spellname="Moonbeam">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>261</page>
 		<classes>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<paladin></paladin>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mordenkainen's Faithful Hound>
+	<name spellname="Mordenkainen's Faithful Hound">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>261</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mordenkainen's Magnificent Mansion>
+	<name spellname="Mordenkainen's Magnificent Mansion">
 		<level>7</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>261</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mordenkainen's Private Sanctum>
+	<name spellname="Mordenkainen's Private Sanctum">
 		<level>4</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>262</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Mordenkainen's Sword>
+	<name spellname="Mordenkainen's Sword">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>262</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Move Earth>
+	<name spellname="Move Earth">
 		<level>6</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>263</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Nondetection>
+	<name spellname="Nondetection">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>263</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Nystul's Magic Aura>
+	<name spellname="Nystul's Magic Aura">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>263</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Otiluke's Freezing Sphere>
+	<name spellname="Otiluke's Freezing Sphere">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>263</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Otiluke's Resilient Sphere>
+	<name spellname="Otiluke's Resilient Sphere">
 		<level>4</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>264</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Otto's Irresistible Dance>
+	<name spellname="Otto's Irresistible Dance">
 		<level>6</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>264</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Pass Without Trace>
+	<name spellname="Pass Without Trace">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>264</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Passwall>
+	<name spellname="Passwall">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>264</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Phantasmal Force>
+	<name spellname="Phantasmal Force">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>264</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Phantasmal Killer>
+	<name spellname="Phantasmal Killer">
 		<level>4</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>265</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Phantom Steed>
+	<name spellname="Phantom Steed">
 		<level>3</level>
 		<school>Illusion</school>
 		<ritual>Yes</ritual>
 		<page>265</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Planar Ally>
+	<name spellname="Planar Ally">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>265</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Planar Binding>
+	<name spellname="Planar Binding">
 		<level>5</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>265</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Plane Shift>
+	<name spellname="Plane Shift">
 		<level>7</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Plant Growth>
+	<name spellname="Plant Growth">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Poison Spray>
+	<name spellname="Poison Spray">
 		<level>0</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Polymorph>
+	<name spellname="Polymorph">
 		<level>4</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<bard>Yes</bard>
-			<paladin>Yes</paladin>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<paladin></paladin>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Power Word Heal>
+	<name spellname="Power Word Heal">
 		<level>9</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<bard>Yes</bard>
+			<bard></bard>
 		</classes>
 	</name>
-	<name Power Word Kill>
+	<name spellname="Power Word Kill">
 		<level>9</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>266</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Power Word Stun>
+	<name spellname="Power Word Stun">
 		<level>8</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>267</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Prayer of Healing>
+	<name spellname="Prayer of Healing">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>267</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Prestidigitation>
+	<name spellname="Prestidigitation">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>267</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Prismatic Spray>
+	<name spellname="Prismatic Spray">
 		<level>7</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>267</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Prismatic Wall>
+	<name spellname="Prismatic Wall">
 		<level>9</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>267</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Produce Flame>
+	<name spellname="Produce Flame">
 		<level>0</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>268</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Programmed Illusion>
+	<name spellname="Programmed Illusion">
 		<level>6</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>268</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Project Image>
+	<name spellname="Project Image">
 		<level>7</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>270</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Protection from Energy>
+	<name spellname="Protection from Energy">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>270</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Protection from Evil and Good>
+	<name spellname="Protection from Evil and Good">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>270</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<paladin></paladin>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Protection from Poison>
+	<name spellname="Protection from Poison">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>270</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
-			<ranger>Yes</ranger>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Purify Food and Drink>
+	<name spellname="Purify Food and Drink">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>Yes</ritual>
 		<page>270</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<druid></druid>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Raise Dead>
+	<name spellname="Raise Dead">
 		<level>5</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>270</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<bard></bard>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Rary's Telepathic Bond>
+	<name spellname="Rary's Telepathic Bond">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>270</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Ray of Enfeeblement>
+	<name spellname="Ray of Enfeeblement">
 		<level>2</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Ray of Frost>
+	<name spellname="Ray of Frost">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Ray of Sickness>
+	<name spellname="Ray of Sickness">
 		<level>1</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Regenerate>
+	<name spellname="Regenerate">
 		<level>7</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<bard></bard>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Reincarnate>
+	<name spellname="Reincarnate">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Remove Curse>
+	<name spellname="Remove Curse">
 		<level>3</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>271</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<paladin></paladin>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Resistance>
+	<name spellname="Resistance">
 		<level>0</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Resurrection>
+	<name spellname="Resurrection">
 		<level>7</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
+			<bard></bard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Reverse Gravity>
+	<name spellname="Reverse Gravity">
 		<level>7</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Revivify>
+	<name spellname="Revivify">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Rope Trick>
+	<name spellname="Rope Trick">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sacred Flame>
+	<name spellname="Sacred Flame">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Sanctuary>
+	<name spellname="Sanctuary">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>272</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Scorching Ray>
+	<name spellname="Scorching Ray">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>273</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Scrying>
+	<name spellname="Scrying">
 		<level>5</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>273</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Searing Smite>
+	<name spellname="Searing Smite">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name See Invisibility>
+	<name spellname="See Invisibility">
 		<level>2</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Seeming>
+	<name spellname="Seeming">
 		<level>5</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sending>
+	<name spellname="Sending">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sequester>
+	<name spellname="Sequester">
 		<level>7</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Shapechange>
+	<name spellname="Shapechange">
 		<level>9</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>274</page>
 		<classes>
-			<druid>Yes</druid>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Shatter>
+	<name spellname="Shatter">
 		<level>2</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>275</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Shield of Faith>
+	<name spellname="Shield of Faith">
 		<level>1</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>275</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Shillelagh>
+	<name spellname="Shillelagh">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>275</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Shocking Grasp>
+	<name spellname="Shocking Grasp">
 		<level>0</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>275</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Silence>
+	<name spellname="Silence">
 		<level>2</level>
 		<school>Illusion</school>
 		<ritual>Yes</ritual>
 		<page>275</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<cleric></cleric>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Silent Image>
+	<name spellname="Silent Image">
 		<level>1</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>276</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Simulacrum>
+	<name spellname="Simulacrum">
 		<level>7</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>276</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sleep>
+	<name spellname="Sleep">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>276</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sleet Storm>
+	<name spellname="Sleet Storm">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>276</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Slow>
+	<name spellname="Slow">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Spare the Dying>
+	<name spellname="Spare the Dying">
 		<level>0</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Speak with Animals>
+	<name spellname="Speak with Animals">
 		<level>1</level>
 		<school>Divination</school>
 		<ritual>Yes</ritual>
 		<page>277</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Speak with Dead>
+	<name spellname="Speak with Dead">
 		<level>3</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
+			<bard></bard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Speak with Plants>
+	<name spellname="Speak with Plants">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<bard>Yes</bard>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<bard></bard>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Spider Climb>
+	<name spellname="Spider Climb">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Spike Growth>
+	<name spellname="Spike Growth">
 		<level>2</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>277</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Spirit Guardians>
-		<level>3</level>
-		<school>Conjuration</school>
-		<ritual>No</ritual>
-		<page>278</page>
-		<classes>
-			<cleric>Yes</cleric>
-		</classes>
-	</name>
-	<name Spiritual Weapon>
-		<level>2</level>
-		<school>Evocation</school>
-		<ritual>No</ritual>
-		<page>278</page>
-		<classes>
-			<cleric>Yes</cleric>
-		</classes>
-	</name>
-	<name Staggering Smite>
-		<level>4</level>
-		<school>Evocation</school>
-		<ritual>No</ritual>
-		<page>278</page>
-		<classes>
-			<paladin>Yes</paladin>
-		</classes>
-	</name>
-	<name Stinking Cloud>
+	<name spellname="Spirit Guardians">
 		<level>3</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>278</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Stone Shape>
+	<name spellname="Spiritual Weapon">
+		<level>2</level>
+		<school>Evocation</school>
+		<ritual>No</ritual>
+		<page>278</page>
+		<classes>
+			<cleric></cleric>
+		</classes>
+	</name>
+	<name spellname="Staggering Smite">
+		<level>4</level>
+		<school>Evocation</school>
+		<ritual>No</ritual>
+		<page>278</page>
+		<classes>
+			<paladin></paladin>
+		</classes>
+	</name>
+	<name spellname="Stinking Cloud">
+		<level>3</level>
+		<school>Conjuration</school>
+		<ritual>No</ritual>
+		<page>278</page>
+		<classes>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
+		</classes>
+	</name>
+	<name spellname="Stone Shape">
 		<level>4</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>278</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<cleric></cleric>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Stoneskin>
+	<name spellname="Stoneskin">
 		<level>4</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>278</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Storm of Vengeance>
+	<name spellname="Storm of Vengeance">
 		<level>9</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>279</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Suggestion>
+	<name spellname="Suggestion">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>279</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sunbeam>
+	<name spellname="Sunbeam">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>279</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Sunburst>
+	<name spellname="Sunburst">
 		<level>8</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>279</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Swift Quiver>
+	<name spellname="Swift Quiver">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>279</page>
 		<classes>
-			<ranger>Yes</ranger>
-			<wizard>Yes</wizard>
+			<ranger></ranger>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Symbol>
+	<name spellname="Symbol">
 		<level>7</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>280</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Tasha's Hideous Laughter>
+	<name spellname="Tasha's Hideous Laughter">
 		<level>1</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>280</page>
 		<classes>
-			<bard>Yes</bard>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Telekinesis>
+	<name spellname="Telekinesis">
 		<level>5</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>280</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Telepathy>
+	<name spellname="Telepathy">
 		<level>8</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>281</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Teleport>
+	<name spellname="Teleport">
 		<level>7</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>281</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Teleportation Circle>
+	<name spellname="Teleportation Circle">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>282</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Tenser's Floating Disk>
+	<name spellname="Tenser's Floating Disk">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>Yes</ritual>
 		<page>282</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Thaumaturgy>
+	<name spellname="Thaumaturgy">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>282</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Thorn Whip>
+	<name spellname="Thorn Whip">
 		<level>0</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>282</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Thunderous Smite>
+	<name spellname="Thunderous Smite">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>282</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Thunderwave>
+	<name spellname="Thunderwave">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>282</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Time Stop>
+	<name spellname="Time Stop">
 		<level>9</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>283</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Tongues>
+	<name spellname="Tongues">
 		<level>3</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>283</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Transport via Plants>
+	<name spellname="Transport via Plants">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>283</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Tree Stride>
+	<name spellname="Tree Stride">
 		<level>5</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>283</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name True Polymorph>
+	<name spellname="True Polymorph">
 		<level>9</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>283</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name True Resurrection>
+	<name spellname="True Resurrection">
 		<level>9</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>284</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
+			<cleric></cleric>
+			<druid></druid>
 		</classes>
 	</name>
-	<name True Seeing>
+	<name spellname="True Seeing">
 		<level>6</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>284</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<cleric></cleric>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name True Strike>
+	<name spellname="True Strike">
 		<level>0</level>
 		<school>Divination</school>
 		<ritual>No</ritual>
 		<page>284</page>
 		<classes>
-			<bard>Yes</bard>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Tsunami>
+	<name spellname="Tsunami">
 		<level>8</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>284</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Unseen Servant>
+	<name spellname="Unseen Servant">
 		<level>1</level>
 		<school>Conjuration</school>
 		<ritual>Yes</ritual>
 		<page>284</page>
 		<classes>
-			<bard>Yes</bard>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<bard></bard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Vampiric Touch>
+	<name spellname="Vampiric Touch">
 		<level>3</level>
 		<school>Necromancy</school>
 		<ritual>No</ritual>
 		<page>285</page>
 		<classes>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Vicious Mockery>
+	<name spellname="Vicious Mockery">
 		<level>0</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>285</page>
 		<classes>
-			<bard>Yes</bard>
+			<bard></bard>
 		</classes>
 	</name>
-	<name Wall of Fire>
+	<name spellname="Wall of Fire">
 		<level>4</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>285</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Wall of Force>
+	<name spellname="Wall of Force">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>285</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Wall of Ice>
+	<name spellname="Wall of Ice">
 		<level>6</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>285</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Wall of Stone>
+	<name spellname="Wall of Stone">
 		<level>5</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>287</page>
 		<classes>
-			<druid>Yes</druid>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Wall of Thorns>
+	<name spellname="Wall of Thorns">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>287</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Warding Bond>
+	<name spellname="Warding Bond">
 		<level>2</level>
 		<school>Abjuration</school>
 		<ritual>No</ritual>
 		<page>287</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Water Breathing>
+	<name spellname="Water Breathing">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>Yes</ritual>
 		<page>287</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Water Walk>
+	<name spellname="Water Walk">
 		<level>3</level>
 		<school>Transmutation</school>
 		<ritual>Yes</ritual>
 		<page>287</page>
 		<classes>
-			<cleric>Yes</cleric>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
-			<sorcerer>Yes</sorcerer>
+			<cleric></cleric>
+			<druid></druid>
+			<ranger></ranger>
+			<sorcerer></sorcerer>
 		</classes>
 	</name>
-	<name Web>
+	<name spellname="Web">
 		<level>2</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>287</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Weird>
+	<name spellname="Weird">
 		<level>9</level>
 		<school>Illusion</school>
 		<ritual>No</ritual>
 		<page>288</page>
 		<classes>
-			<wizard>Yes</wizard>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Wind Walk>
+	<name spellname="Wind Walk">
 		<level>6</level>
 		<school>Transmutation</school>
 		<ritual>No</ritual>
 		<page>288</page>
 		<classes>
-			<druid>Yes</druid>
+			<druid></druid>
 		</classes>
 	</name>
-	<name Wind Wall>
+	<name spellname="Wind Wall">
 		<level>3</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>288</page>
 		<classes>
-			<druid>Yes</druid>
-			<ranger>Yes</ranger>
+			<druid></druid>
+			<ranger></ranger>
 		</classes>
 	</name>
-	<name Wish>
+	<name spellname="Wish">
 		<level>9</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>288</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Witch Bolt>
+	<name spellname="Witch Bolt">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>289</page>
 		<classes>
-			<sorcerer>Yes</sorcerer>
-			<warlock>Yes</warlock>
-			<wizard>Yes</wizard>
+			<sorcerer></sorcerer>
+			<warlock></warlock>
+			<wizard></wizard>
 		</classes>
 	</name>
-	<name Word of Recall>
+	<name spellname="Word of Recall">
 		<level>6</level>
 		<school>Conjuration</school>
 		<ritual>No</ritual>
 		<page>289</page>
 		<classes>
-			<cleric>Yes</cleric>
+			<cleric></cleric>
 		</classes>
 	</name>
-	<name Wrathful Smite>
+	<name spellname="Wrathful Smite">
 		<level>1</level>
 		<school>Evocation</school>
 		<ritual>No</ritual>
 		<page>289</page>
 		<classes>
-			<paladin>Yes</paladin>
+			<paladin></paladin>
 		</classes>
 	</name>
-	<name Zone of Truth>
+	<name spellname="Zone of Truth">
 		<level>2</level>
 		<school>Enchantment</school>
 		<ritual>No</ritual>
 		<page>289</page>
 		<classes>
-			<bard>Yes</bard>
-			<cleric>Yes</cleric>
-			<paladin>Yes</paladin>
+			<bard></bard>
+			<cleric></cleric>
+			<paladin></paladin>
 		</classes>
 	</name>
-</file>
+</spells>
