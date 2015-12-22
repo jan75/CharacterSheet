@@ -1,26 +1,18 @@
-package equipment;
+package data;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 class ParserOperationsXML {
-	
-    public static void main(String[] args) {        
-        Map<String, Equipment> weaponMap = parseWeapons("src/data/weapons.xml");
-		Map<String, Armor> armorMap = parseArmor("src/data/armour.xml");
-		Map<String, Spell> spellMap = parseSpells("src/data/spells.xml");
-		//
-		Equipment testWeapon = weaponMap.get("Crossbow, Light");
-		Equipment testArmor = armorMap.get("Leather");
-		Equipment testSpell = spellMap.get("Animate Objects");
-		testWeapon.print();
-		testArmor.print();
-		testSpell.print();
-    }
-
 	/**
 	 * The Method "parseWeapons" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Weapon).
 	 * @param path
@@ -192,5 +184,41 @@ class ParserOperationsXML {
 		}
 		//
 		return spellMap;
+	}
+
+	//
+
+	public static void saveCharacterToXML(Player player) {
+		//
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			//
+			Document document = dBuilder.newDocument();
+			Element rootElement = document.createElement("player");
+			document.appendChild(rootElement);
+			//
+			Element character = document.createElement("character");
+			rootElement.appendChild(character);
+			//
+			character.setAttribute("name", player.getCharName());
+			//
+			Element stats = document.createElement("stats");
+			stats.appendChild(document.createTextNode(player.getCharName()));
+			character.appendChild(stats);
+
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(document);
+			StreamResult result = new StreamResult(new File("src/files/character.xml"));
+			//StreamResult result = new StreamResult(System.out);
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+			//
+			transformer.transform(source, result);
+			//System.out.println("File saved");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

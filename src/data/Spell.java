@@ -1,8 +1,8 @@
-package equipment;
+package data;
 
 import java.util.ArrayList;
 
-class Spell extends Equipment {
+class Spell {
 	String spellName, spellSchool, spellRitual, spellLevel, spellPage;
 	ArrayList<String> spellClasses;
 	//
@@ -18,5 +18,9 @@ class Spell extends Equipment {
 	void print() {
 		System.out.println("Spell:\t\t" + spellName + "\nLevel:\t\t" + spellLevel + "\nSchool:\t\t" + spellSchool + "\nRitual:\t\t" + spellRitual + "\nPage:\t\t" + spellPage + "\nClasses:\t" + spellClasses);
 		System.out.println("\n------------------------------------\n");
+	}
+
+	String getKey() {
+		return spellName;
 	}
 }

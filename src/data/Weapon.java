@@ -1,4 +1,4 @@
-package equipment;
+package data;
 
 import java.util.ArrayList;
 
@@ -19,5 +19,9 @@ class Weapon extends Equipment {
 	void print() {
 		System.out.println("Weapon:\t\t" + weaponName + "\nDamage:\t\t" + weaponDamage + "\nWeight:\t\t" + weaponWeight + "\nPrice:\t\t" + weaponPrice + "\nGroup:\t\t" + weaponGroup+ "\nProperties:\t" + weaponProperties + "\nModifiers:\t" + weaponModifiers);
 		System.out.println("\n------------------------------------\n");
+	}
+
+	String getKey() {
+		return weaponName;
 	}
 }
