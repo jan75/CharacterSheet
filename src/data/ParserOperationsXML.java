@@ -189,6 +189,11 @@ class ParserOperationsXML {
 	//
 
 	public static void saveCharacterToXML(Player player) {
+		int[] playerStats = player.getPlayerStats();
+		String[] playerStatsString = new String[6];
+		for(int i = 0; i < playerStats.length; i++) {
+			playerStatsString[i] = Integer.toString(playerStats[i]);
+		}
 		//
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		try {
@@ -203,14 +208,39 @@ class ParserOperationsXML {
 			//
 			character.setAttribute("name", player.getCharName());
 			//
+			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
-			stats.appendChild(document.createTextNode(player.getCharName()));
+			//
+			Element strength = document.createElement("strength");
+			Element dexterity = document.createElement("dexterity");
+			Element constitution = document.createElement("strength");
+			Element intelligence = document.createElement("intelligence");
+			Element wisdom = document.createElement("wisdom");
+			Element charisma = document.createElement("charisma");
+			stats.appendChild(strength);
+			stats.appendChild(dexterity);
+			stats.appendChild(constitution);
+			stats.appendChild(intelligence);
+			stats.appendChild(wisdom);
+			stats.appendChild(charisma);
+			strength.appendChild(document.createTextNode(playerStatsString[0]));
+			dexterity.appendChild(document.createTextNode(playerStatsString[1]));
+			constitution.appendChild(document.createTextNode(playerStatsString[2]));
+			intelligence.appendChild(document.createTextNode(playerStatsString[3]));
+			wisdom.appendChild(document.createTextNode(playerStatsString[4]));
+			charisma.appendChild(document.createTextNode(playerStatsString[5]));
+			//
 			character.appendChild(stats);
-
+			//
+			// ::::: BEGINNING OF EQUIPMENT BLOCK :::::
+			//
+			//
+			//
+			// ::::: BEGINNING OF FINISHING BLOCK :::::
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult result = new StreamResult(new File("src/files/character.xml"));
+			StreamResult result = new StreamResult(new File("src/files/" + player.getCharName() + ".xml"));
 			//StreamResult result = new StreamResult(System.out);
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");

@@ -62,6 +62,10 @@ class Player {
         return charName;
     }
 
+    int[] getPlayerStats() {
+        return playerStats;
+    }
+
     void print() {
         System.out.println("Character:\t" + charName + "\nStats:\t\t" + getPlayerStatsString() + "\nEquipment:\t" + getEquipmentKeysString() + "\nSpells:\t\t" + getSpellKeysString());
     }
