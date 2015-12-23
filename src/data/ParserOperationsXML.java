@@ -1,26 +1,18 @@
-package equipment;
+package data;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 class ParserOperationsXML {
-	
-    public static void main(String[] args) {        
-        Map<String, Equipment> weaponMap = parseWeapons("src/data/weapons.xml");
-		Map<String, Armor> armorMap = parseArmor("src/data/armour.xml");
-		Map<String, Spell> spellMap = parseSpells("src/data/spells.xml");
-		//
-		Equipment testWeapon = weaponMap.get("Crossbow, Light");
-		Equipment testArmor = armorMap.get("Leather");
-		Equipment testSpell = spellMap.get("Animate Objects");
-		testWeapon.print();
-		testArmor.print();
-		testSpell.print();
-    }
-
 	/**
 	 * The Method "parseWeapons" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Weapon).
 	 * @param path
@@ -192,5 +184,71 @@ class ParserOperationsXML {
 		}
 		//
 		return spellMap;
+	}
+
+	//
+
+	public static void saveCharacterToXML(Player player) {
+		int[] playerStats = player.getPlayerStats();
+		String[] playerStatsString = new String[6];
+		for(int i = 0; i < playerStats.length; i++) {
+			playerStatsString[i] = Integer.toString(playerStats[i]);
+		}
+		//
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			//
+			Document document = dBuilder.newDocument();
+			Element rootElement = document.createElement("player");
+			document.appendChild(rootElement);
+			//
+			Element character = document.createElement("character");
+			rootElement.appendChild(character);
+			//
+			character.setAttribute("name", player.getCharName());
+			//
+			// ::::: BEGINNING OF STATS BLOCK :::::
+			Element stats = document.createElement("stats");
+			//
+			Element strength = document.createElement("strength");
+			Element dexterity = document.createElement("dexterity");
+			Element constitution = document.createElement("strength");
+			Element intelligence = document.createElement("intelligence");
+			Element wisdom = document.createElement("wisdom");
+			Element charisma = document.createElement("charisma");
+			stats.appendChild(strength);
+			stats.appendChild(dexterity);
+			stats.appendChild(constitution);
+			stats.appendChild(intelligence);
+			stats.appendChild(wisdom);
+			stats.appendChild(charisma);
+			strength.appendChild(document.createTextNode(playerStatsString[0]));
+			dexterity.appendChild(document.createTextNode(playerStatsString[1]));
+			constitution.appendChild(document.createTextNode(playerStatsString[2]));
+			intelligence.appendChild(document.createTextNode(playerStatsString[3]));
+			wisdom.appendChild(document.createTextNode(playerStatsString[4]));
+			charisma.appendChild(document.createTextNode(playerStatsString[5]));
+			//
+			character.appendChild(stats);
+			//
+			// ::::: BEGINNING OF EQUIPMENT BLOCK :::::
+			//
+			//
+			//
+			// ::::: BEGINNING OF FINISHING BLOCK :::::
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			DOMSource source = new DOMSource(document);
+			StreamResult result = new StreamResult(new File("src/files/" + player.getCharName() + ".xml"));
+			//StreamResult result = new StreamResult(System.out);
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+			//
+			transformer.transform(source, result);
+			//System.out.println("File saved");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
