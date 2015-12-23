@@ -1,10 +1,8 @@
 package characterClass;
 
 public class Bard extends CharacterClass{
-
-	Bard(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
+	this.hitDie=8;
+	this.name="Bard";
+	this.proficiencies=[];
 
 }

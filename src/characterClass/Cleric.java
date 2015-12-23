@@ -2,9 +2,7 @@ package characterClass;
 
 public class Cleric extends CharacterClass{
 
-	Cleric(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
-
+	this.hitDie=8;
+	this.name="Cleric";
+	this.proficiencies=[];
 }

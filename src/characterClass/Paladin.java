@@ -2,9 +2,8 @@ package characterClass;
 
 public class Paladin extends CharacterClass{
 
-	Paladin(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
-	}
+	this.hitDie=10;
+	this.name="Paladin";
+	this.proficiencies=[];
 
 }
