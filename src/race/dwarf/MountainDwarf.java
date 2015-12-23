@@ -9,4 +9,8 @@ public class MountainDwarf extends Dwarf{
 		this.name="Mountain Dwarf";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

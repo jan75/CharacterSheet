@@ -9,4 +9,8 @@ public class Fighter extends CharacterClass{
 		this.conProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
+
 }

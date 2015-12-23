@@ -8,4 +8,8 @@ public class Sorcerer extends CharacterClass{
 		this.chaProf=true;
 		this.conProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

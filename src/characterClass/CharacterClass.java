@@ -47,4 +47,6 @@ boolean strProf=false;
    boolean chaProf=false;
    boolean dexProf=false;
    boolean wisProf=false;
+
+	public abstract String getName();
 }

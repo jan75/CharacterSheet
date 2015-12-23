@@ -9,5 +9,9 @@ public class Cleric extends CharacterClass{
 		this.chaProf=true;
 		this.wisProf=true;
 		}
+
+	public String getName() {
+		return name;
+	}
 	
 }

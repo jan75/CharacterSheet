@@ -10,4 +10,7 @@ public class Paladin extends CharacterClass{
 		this.chaProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
 }

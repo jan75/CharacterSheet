@@ -9,4 +9,8 @@ public class HighElf extends Elf{
 		this.name="High Elf";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

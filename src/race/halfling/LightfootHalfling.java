@@ -9,4 +9,8 @@ public class LightfootHalfling extends Halfling{
 		this.name="Lightfoot Halfling";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

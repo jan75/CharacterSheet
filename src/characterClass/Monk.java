@@ -7,4 +7,9 @@ public class Monk extends CharacterClass{
 		this.strProf=true;
 		this.dexProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
+
 }

@@ -8,4 +8,8 @@ public class Wizard extends CharacterClass{
 		this.intProf=true;
 		this.wisProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

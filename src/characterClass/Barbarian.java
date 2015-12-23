@@ -9,6 +9,8 @@ public class Barbarian extends CharacterClass{
 		this.conProf=true;
 	}
 
-
+	public String getName() {
+		return name;
+	}
 
 }

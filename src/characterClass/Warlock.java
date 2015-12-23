@@ -8,4 +8,8 @@ public class Warlock extends CharacterClass{
 		this.wisProf=true;
 		this.chaProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

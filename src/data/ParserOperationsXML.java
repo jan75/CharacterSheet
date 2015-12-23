@@ -1,6 +1,8 @@
 package data;
 
 import org.w3c.dom.*;
+import race.DNDCharacter;
+
 import javax.xml.parsers.*;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -186,34 +188,30 @@ class ParserOperationsXML {
 		return spellMap;
 	}
 
-	//
-
-	public static void saveCharacterToXML(Player player) {
-		int[] playerStats = player.getPlayerStats();
-		String[] playerStatsString = new String[6];
-		for(int i = 0; i < playerStats.length; i++) {
-			playerStatsString[i] = Integer.toString(playerStats[i]);
-		}
-		//
+	/**
+	 * The Method "saveCharacterToXML" generates a file(XML) and fills it with the object player. This XML file can be parsed with the method "loadCharacterFromXML"
+	 * @param tmpCharacter
+	 */
+	public static void saveCharacterToXML(DNDCharacter tmpCharacter) {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 			//
 			Document document = dBuilder.newDocument();
-			Element rootElement = document.createElement("player");
+			Element rootElement = document.createElement("character");
 			document.appendChild(rootElement);
 			//
-			Element character = document.createElement("character");
+			Element character = document.createElement("dndcharacter");
 			rootElement.appendChild(character);
 			//
-			character.setAttribute("name", player.getCharName());
+			character.setAttribute("name", tmpCharacter.getName());
 			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
 			//
 			Element strength = document.createElement("strength");
 			Element dexterity = document.createElement("dexterity");
-			Element constitution = document.createElement("strength");
+			Element constitution = document.createElement("constitution");
 			Element intelligence = document.createElement("intelligence");
 			Element wisdom = document.createElement("wisdom");
 			Element charisma = document.createElement("charisma");
@@ -223,16 +221,80 @@ class ParserOperationsXML {
 			stats.appendChild(intelligence);
 			stats.appendChild(wisdom);
 			stats.appendChild(charisma);
-			strength.appendChild(document.createTextNode(playerStatsString[0]));
-			dexterity.appendChild(document.createTextNode(playerStatsString[1]));
-			constitution.appendChild(document.createTextNode(playerStatsString[2]));
-			intelligence.appendChild(document.createTextNode(playerStatsString[3]));
-			wisdom.appendChild(document.createTextNode(playerStatsString[4]));
-			charisma.appendChild(document.createTextNode(playerStatsString[5]));
+			strength.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getStrength())));
+			dexterity.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getDexterity())));
+			constitution.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getConstitution())));
+			intelligence.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getIntelligence())));
+			wisdom.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getWisdom())));
+			charisma.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getCharisma())));
 			//
 			character.appendChild(stats);
 			//
+			// ::::: BEGINNING OF SPELLS BLOCK :::::
+			Element spells = document.createElement("spells");
+			//
+			ArrayList<String> tmpSpells = tmpCharacter.getSpellKeysList();
+			for(int i = 0; i < tmpSpells.size(); i++) {
+				Element spell = document.createElement("spell");
+				spells.appendChild(spell);
+				spell.appendChild(document.createTextNode(tmpSpells.get(i)));
+			}
+			character.appendChild(spells);
+			//
+			// ::::: BEGINNING OF WEAPONS BLOCK :::::
+			ArrayList<String> tmpWeapons = tmpCharacter.getEquipmentKeysList(true);
+			//
+			if(tmpWeapons.size() != 0) {
+				Element weapons = document.createElement("weapons");
+				//
+				for (int i = 0; i < tmpWeapons.size(); i++) {
+					Element weapon = document.createElement("weapon");
+					weapons.appendChild(weapon);
+					weapon.appendChild(document.createTextNode(tmpWeapons.get(i)));
+				}
+				character.appendChild(weapons);
+			}
+			//
 			// ::::: BEGINNING OF EQUIPMENT BLOCK :::::
+			ArrayList<String> tmpEquipment = tmpCharacter.getEquipmentKeysList(false);
+			//
+			if(tmpEquipment.size() != 0) {
+				Element equipment = document.createElement("equipment");
+				//
+
+				for (int i = 0; i < tmpEquipment.size(); i++) {
+					Element item = document.createElement("item");
+					equipment.appendChild(item);
+					item.appendChild(document.createTextNode(tmpEquipment.get(i)));
+				}
+				character.appendChild(equipment);
+			}
+			//
+			// ::::: BEGINNING OF ARMOR BLOCK :::::
+			if(!tmpCharacter.getEquipmentKey().isEmpty()) {
+				Element armor = document.createElement("armor");
+				Element armorItem = document.createElement("armorItem");
+				armor.appendChild(armorItem);
+				armorItem.appendChild(document.createTextNode(tmpCharacter.getEquipmentKey()));
+				//
+				character.appendChild(armor);
+			}
+			//
+			// ::::: BEGINNING OF RACE BLOCK :::::
+			Element race = document.createElement("race");
+			Element raceName = document.createElement("raceName");
+			race.appendChild(raceName);
+			raceName.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
+			//
+			character.appendChild(race);
+			//
+			// ::::: BEGINNING OF CLASS BLOCK :::::
+			Element charClass = document.createElement("charClass");
+			Element charClassName = document.createElement("charClassName");
+			charClass.appendChild(charClassName);
+			charClassName.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
+			//
+			character.appendChild(charClass);
 			//
 			//
 			//
@@ -240,13 +302,13 @@ class ParserOperationsXML {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult result = new StreamResult(new File("src/files/" + player.getCharName() + ".xml"));
+			StreamResult result = new StreamResult(new File("src/files/" + tmpCharacter.getName() + ".xml"));
 			//StreamResult result = new StreamResult(System.out);
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 			//
 			transformer.transform(source, result);
-			//System.out.println("File saved");
+			//
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

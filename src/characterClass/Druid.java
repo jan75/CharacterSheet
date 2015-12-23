@@ -8,6 +8,9 @@ public class Druid extends CharacterClass{
 		this.wisProf=true;
 		this.intProf=true;
 	}
-	
+
+	public String getName() {
+		return name;
+	}
 
 }

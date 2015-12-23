@@ -2,7 +2,7 @@ package data;
 
 import java.util.ArrayList;
 
-class Spell {
+public class Spell {
 	String spellName, spellSchool, spellRitual, spellLevel, spellPage;
 	ArrayList<String> spellClasses;
 	//
@@ -20,7 +20,7 @@ class Spell {
 		System.out.println("\n------------------------------------\n");
 	}
 
-	String getKey() {
+	public String getKey() {
 		return spellName;
 	}
 }

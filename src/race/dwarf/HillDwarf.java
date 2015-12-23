@@ -9,4 +9,8 @@ public class HillDwarf extends Dwarf {
 		this.name="Hill Dwarf";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

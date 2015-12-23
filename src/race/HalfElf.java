@@ -8,4 +8,8 @@ public class HalfElf extends Race{
 		// TODO Auto-generated constructor stub
 	this.name="Half-Elf";
 	}
+
+	String getName() {
+		return name;
+	}
 }

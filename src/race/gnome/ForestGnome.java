@@ -9,4 +9,8 @@ public class ForestGnome extends Gnome{
 		this.name="Forest Gnome";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

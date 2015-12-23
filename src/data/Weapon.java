@@ -21,7 +21,7 @@ class Weapon extends Equipment {
 		System.out.println("\n------------------------------------\n");
 	}
 
-	String getKey() {
+	public String getKey() {
 		return weaponName;
 	}
 }

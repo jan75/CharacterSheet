@@ -8,4 +8,8 @@ public class Ranger extends CharacterClass{
 		this.strProf=true;
 		this.dexProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

@@ -8,4 +8,8 @@ public class Rogue extends CharacterClass{
 		this.dexProf=true;
 		this.intProf=true;
 	}
+
+	public String getName() {
+		return name;
+	}
 }

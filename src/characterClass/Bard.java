@@ -8,6 +8,9 @@ public class Bard extends CharacterClass{
 		this.dexProf=true;
 		this.chaProf=true;
 	}
-	
+
+	public String getName() {
+		return name;
+	}
 
 }

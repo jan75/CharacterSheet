@@ -9,4 +9,8 @@ public class RockGnome extends Gnome{
 		this.name="Rock Gnome";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

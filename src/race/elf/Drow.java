@@ -9,4 +9,8 @@ public class Drow extends Elf{
 		this.name="Drow";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

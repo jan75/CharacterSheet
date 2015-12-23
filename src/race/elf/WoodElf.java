@@ -9,4 +9,8 @@ public class WoodElf extends Elf{
 		this.name="Wood Elf";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

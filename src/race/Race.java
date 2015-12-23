@@ -6,4 +6,6 @@ public abstract class Race {
 	protected String name;
 	int speed;
 	List<String> languages;
+
+	abstract String getName();
 }
