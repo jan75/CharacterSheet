@@ -2,8 +2,10 @@ package characterClass;
 
 public class Warlock extends CharacterClass{
 
-	this.hitDie=8;
-	this.name="Warlock";
-	this.proficiencies=[];
-
+	public Warlock() {
+		this.hitDie=8;
+		this.name="Warlock";
+		this.wisProf=true;
+		this.chaProf=true;
+	}
 }

@@ -1,8 +1,13 @@
 package characterClass;
 
 public class Cleric extends CharacterClass{
-
-	this.hitDie=8;
-	this.name="Cleric";
-	this.proficiencies=[];
+	
+	public Cleric() {
+		// TODO Auto-generated constructor stub
+		this.hitDie=8;
+		this.name="Cleric";
+		this.chaProf=true;
+		this.wisProf=true;
+		}
+	
 }

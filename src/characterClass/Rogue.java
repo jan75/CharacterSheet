@@ -1,8 +1,11 @@
 package characterClass;
 
 public class Rogue extends CharacterClass{
-	this.hitDie=8;
-	this.name="Rogue";
-	this.proficiencies=[];
-
+	
+	public Rogue() {
+		this.hitDie=8;
+		this.name="Rogue";
+		this.dexProf=true;
+		this.intProf=true;
+	}
 }

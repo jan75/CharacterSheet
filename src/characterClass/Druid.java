@@ -2,8 +2,12 @@ package characterClass;
 
 public class Druid extends CharacterClass{
 
-	this.hitDie=8;
-	this.name="Druid";
-	this.proficiencies=[];
+	public Druid() {
+		this.hitDie=8;
+		this.name="Druid";
+		this.wisProf=true;
+		this.intProf=true;
+	}
+	
 
 }
