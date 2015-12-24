@@ -49,4 +49,39 @@ boolean strProf=false;
    boolean wisProf=false;
 
 	public abstract String getName();
+
+	public static CharacterClass createCharClass(String name) {
+		CharacterClass tmpCharClass;
+		switch (name) {
+			case "Barbarian": tmpCharClass = new Barbarian();
+				break;
+			case "Bard": tmpCharClass = new Bard();
+				break;
+			case "Cleric": tmpCharClass = new Cleric();
+				break;
+			case "Druid": tmpCharClass = new Druid();
+				break;
+			case "Fighter": tmpCharClass = new Fighter();
+				break;
+			case "Monk": tmpCharClass = new Monk();
+				break;
+			case "Paladin": tmpCharClass = new Paladin();
+				break;
+			case "Ranger": tmpCharClass = new Ranger();
+				break;
+			case "Rogue": tmpCharClass = new Rogue();
+				break;
+			case "Sorcerer": tmpCharClass = new Sorcerer();
+				break;
+			case "Warlock": tmpCharClass = new Warlock();
+				break;
+			case "Wizard": tmpCharClass = new Wizard();
+				break;
+			default:
+				tmpCharClass = new Barbarian(); // to be defined: exception
+				System.out.println("Default CharacterClass!");
+				break;
+		}
+		return tmpCharClass;
+	}
 }

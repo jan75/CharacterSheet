@@ -5,7 +5,7 @@ import race.Halfling;
 
 public class LightfootHalfling extends Halfling{
 
-	protected LightfootHalfling() {
+	public LightfootHalfling() {
 		this.name="Lightfoot Halfling";
 	}
 

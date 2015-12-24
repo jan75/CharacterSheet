@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Human extends Race{
 
-	Human() {
+	public Human() {
 		this.name="Human";
 	}
 

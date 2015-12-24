@@ -1,8 +1,13 @@
 package data;
 
-import org.w3c.dom.*;
-import race.DNDCharacter;
+import characterClass.*;
+import race.*;
+import race.dwarf.*;
+import race.elf.*;
+import race.gnome.*;
+import race.halfling.*;
 
+import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
@@ -10,6 +15,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -208,10 +214,7 @@ class ParserOperationsXML {
 			//
 			// ::::: BEGINNING OF LEVEL BLOCK :::::
 			Element level = document.createElement("level");
-			Element charLevel = document.createElement("charLevel");
-			level.appendChild(charLevel);
-			charLevel.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
-			//
+			level.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
 			character.appendChild(level);
 			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
@@ -290,18 +293,12 @@ class ParserOperationsXML {
 			//
 			// ::::: BEGINNING OF RACE BLOCK :::::
 			Element race = document.createElement("race");
-			Element raceName = document.createElement("raceName");
-			race.appendChild(raceName);
-			raceName.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
-			//
+			race.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
 			character.appendChild(race);
 			//
 			// ::::: BEGINNING OF CLASS BLOCK :::::
 			Element charClass = document.createElement("charClass");
-			Element charClassName = document.createElement("charClassName");
-			charClass.appendChild(charClassName);
-			charClassName.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
-			//
+			charClass.appendChild(document.createTextNode(tmpCharacter.getCharClassName()));
 			character.appendChild(charClass);
 			//
 			// ::::: BEGINNING OF PROFICIENCIES BLOCK :::::
@@ -339,4 +336,124 @@ class ParserOperationsXML {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * The Method "parseSpells" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Spell).
+	 * @param path
+	 * @return Map
+	 */
+	public static Map loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap) {
+        //
+        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        try {
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document document = dBuilder.parse(path);
+            //
+            document.getDocumentElement().normalize();
+            //
+            NodeList nList = document.getElementsByTagName("dndcharacter");
+            //
+            for(int i = 0; i < nList.getLength(); i++) {
+                Node nNode = nList.item(i);
+                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+                    Element eElement = (Element) nNode;
+                    //
+                    String tmpName = eElement.getAttribute("name");
+                    int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
+                    Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
+                    CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
+
+                    // The following code block parses the sub elements under "stats"
+                    NodeList nListStats = eElement.getElementsByTagName("stats");
+                    Node nNodeStats = nListStats.item(0);
+                    Element eElementStats = (Element) nNodeStats;
+                    //
+                    int tmpStrength = Integer.parseInt(eElementStats.getElementsByTagName("strength").item(0).getTextContent());
+                    int tmpDexterity = Integer.parseInt(eElementStats.getElementsByTagName("dexterity").item(0).getTextContent());
+                    int tmpConstitution = Integer.parseInt(eElementStats.getElementsByTagName("constitution").item(0).getTextContent());
+                    int tmpIntelligence = Integer.parseInt(eElementStats.getElementsByTagName("intelligence").item(0).getTextContent());
+                    int tmpWisdom = Integer.parseInt(eElementStats.getElementsByTagName("wisdom").item(0).getTextContent());
+                    int tmpCharisma = Integer.parseInt(eElementStats.getElementsByTagName("charisma").item(0).getTextContent());
+                    //
+                    //
+                    // The following code block parses the sub elements under "classes"
+                    NodeList nListSpells = eElement.getElementsByTagName("spells");
+                    Node nNodeSpells = nListSpells.item(0);
+                    Element eElementSpells = (Element) nNodeSpells;
+                    //
+                    ArrayList<Spell> tmpSpells = new ArrayList();
+                    tmpSpells.clear();
+                    Spell tmpSpell;
+                    //
+                    NodeList tmpSpellNodeList = eElementSpells.getElementsByTagName("spell");
+                    for(int j = 0; j < tmpSpellNodeList.getLength(); j++) {
+                        tmpSpell = spellMap.get(eElementSpells.getElementsByTagName("spell").item(j).getTextContent());
+                        tmpSpells.add(tmpSpell);
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        /*
+		ArrayList<String> arraySpellClasses = new ArrayList(); //used for sub node "property" of "properties"
+				//
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					//
+					//
+					// The following code block parses the sub elements under "classes"
+					NodeList nListClasses = eElement.getElementsByTagName("classes");
+					Node nNodeClasses = nListClasses.item(0);
+					Element eElementClasses = (Element) nNodeClasses;
+					//
+					//getTagName());
+					for(int j = 0; j < allClasses.length; j++) {
+						if (eElementClasses.getElementsByTagName(allClasses[j]).item(0) != null) {
+							arraySpellClasses.add(allClasses[j]);
+						}
+					}
+					//
+					// Creating a Spell object and adding the Object to the Map, which will later be returned
+					Spell tmpSpellObject = new Spell(tmpSpell, tmpLevel, tmpSchool, tmpRitual, tmpPage, arraySpellClasses);
+					//tmpSpellObject.print();
+					spellMap.put(tmpSpell, tmpSpellObject);
+					//
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//*/
+		return spellMap;
+	}
+
+
 }

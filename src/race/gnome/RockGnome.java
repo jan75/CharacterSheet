@@ -5,7 +5,7 @@ import race.Gnome;
 
 public class RockGnome extends Gnome{
 
-	protected RockGnome() {
+	public RockGnome() {
 		this.name="Rock Gnome";
 	}
 

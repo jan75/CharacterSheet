@@ -5,7 +5,7 @@ import race.Elf;
 
 public class WoodElf extends Elf{
 
-	protected WoodElf() {
+	public WoodElf() {
 		this.name="Wood Elf";
 	}
 

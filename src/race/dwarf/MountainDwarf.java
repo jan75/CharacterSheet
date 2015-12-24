@@ -5,7 +5,7 @@ import race.Dwarf;
 
 public class MountainDwarf extends Dwarf{
 
-	MountainDwarf() {
+	public MountainDwarf() {
 		this.name="Mountain Dwarf";
 	}
 

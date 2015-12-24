@@ -5,7 +5,7 @@ import race.Elf;
 
 public class Drow extends Elf{
 
-	Drow() {
+	public Drow() {
 		this.name="Drow";
 	}
 

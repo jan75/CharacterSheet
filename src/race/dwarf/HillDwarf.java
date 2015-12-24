@@ -5,7 +5,7 @@ import race.Dwarf;
 
 public class HillDwarf extends Dwarf {
 
-	protected HillDwarf() {
+	public HillDwarf() {
 		this.name="Hill Dwarf";
 	}
 
