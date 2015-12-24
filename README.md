@@ -7,7 +7,7 @@ Documentations (to be made)
 Source-Files in Java and XML 
 #### characterClass
 Package characterClass 
-#### data 
+#### data
 In this directory is everything related to data - mostly *.java-Files. 
 #### files
 XML-Files with data to parse. 

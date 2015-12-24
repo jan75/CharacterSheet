@@ -206,6 +206,14 @@ class ParserOperationsXML {
 			//
 			character.setAttribute("name", tmpCharacter.getName());
 			//
+			// ::::: BEGINNING OF LEVEL BLOCK :::::
+			Element level = document.createElement("level");
+			Element charLevel = document.createElement("charLevel");
+			level.appendChild(charLevel);
+			charLevel.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
+			//
+			character.appendChild(level);
+			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
 			//
@@ -295,6 +303,24 @@ class ParserOperationsXML {
 			charClassName.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
 			//
 			character.appendChild(charClass);
+			//
+			// ::::: BEGINNING OF PROFICIENCIES BLOCK :::::
+			ArrayList<String> tmpProficiencies = tmpCharacter.getProficiencies();
+			//
+			if(tmpProficiencies.size() != 0) {
+				Element proficiencies = document.createElement("proficiencies");
+				//
+				for (int i = 0; i < tmpProficiencies.size(); i++) {
+					Element proficiency = document.createElement("proficiency");
+					proficiencies.appendChild(proficiency);
+					proficiency.appendChild(document.createTextNode(tmpProficiencies.get(i)));
+				}
+				//
+				character.appendChild(proficiencies);
+			}
+			//
+			//
+			//
 			//
 			//
 			//

@@ -32,11 +32,19 @@ public class Tester {
         tmpPlayerSpells.add(testSpellAnimateObjects);
         tmpPlayerSpells.add(testSpellAid);
 
+        ArrayList<String> tmpProficiencies = new ArrayList();
+        tmpProficiencies.add("Maces");
+        tmpProficiencies.add("Swords");
+        tmpProficiencies.add("Shields");
+        tmpProficiencies.add("Detecting Undead");
+
+        Skills tmpSkills = new Skills();
+
         Race tmpRace = new Dragonborn();
 
         CharacterClass tmpClass = new Cleric();
 
-        DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor);
+        DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, 2, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills);
         //tmpCharacter.print();
         //
         ParserOperationsXML.saveCharacterToXML(tmpCharacter);
