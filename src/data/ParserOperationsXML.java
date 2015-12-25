@@ -15,7 +15,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -314,6 +313,140 @@ class ParserOperationsXML {
 				character.appendChild(proficiencies);
 			}
 			//
+			// ::::: BEGINNING OF SKILLS BLOCK :::::
+			Skills tmpSkills = tmpCharacter.getSkills();
+			String[] allSkills = {"acrobatics", "animalHandling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medecine", "nature", "perception", "performance", "persuasion", "religion", "sleightOfHand", "stealth", "survival"};
+			//
+			Element skills = document.createElement("skills");
+			//
+			Element acrobatics = document.createElement("acrobatics");
+			Element animalHandling = document.createElement("animalHandling");
+			Element arcana = document.createElement("arcana");
+			Element athletics = document.createElement("athlthics");
+			Element deception = document.createElement("deception");
+			Element history = document.createElement("history");
+			Element insight = document.createElement("insight");
+			Element intimidation = document.createElement("intimidation");
+			Element investigation = document.createElement("investigation");
+			Element medicine = document.createElement("medicine");
+			Element nature = document.createElement("nature");
+			Element perception = document.createElement("perception");
+			Element performance = document.createElement("performance");
+			Element persuasion = document.createElement("persuasion");
+			Element religon = document.createElement("religon");
+			Element sleightOfHand = document.createElement("sleightOfHand");
+			Element stealth = document.createElement("stealth");
+			Element survival = document.createElement("survival");
+			skills.appendChild(acrobatics);
+			skills.appendChild(animalHandling);
+			skills.appendChild(arcana);
+			skills.appendChild(athletics);
+			skills.appendChild(deception);
+			skills.appendChild(history);
+			skills.appendChild(insight);
+			skills.appendChild(intimidation);
+			skills.appendChild(investigation);
+			skills.appendChild(medicine);
+			skills.appendChild(nature);
+			skills.appendChild(perception);
+			skills.appendChild(performance);
+			skills.appendChild(persuasion);
+			skills.appendChild(religon);
+			skills.appendChild(sleightOfHand);
+			skills.appendChild(stealth);
+			skills.appendChild(survival);
+			if(tmpCharacter.getSkills().isAcrobatics()) {
+				acrobatics.appendChild(document.createTextNode("true"));
+			} else {
+				acrobatics.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isAnimalHandling()) {
+				animalHandling.appendChild(document.createTextNode("true"));
+			} else {
+				animalHandling.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isArcana()) {
+				arcana.appendChild(document.createTextNode("true"));
+			} else {
+				arcana.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isAthletics()) {
+				athletics.appendChild(document.createTextNode("true"));
+			} else {
+				athletics.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isDeception()) {
+				deception.appendChild(document.createTextNode("true"));
+			} else {
+				deception.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isHistory()) {
+				history.appendChild(document.createTextNode("true"));
+			} else {
+				history.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isInsight()) {
+				insight.appendChild(document.createTextNode("true"));
+			} else {
+				insight.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isIntimidation()) {
+				intimidation.appendChild(document.createTextNode("true"));
+			} else {
+				intimidation.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isInvestigation()) {
+				investigation.appendChild(document.createTextNode("true"));
+			} else {
+				investigation.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isMedicine()) {
+				medicine.appendChild(document.createTextNode("true"));
+			} else {
+				medicine.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isNature()) {
+				nature.appendChild(document.createTextNode("true"));
+			} else {
+				nature.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isPerception()) {
+				perception.appendChild(document.createTextNode("true"));
+			} else {
+				perception.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isPerformance()) {
+				performance.appendChild(document.createTextNode("true"));
+			} else {
+				performance.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isPersuasion()) {
+				persuasion.appendChild(document.createTextNode("true"));
+			} else {
+				persuasion.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isReligon()) {
+				religon.appendChild(document.createTextNode("true"));
+			} else {
+				religon.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isSleightOfHand()) {
+				sleightOfHand.appendChild(document.createTextNode("true"));
+			} else {
+				sleightOfHand.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isStealth()) {
+				stealth.appendChild(document.createTextNode("true"));
+			} else {
+				stealth.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isSurvival()) {
+				survival.appendChild(document.createTextNode("true"));
+			} else {
+				survival.appendChild(document.createTextNode("false"));
+			}
+			character.appendChild(skills);
+			//
 			//
 			//
 			//
@@ -341,85 +474,104 @@ class ParserOperationsXML {
 	 * @return Map
 	 */
 	public static DNDCharacter loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap, Map<String, Armor> armorMap) {
-        //
-        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-        try {
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document document = dBuilder.parse(path);
-            //
-            document.getDocumentElement().normalize();
-            //
-            NodeList nList = document.getElementsByTagName("dndcharacter");
-            //
-            for(int i = 0; i < nList.getLength(); i++) {
-                Node nNode = nList.item(i);
-                if(nNode.getNodeType() == Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-                    //
-                    String tmpName = eElement.getAttribute("name");
-                    int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
-                    Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
-                    CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
+		DNDCharacter tmpCharacter = null;
+		//
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document document = dBuilder.parse(path);
+			//
+			document.getDocumentElement().normalize();
+			//
+			NodeList nList = document.getElementsByTagName("dndcharacter");
+			//
+			for (int i = 0; i < nList.getLength(); i++) {
+				Node nNode = nList.item(i);
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					//
+					String tmpName = eElement.getAttribute("name");
+					int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
+					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
+					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
 					Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent());
 
-                    // The following code block parses the sub elements under "stats"
-                    NodeList nListStats = eElement.getElementsByTagName("stats");
-                    Node nNodeStats = nListStats.item(0);
-                    Element eElementStats = (Element) nNodeStats;
-                    //
-                    int tmpStrength = Integer.parseInt(eElementStats.getElementsByTagName("strength").item(0).getTextContent());
-                    int tmpDexterity = Integer.parseInt(eElementStats.getElementsByTagName("dexterity").item(0).getTextContent());
-                    int tmpConstitution = Integer.parseInt(eElementStats.getElementsByTagName("constitution").item(0).getTextContent());
-                    int tmpIntelligence = Integer.parseInt(eElementStats.getElementsByTagName("intelligence").item(0).getTextContent());
-                    int tmpWisdom = Integer.parseInt(eElementStats.getElementsByTagName("wisdom").item(0).getTextContent());
-                    int tmpCharisma = Integer.parseInt(eElementStats.getElementsByTagName("charisma").item(0).getTextContent());
-                    //
-                    //
-                    // The following code block parses the sub elements under "spells"
-                    NodeList nListSpells = eElement.getElementsByTagName("spells");
-                    Node nNodeSpells = nListSpells.item(0);
-                    Element eElementSpells = (Element) nNodeSpells;
-                    //
-                    ArrayList<Spell> tmpSpells = new ArrayList();
-                    tmpSpells.clear();
-                    Spell tmpSpell;
-                    //
-                    NodeList tmpSpellNodeList = eElementSpells.getElementsByTagName("spell");
-                    for(int j = 0; j < tmpSpellNodeList.getLength(); j++) {
-                        tmpSpell = spellMap.get(eElementSpells.getElementsByTagName("spell").item(j).getTextContent());
-                        tmpSpells.add(tmpSpell);
-                    }
-                    //
+					// The following code block parses the sub elements under "stats"
+					NodeList nListStats = eElement.getElementsByTagName("stats");
+					Node nNodeStats = nListStats.item(0);
+					Element eElementStats = (Element) nNodeStats;
 					//
-					// The following code block parses the sub elements under "weapons"
-					NodeList nListWeapons = eElement.getElementsByTagName("weapons");
-					Node nNodeWeapons = nListWeapons.item(0);
-					Element eElementWeapons = (Element) nNodeWeapons;
+					int tmpStrength = Integer.parseInt(eElementStats.getElementsByTagName("strength").item(0).getTextContent());
+					int tmpDexterity = Integer.parseInt(eElementStats.getElementsByTagName("dexterity").item(0).getTextContent());
+					int tmpConstitution = Integer.parseInt(eElementStats.getElementsByTagName("constitution").item(0).getTextContent());
+					int tmpIntelligence = Integer.parseInt(eElementStats.getElementsByTagName("intelligence").item(0).getTextContent());
+					int tmpWisdom = Integer.parseInt(eElementStats.getElementsByTagName("wisdom").item(0).getTextContent());
+					int tmpCharisma = Integer.parseInt(eElementStats.getElementsByTagName("charisma").item(0).getTextContent());
 					//
-					ArrayList<Equipment> tmpWeapons = new ArrayList();
-					tmpWeapons.clear();
-					Equipment tmpWeapon;
 					//
-					NodeList tmpWeaponNodeList = eElementWeapons.getElementsByTagName("weapon");
-					for(int j = 0; j < tmpWeaponNodeList.getLength(); j++) {
-						tmpWeapon = weaponMap.get(eElementWeapons.getElementsByTagName("weapon").item(j).getTextContent());
-						tmpWeapons.add(tmpWeapon);
+					// The following code block parses the sub elements under "spells"
+					NodeList nListSpells = eElement.getElementsByTagName("spells");
+					//
+					ArrayList<Spell> tmpSpells = new ArrayList();
+					tmpSpells.clear();
+					//
+					if (nListSpells.getLength() != 0) {
+						Node nNodeSpells = nListSpells.item(0);
+						Element eElementSpells = (Element) nNodeSpells;
+						//
+						Spell tmpSpell;
+						//
+						NodeList tmpSpellNodeList = eElementSpells.getElementsByTagName("spell");
+						for (int j = 0; j < tmpSpellNodeList.getLength(); j++) {
+							tmpSpell = spellMap.get(eElementSpells.getElementsByTagName("spell").item(j).getTextContent());
+							tmpSpells.add(tmpSpell);
+						}
+					} else {
+						System.out.println("no spells");
 					}
 					//
 					//
 					// The following code block parses the sub elements under "weapons"
+					NodeList nListWeapons = eElement.getElementsByTagName("weapons");
+					//
+					ArrayList<Equipment> tmpWeapons = new ArrayList();
+					tmpWeapons.clear();
+					//
+					if (nListWeapons.getLength() != 0) {
+						Node nNodeWeapons = nListWeapons.item(0);
+						Element eElementWeapons = (Element) nNodeWeapons;
+						//
+						Equipment tmpWeapon;
+						//
+						NodeList tmpWeaponNodeList = eElementWeapons.getElementsByTagName("weapon");
+						for (int j = 0; j < tmpWeaponNodeList.getLength(); j++) {
+							tmpWeapon = weaponMap.get(eElementWeapons.getElementsByTagName("weapon").item(j).getTextContent());
+							tmpWeapons.add(tmpWeapon);
+						}
+					} else {
+						System.out.println("no weapons");
+					}
+					//
+					//
+					// The following code block parses the sub elements under "proficiencies"
 					NodeList nListProficiencies = eElement.getElementsByTagName("proficiencies");
-					Node nNodeProficiency = nListProficiencies.item(0);
-					Element eElementProficiencies = (Element) nNodeProficiency;
 					//
 					ArrayList<String> tmpProficiencies = new ArrayList();
 					tmpProficiencies.clear();
-					String tmpProficiency;
 					//
-					NodeList tmpProficienciesNodeList = eElementProficiencies.getElementsByTagName("proficiency");
-					for(int j = 0; j < tmpProficienciesNodeList.getLength(); j++) {
-						tmpProficiency = eElementProficiencies.getElementsByTagName("proficiency").item(j).getTextContent();
-						tmpProficiencies.add(tmpProficiency);
+					if (nListProficiencies.getLength() != 0) {
+						Node nNodeProficiency = nListProficiencies.item(0);
+						Element eElementProficiencies = (Element) nNodeProficiency;
+						//
+						String tmpProficiency;
+						//
+						NodeList tmpProficienciesNodeList = eElementProficiencies.getElementsByTagName("proficiency");
+						for (int j = 0; j < tmpProficienciesNodeList.getLength(); j++) {
+							tmpProficiency = eElementProficiencies.getElementsByTagName("proficiency").item(j).getTextContent();
+							tmpProficiencies.add(tmpProficiency);
+						}
+					} else {
+						System.out.println("no proficiencies");
 					}
 					//
 					//
@@ -427,13 +579,14 @@ class ParserOperationsXML {
 					ArrayList<Equipment> tmpEquipment = new ArrayList();
 					Skills tmpSkills = new Skills();
 					//
-					DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpEquipment, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills);
+					// ::::: Creating a DNDCharacter object to be returned
+					tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpEquipment, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills);
 					tmpCharacter.print();
 				}
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-		return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return tmpCharacter;
 	}
 }

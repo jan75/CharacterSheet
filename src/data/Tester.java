@@ -36,7 +36,6 @@ public class Tester {
         tmpProficiencies.add("Maces");
         tmpProficiencies.add("Swords");
         tmpProficiencies.add("Shields");
-        tmpProficiencies.add("Detecting Undead");
 
         Skills tmpSkills = new Skills();
 
@@ -49,7 +48,6 @@ public class Tester {
         //
         ParserOperationsXML.saveCharacterToXML(tmpCharacter);
         ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
-        //System.out.println(tmpCharacter.getSpellKeysList());
     }
 
 }

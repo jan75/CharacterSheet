@@ -97,6 +97,10 @@ public class DNDCharacter {
 		return characterClass.getName();
 	}
 
+	public Skills getSkills() {
+		return skills;
+	}
+
 	public ArrayList<String> getProficiencies() {
 		ArrayList<String> tmpList = new ArrayList();
 		tmpList.addAll(proficiencies);
@@ -158,6 +162,6 @@ public class DNDCharacter {
 	}
 
 	public void print() {
-		System.out.println("We made a damn XML, check it out!");
+		System.out.println("Character '" + name + "' has been generated.");
 	}
 }

@@ -9,7 +9,7 @@ public class Skills {
 	boolean acrobatics;
 	boolean animalHandling;
 	boolean arcana;
-	boolean atheltics;
+	boolean athletics;
 	boolean deception;
 	boolean history;
 	boolean insight;
@@ -65,16 +65,16 @@ public class Skills {
 		return arcana? DNDCharacter.getStatBonus(DNDCharacter.intelligence)+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.intelligence);
 	}
 
-	public boolean isAtheltics() {
-		return atheltics;
+	public boolean isAthletics() {
+		return athletics;
 	}
 
-	public void setAtheltics(boolean atheltics) {
-		this.atheltics = atheltics;
+	public void setAthletics(boolean athletics) {
+		this.athletics = athletics;
 	}
 
 	public int getAthletics(DNDCharacter DNDCharacter) {
-		return atheltics? DNDCharacter.getStatBonus(DNDCharacter.strength)+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.strength);
+		return athletics? DNDCharacter.getStatBonus(DNDCharacter.strength)+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.strength);
 	}
 
 	public boolean isDeception() {
