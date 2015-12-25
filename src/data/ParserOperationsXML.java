@@ -284,9 +284,7 @@ class ParserOperationsXML {
 			// ::::: BEGINNING OF ARMOR BLOCK :::::
 			if(!tmpCharacter.getEquipmentKey().isEmpty()) {
 				Element armor = document.createElement("armor");
-				Element armorItem = document.createElement("armorItem");
-				armor.appendChild(armorItem);
-				armorItem.appendChild(document.createTextNode(tmpCharacter.getEquipmentKey()));
+				armor.appendChild(document.createTextNode(tmpCharacter.getEquipmentKey()));
 				//
 				character.appendChild(armor);
 			}
@@ -342,7 +340,7 @@ class ParserOperationsXML {
 	 * @param path
 	 * @return Map
 	 */
-	public static Map loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap) {
+	public static DNDCharacter loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap, Map<String, Armor> armorMap) {
         //
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -362,6 +360,7 @@ class ParserOperationsXML {
                     int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
                     Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
                     CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
+					Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent());
 
                     // The following code block parses the sub elements under "stats"
                     NodeList nListStats = eElement.getElementsByTagName("stats");
@@ -376,7 +375,7 @@ class ParserOperationsXML {
                     int tmpCharisma = Integer.parseInt(eElementStats.getElementsByTagName("charisma").item(0).getTextContent());
                     //
                     //
-                    // The following code block parses the sub elements under "classes"
+                    // The following code block parses the sub elements under "spells"
                     NodeList nListSpells = eElement.getElementsByTagName("spells");
                     Node nNodeSpells = nListSpells.item(0);
                     Element eElementSpells = (Element) nNodeSpells;
@@ -390,70 +389,51 @@ class ParserOperationsXML {
                         tmpSpell = spellMap.get(eElementSpells.getElementsByTagName("spell").item(j).getTextContent());
                         tmpSpells.add(tmpSpell);
                     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    }
+                    //
+					//
+					// The following code block parses the sub elements under "weapons"
+					NodeList nListWeapons = eElement.getElementsByTagName("weapons");
+					Node nNodeWeapons = nListWeapons.item(0);
+					Element eElementWeapons = (Element) nNodeWeapons;
+					//
+					ArrayList<Equipment> tmpWeapons = new ArrayList();
+					tmpWeapons.clear();
+					Equipment tmpWeapon;
+					//
+					NodeList tmpWeaponNodeList = eElementWeapons.getElementsByTagName("weapon");
+					for(int j = 0; j < tmpWeaponNodeList.getLength(); j++) {
+						tmpWeapon = weaponMap.get(eElementWeapons.getElementsByTagName("weapon").item(j).getTextContent());
+						tmpWeapons.add(tmpWeapon);
+					}
+					//
+					//
+					// The following code block parses the sub elements under "weapons"
+					NodeList nListProficiencies = eElement.getElementsByTagName("proficiencies");
+					Node nNodeProficiency = nListProficiencies.item(0);
+					Element eElementProficiencies = (Element) nNodeProficiency;
+					//
+					ArrayList<String> tmpProficiencies = new ArrayList();
+					tmpProficiencies.clear();
+					String tmpProficiency;
+					//
+					NodeList tmpProficienciesNodeList = eElementProficiencies.getElementsByTagName("proficiency");
+					for(int j = 0; j < tmpProficienciesNodeList.getLength(); j++) {
+						tmpProficiency = eElementProficiencies.getElementsByTagName("proficiency").item(j).getTextContent();
+						tmpProficiencies.add(tmpProficiency);
+					}
+					//
+					//
+					// ::::: The following code is to be refined
+					ArrayList<Equipment> tmpEquipment = new ArrayList();
+					Skills tmpSkills = new Skills();
+					//
+					DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpEquipment, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills);
+					tmpCharacter.print();
+				}
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        /*
-		ArrayList<String> arraySpellClasses = new ArrayList(); //used for sub node "property" of "properties"
-				//
-				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					//
-					//
-					// The following code block parses the sub elements under "classes"
-					NodeList nListClasses = eElement.getElementsByTagName("classes");
-					Node nNodeClasses = nListClasses.item(0);
-					Element eElementClasses = (Element) nNodeClasses;
-					//
-					//getTagName());
-					for(int j = 0; j < allClasses.length; j++) {
-						if (eElementClasses.getElementsByTagName(allClasses[j]).item(0) != null) {
-							arraySpellClasses.add(allClasses[j]);
-						}
-					}
-					//
-					// Creating a Spell object and adding the Object to the Map, which will later be returned
-					Spell tmpSpellObject = new Spell(tmpSpell, tmpLevel, tmpSchool, tmpRitual, tmpPage, arraySpellClasses);
-					//tmpSpellObject.print();
-					spellMap.put(tmpSpell, tmpSpellObject);
-					//
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//*/
-		return spellMap;
+		return null;
 	}
-
-
 }

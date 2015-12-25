@@ -48,7 +48,7 @@ public class Tester {
         //tmpCharacter.print();
         //
         ParserOperationsXML.saveCharacterToXML(tmpCharacter);
-        ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap);
+        ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
         //System.out.println(tmpCharacter.getSpellKeysList());
     }
 
