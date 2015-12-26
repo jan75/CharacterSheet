@@ -322,7 +322,7 @@ class ParserOperationsXML {
 			Element acrobatics = document.createElement("acrobatics");
 			Element animalHandling = document.createElement("animalHandling");
 			Element arcana = document.createElement("arcana");
-			Element athletics = document.createElement("athlthics");
+			Element athletics = document.createElement("athletics");
 			Element deception = document.createElement("deception");
 			Element history = document.createElement("history");
 			Element insight = document.createElement("insight");
@@ -333,7 +333,7 @@ class ParserOperationsXML {
 			Element perception = document.createElement("perception");
 			Element performance = document.createElement("performance");
 			Element persuasion = document.createElement("persuasion");
-			Element religon = document.createElement("religon");
+			Element religion = document.createElement("religion");
 			Element sleightOfHand = document.createElement("sleightOfHand");
 			Element stealth = document.createElement("stealth");
 			Element survival = document.createElement("survival");
@@ -351,7 +351,7 @@ class ParserOperationsXML {
 			skills.appendChild(perception);
 			skills.appendChild(performance);
 			skills.appendChild(persuasion);
-			skills.appendChild(religon);
+			skills.appendChild(religion);
 			skills.appendChild(sleightOfHand);
 			skills.appendChild(stealth);
 			skills.appendChild(survival);
@@ -425,10 +425,10 @@ class ParserOperationsXML {
 			} else {
 				persuasion.appendChild(document.createTextNode("false"));
 			}
-			if(tmpCharacter.getSkills().isReligon()) {
-				religon.appendChild(document.createTextNode("true"));
+			if(tmpCharacter.getSkills().isReligion()) {
+				religion.appendChild(document.createTextNode("true"));
 			} else {
-				religon.appendChild(document.createTextNode("false"));
+				religion.appendChild(document.createTextNode("false"));
 			}
 			if(tmpCharacter.getSkills().isSleightOfHand()) {
 				sleightOfHand.appendChild(document.createTextNode("true"));
@@ -574,10 +574,34 @@ class ParserOperationsXML {
 						System.out.println("no proficiencies");
 					}
 					//
+					// The following code block parses the sub elements under "skills"
+					Skills tmpSkills = new Skills();
+					NodeList nListSkills = eElement.getElementsByTagName("skills");
+					Node nNodeSkills = nListSkills.item(0);
+					Element eElementSkills = (Element) nNodeSkills;
+					//
+					tmpSkills.setAcrobatics(Boolean.parseBoolean(eElementSkills.getElementsByTagName("acrobatics").item(0).getTextContent()));
+					tmpSkills.setAnimalHandling(Boolean.parseBoolean(eElementSkills.getElementsByTagName("animalHandling").item(0).getTextContent()));
+					tmpSkills.setArcana(Boolean.parseBoolean(eElementSkills.getElementsByTagName("arcana").item(0).getTextContent()));
+					tmpSkills.setAthletics(Boolean.parseBoolean(eElementSkills.getElementsByTagName("athletics").item(0).getTextContent()));
+					tmpSkills.setDeception(Boolean.parseBoolean(eElementSkills.getElementsByTagName("deception").item(0).getTextContent()));
+					tmpSkills.setHistory(Boolean.parseBoolean(eElementSkills.getElementsByTagName("history").item(0).getTextContent()));
+					tmpSkills.setInsight(Boolean.parseBoolean(eElementSkills.getElementsByTagName("insight").item(0).getTextContent()));
+					tmpSkills.setIntimidation(Boolean.parseBoolean(eElementSkills.getElementsByTagName("intimidation").item(0).getTextContent()));
+					tmpSkills.setInvestigation(Boolean.parseBoolean(eElementSkills.getElementsByTagName("investigation").item(0).getTextContent()));
+					tmpSkills.setMedicine(Boolean.parseBoolean(eElementSkills.getElementsByTagName("medicine").item(0).getTextContent()));
+					tmpSkills.setNature(Boolean.parseBoolean(eElementSkills.getElementsByTagName("nature").item(0).getTextContent()));
+					tmpSkills.setPerception(Boolean.parseBoolean(eElementSkills.getElementsByTagName("perception").item(0).getTextContent()));
+					tmpSkills.setPerformance(Boolean.parseBoolean(eElementSkills.getElementsByTagName("performance").item(0).getTextContent()));
+					tmpSkills.setPersuasion(Boolean.parseBoolean(eElementSkills.getElementsByTagName("persuasion").item(0).getTextContent()));
+					tmpSkills.setReligion(Boolean.parseBoolean(eElementSkills.getElementsByTagName("religion").item(0).getTextContent()));
+					tmpSkills.setSleightOfHand(Boolean.parseBoolean(eElementSkills.getElementsByTagName("sleightOfHand").item(0).getTextContent()));
+					tmpSkills.setStealth(Boolean.parseBoolean(eElementSkills.getElementsByTagName("stealth").item(0).getTextContent()));
+					tmpSkills.setSurvival(Boolean.parseBoolean(eElementSkills.getElementsByTagName("survival").item(0).getTextContent()));
 					//
 					// ::::: The following code is to be refined
 					ArrayList<Equipment> tmpEquipment = new ArrayList();
-					Skills tmpSkills = new Skills();
+
 					//
 					// ::::: Creating a DNDCharacter object to be returned
 					tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpEquipment, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills);

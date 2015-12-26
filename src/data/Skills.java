@@ -20,7 +20,7 @@ public class Skills {
 	boolean perception;
 	boolean performance;
 	boolean persuasion;
-	boolean religon;
+	boolean religion;
 	boolean sleightOfHand;
 	boolean stealth;
 	boolean survival;
@@ -197,12 +197,12 @@ public class Skills {
 		return nature? DNDCharacter.getStatBonus(DNDCharacter.charisma)+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.charisma);
 	}
 
-	public boolean isReligon() {
-		return religon;
+	public boolean isReligion() {
+		return religion;
 	}
 
-	public void setReligon(boolean religon) {
-		this.religon = religon;
+	public void setReligion(boolean religion) {
+		this.religion = religion;
 	}
 
 	public int getReligion(DNDCharacter DNDCharacter) {
