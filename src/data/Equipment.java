@@ -1,8 +1,9 @@
 package data;
 
 public abstract class Equipment {
+	String name;
 
-	abstract String getKey();
+	public abstract String getKey();
 
 	abstract void print();
 }

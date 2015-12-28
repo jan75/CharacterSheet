@@ -2,9 +2,14 @@ package characterClass;
 
 public class Sorcerer extends CharacterClass{
 
-	Sorcerer(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public Sorcerer() {
+		this.hitDie=6;
+		this.name="Sorcerer";
+		this.chaProf=true;
+		this.conProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
 }

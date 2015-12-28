@@ -5,8 +5,12 @@ import race.Gnome;
 
 public class ForestGnome extends Gnome{
 
-	protected ForestGnome() {
+	public ForestGnome() {
 		this.name="Forest Gnome";
+	}
+
+	String getName() {
+		return name;
 	}
 
 }

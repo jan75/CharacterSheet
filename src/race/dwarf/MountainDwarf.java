@@ -5,8 +5,12 @@ import race.Dwarf;
 
 public class MountainDwarf extends Dwarf{
 
-	MountainDwarf() {
+	public MountainDwarf() {
 		this.name="Mountain Dwarf";
+	}
+
+	String getName() {
+		return name;
 	}
 
 }

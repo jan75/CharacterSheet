@@ -2,9 +2,15 @@ package characterClass;
 
 public class Fighter extends CharacterClass{
 
-	Fighter(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public Fighter(){
+		this.hitDie=10;
+		this.name="Fighter";
+		this.strProf=true;
+		this.conProf=true;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }

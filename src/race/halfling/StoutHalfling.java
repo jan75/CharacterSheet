@@ -10,4 +10,8 @@ public class StoutHalfling extends Halfling{
 		this.name="Stout Halfling";
 	}
 
+	String getName() {
+		return name;
+	}
+
 }

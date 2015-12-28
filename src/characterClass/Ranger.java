@@ -1,10 +1,15 @@
 package characterClass;
 
 public class Ranger extends CharacterClass{
-
-	Ranger(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	
+	public Ranger() {
+		this.hitDie=10;
+		this.name="Ranger";
+		this.strProf=true;
+		this.dexProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
 }

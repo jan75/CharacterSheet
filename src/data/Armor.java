@@ -1,6 +1,6 @@
 package data;
 
-class Armor extends Equipment {
+public class Armor extends Equipment {
 	String armorName, armorPrice, armorModifier, armorSpeed, armorStealth, armorWeight,armorClass;
 	// also available: weaponProperty, weaponModifier
 	//
@@ -19,7 +19,7 @@ class Armor extends Equipment {
 		System.out.println("\n------------------------------------\n");
 	}
 
-	String getKey() {
+	public String getKey() {
 		return armorName;
 	}
 }

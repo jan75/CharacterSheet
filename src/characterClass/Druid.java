@@ -2,9 +2,15 @@ package characterClass;
 
 public class Druid extends CharacterClass{
 
-	Druid(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public Druid() {
+		this.hitDie=8;
+		this.name="Druid";
+		this.wisProf=true;
+		this.intProf=true;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 }

@@ -2,9 +2,14 @@ package characterClass;
 
 public class Warlock extends CharacterClass{
 
-	Warlock(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	public Warlock() {
+		this.hitDie=8;
+		this.name="Warlock";
+		this.wisProf=true;
+		this.chaProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
 }

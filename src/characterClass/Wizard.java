@@ -1,10 +1,15 @@
 package characterClass;
 
 public class Wizard extends CharacterClass{
-
-	Wizard(String name) {
-		super(name);
-		// TODO Auto-generated constructor stub
+	
+	public Wizard() {
+		this.hitDie=6;
+		this.name="Wizard";
+		this.intProf=true;
+		this.wisProf=true;
 	}
 
+	public String getName() {
+		return name;
+	}
 }
