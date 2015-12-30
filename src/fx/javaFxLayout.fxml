@@ -11,12 +11,6 @@
 	minHeight="900.0" minWidth="1280.0" prefHeight="900.0" prefWidth="1280.0"
 	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
 	<children>
-		<ImageView fitHeight="900.0" fitWidth="1280.0" layoutX="0.0"
-			layoutY="0.0" pickOnBounds="true" preserveRatio="true">
-			<image>
-				<Image url="file:/C:/Users/User/Desktop/game/game%20last%20with2.jpg" />
-			</image>
-		</ImageView>
 		<TextArea fx:id="txtBoxFeatures" layoutX="956.0" layoutY="191.0"
 			prefHeight="391.0" prefWidth="252.0" wrapText="true" />
 		<TextArea fx:id="txtBoxEquipment" layoutX="1027.0" layoutY="615.0"
