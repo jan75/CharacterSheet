@@ -12,5 +12,4 @@ public class HighElf extends Elf{
 	String getName() {
 		return name;
 	}
-
 }

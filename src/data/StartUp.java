@@ -2,6 +2,7 @@ package data;
 
 import characterClass.*;
 import race.*;
+import fx.*;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -11,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Jan on 22.12.2015.
  */
-public class Tester {
+public class StartUp {
 
     public static void main(String[] args) {
         Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
@@ -44,10 +45,11 @@ public class Tester {
         CharacterClass tmpClass = new Cleric();
 
         DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, 2, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills);
-        //tmpCharacter.print();
+        tmpCharacter.print();
         //
         ParserOperationsXML.saveCharacterToXML(tmpCharacter);
         ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
+        //
     }
 
 }

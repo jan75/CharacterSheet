@@ -5,3 +5,7 @@ TextField {
     -fx-background-radius: 0;
     -fx-padding: 0;
 }
+
+AnchorPane {
+    -fx-background-image: url("javaFx_Background.jpg");
+}
