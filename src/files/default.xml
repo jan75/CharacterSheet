@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+    <dndcharacter name="DEFAULT">
+        <level>0</level>
+        <stats>
+            <strength>5</strength>
+            <dexterity>5</dexterity>
+            <constitution>5</constitution>
+            <intelligence>5</intelligence>
+            <wisdom>5</wisdom>
+            <charisma>5</charisma>
+        </stats>
+        <armor>Leather</armor>
+        <race>Dragonborn</race>
+        <charClass>Cleric</charClass>
+        <skills>
+            <acrobatics>false</acrobatics>
+            <animalHandling>false</animalHandling>
+            <arcana>false</arcana>
+            <athletics>false</athletics>
+            <deception>false</deception>
+            <history>false</history>
+            <insight>false</insight>
+            <intimidation>false</intimidation>
+            <investigation>false</investigation>
+            <medicine>false</medicine>
+            <nature>false</nature>
+            <perception>false</perception>
+            <performance>false</performance>
+            <persuasion>false</persuasion>
+            <religion>false</religion>
+            <sleightOfHand>false</sleightOfHand>
+            <stealth>false</stealth>
+            <survival>false</survival>
+        </skills>
+    </dndcharacter>
+</character>

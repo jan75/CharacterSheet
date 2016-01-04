@@ -14,7 +14,7 @@ import java.util.Map;
  */
 public class StartUp {
 
-    public static void main(String[] args) {
+    public static void initializeProgram() {
         Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
         Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
         Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
@@ -44,11 +44,11 @@ public class StartUp {
 
         CharacterClass tmpClass = new Cleric();
 
-        DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, 2, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills);
-        tmpCharacter.print();
+        //DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, 2, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills);
+        //tmpCharacter.print();
         //
-        ParserOperationsXML.saveCharacterToXML(tmpCharacter);
-        ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
+        //ParserOperationsXML.saveCharacterToXML(tmpCharacter);
+        //ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
         //
     }
 

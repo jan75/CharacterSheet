@@ -24,12 +24,12 @@
 		<TextArea fx:id="txtBoxIdeals" layoutX="673.0" layoutY="321.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxBonds" layoutX="673.0" layoutY="408.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxFlaws" layoutX="673.0" layoutY="488.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
-		<Label fx:id="txtDex" layoutX="52.0" layoutY="323.0" prefHeight="41.0" prefWidth="75.0" text="X" />
-		<Label fx:id="txtCon" layoutX="52.0" layoutY="441.0" prefHeight="41.0" prefWidth="75.0" text="X" />
-		<Label fx:id="txtInt" layoutX="52.0" layoutY="562.0" prefHeight="41.0" prefWidth="75.0" text="X" />
-		<Label fx:id="txtWis" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="X" />
-		<Label fx:id="txtCha" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="X" />
-		<Label fx:id="txtStr" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblDexMod" layoutX="52.0" layoutY="323.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblConMod" layoutX="52.0" layoutY="441.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblIntMod" layoutX="52.0" layoutY="562.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblWisMod" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblStrMod" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="X" />
+		<Label fx:id="lblChaMod" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="X" />
 		<Label fx:id="lblPassivePerception" layoutX="658.0" layoutY="615.0" text="Label" />
 		<TextField fx:id="txtName" layoutX="264.0" layoutY="107.0" prefHeight="26.0" prefWidth="180.99990000000253" text="Label" />
 		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="Label" />
@@ -38,12 +38,12 @@
 		<Label fx:id="lblInspiration" layoutX="185.0" layoutY="206.0" prefWidth="28.000099999997474" text="Label" />
 		<Label fx:id="lblProficencyMod" layoutX="185.0" layoutY="262.0" prefWidth="35.0" text="Label" />
 		<TextField fx:id="lblTotalHitDie" layoutX="403.0" layoutY="474.0" prefWidth="74.99990000000253" text="Label" />
-		<TextField fx:id="lblDexMod" layoutX="76.0" layoutY="376.0" text="Y" />
-		<TextField fx:id="lblConMod" layoutX="76.0" layoutY="496.0" text="Y" />
-		<TextField fx:id="lblIntMod" layoutX="76.0" layoutY="611.0" text="Y" />
-		<TextField fx:id="lblWisMod" layoutX="76.0" layoutY="729.0" text="Y" />
-		<TextField fx:id="lblStrMod" layoutX="76.0" layoutY="846.0" text="Y" />
-		<TextField fx:id="lblChaMod" layoutX="76.0" layoutY="262.0" text="Y" />
+		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="Y" />
+		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="Y" />
+		<TextField fx:id="txtInt" layoutX="76.0" layoutY="611.0" text="Y" />
+		<TextField fx:id="txtWis" layoutX="76.0" layoutY="729.0" text="Y" />
+		<TextField fx:id="txtCha" layoutX="76.0" layoutY="846.0" text="Y" />
+		<TextField fx:id="txtStr" layoutX="76.0" layoutY="262.0" text="Y" />
 
 		<CheckBox fx:id="chkStr" layoutX="186.0" layoutY="313.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X Strength" />
 		<CheckBox fx:id="chkDex" layoutX="186.0" layoutY="333.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X Dexterity" />
