@@ -2,10 +2,6 @@ package data;
 
 import characterClass.*;
 import race.*;
-import race.dwarf.*;
-import race.elf.*;
-import race.gnome.*;
-import race.halfling.*;
 
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
@@ -241,18 +237,22 @@ public class ParserOperationsXML {
 			character.appendChild(stats);
 			//
 			// ::::: BEGINNING OF SPELLS BLOCK :::::
-			Element spells = document.createElement("spells");
-			//
 			ArrayList<String> tmpSpells = tmpCharacter.getSpellKeysList();
-			for(int i = 0; i < tmpSpells.size(); i++) {
-				Element spell = document.createElement("spell");
-				spells.appendChild(spell);
-				spell.appendChild(document.createTextNode(tmpSpells.get(i)));
+			//
+			if(tmpSpells.size() != 0) {
+				Element spells = document.createElement("spells");
+				//
+				for(int i = 0; i < tmpSpells.size(); i++) {
+					Element spell = document.createElement("spell");
+					spells.appendChild(spell);
+					spell.appendChild(document.createTextNode(tmpSpells.get(i)));
+				}
+				character.appendChild(spells);
 			}
-			character.appendChild(spells);
+			//
 			//
 			// ::::: BEGINNING OF WEAPONS BLOCK :::::
-			ArrayList<String> tmpWeapons = tmpCharacter.getEquipmentKeysList(true);
+			ArrayList<String> tmpWeapons = tmpCharacter.getItemKeysList(true);
 			//
 			if(tmpWeapons.size() != 0) {
 				Element weapons = document.createElement("weapons");
@@ -265,25 +265,102 @@ public class ParserOperationsXML {
 				character.appendChild(weapons);
 			}
 			//
-			// ::::: BEGINNING OF EQUIPMENT BLOCK :::::
-			ArrayList<String> tmpEquipment = tmpCharacter.getEquipmentKeysList(false);
+			// ::::: BEGINNING OF ITEMS BLOCK :::::
+			ArrayList<String> tmpItem = tmpCharacter.getItemKeysList(false);
 			//
-			if(tmpEquipment.size() != 0) {
+			if(tmpItem.size() != 0) {
 				Element equipment = document.createElement("equipment");
 				//
 
-				for (int i = 0; i < tmpEquipment.size(); i++) {
+				for (int i = 0; i < tmpItem.size(); i++) {
 					Element item = document.createElement("item");
 					equipment.appendChild(item);
-					item.appendChild(document.createTextNode(tmpEquipment.get(i)));
+					item.appendChild(document.createTextNode(tmpItem.get(i)));
 				}
 				character.appendChild(equipment);
 			}
 			//
+			//
+			// ::::: BEGINNING OF PERSONALITYTRAITS BLOCK :::::
+			ArrayList<String> tmpPersonalityTraits = tmpCharacter.getLists("personalityTraits");
+			//
+			if(tmpPersonalityTraits.size() != 0) {
+				Element personalityTraits = document.createElement("personalityTraits");
+				//
+				for (int i = 0; i < tmpPersonalityTraits.size(); i++) {
+					Element personalityTrait = document.createElement("personalityTrait");
+					personalityTraits.appendChild(personalityTrait);
+					personalityTrait.appendChild(document.createTextNode(tmpPersonalityTraits.get(i)));
+				}
+				//
+				character.appendChild(personalityTraits);
+			}
+			//
+			// ::::: BEGINNING OF IDEALS BLOCK :::::
+			ArrayList<String> tmpIdeals = tmpCharacter.getLists("ideals");
+			//
+			if(tmpIdeals.size() != 0) {
+				Element ideals = document.createElement("ideals");
+				//
+				for (int i = 0; i < tmpIdeals.size(); i++) {
+					Element ideal = document.createElement("ideal");
+					ideals.appendChild(ideal);
+					ideal.appendChild(document.createTextNode(tmpIdeals.get(i)));
+				}
+				//
+				character.appendChild(ideals);
+			}
+			//
+			// ::::: BEGINNING OF BONDS BLOCK :::::
+			ArrayList<String> tmpBonds = tmpCharacter.getLists("bonds");
+			//
+			if(tmpBonds.size() != 0) {
+				Element bonds = document.createElement("bonds");
+				//
+				for (int i = 0; i < tmpBonds.size(); i++) {
+					Element bond = document.createElement("bond");
+					bonds.appendChild(bond);
+					bond.appendChild(document.createTextNode(tmpBonds.get(i)));
+				}
+				//
+				character.appendChild(bonds);
+			}
+			//
+			// ::::: BEGINNING OF FLAWS BLOCK :::::
+			ArrayList<String> tmpFlaws = tmpCharacter.getLists("flaws");
+			//
+			if(tmpFlaws.size() != 0) {
+				Element flaws = document.createElement("flaws");
+				//
+				for (int i = 0; i < tmpFlaws.size(); i++) {
+					Element flaw = document.createElement("flaw");
+					flaws.appendChild(flaw);
+					flaw.appendChild(document.createTextNode(tmpFlaws.get(i)));
+				}
+				//
+				character.appendChild(flaws);
+			}
+			//
+			// ::::: BEGINNING OF FEATURESTRAITS BLOCK :::::
+			ArrayList<String> tmpFeaturesTraits = tmpCharacter.getLists("featuresTraits");
+			//
+			if(tmpFeaturesTraits.size() != 0) {
+				Element featuresTraits = document.createElement("featuresTraits");
+				//
+				for (int i = 0; i < tmpFeaturesTraits.size(); i++) {
+					Element featureTrait = document.createElement("featureTrait");
+					featuresTraits.appendChild(featureTrait);
+					featureTrait.appendChild(document.createTextNode(tmpFeaturesTraits.get(i)));
+				}
+				//
+				character.appendChild(featuresTraits);
+			}
+			//
+			//
 			// ::::: BEGINNING OF ARMOR BLOCK :::::
-			if(!tmpCharacter.getEquipmentKey().isEmpty()) {
+			if(!tmpCharacter.getArmorKey().isEmpty()) {
 				Element armor = document.createElement("armor");
-				armor.appendChild(document.createTextNode(tmpCharacter.getEquipmentKey()));
+				armor.appendChild(document.createTextNode(tmpCharacter.getArmorKey()));
 				//
 				character.appendChild(armor);
 			}
@@ -298,8 +375,34 @@ public class ParserOperationsXML {
 			charClass.appendChild(document.createTextNode(tmpCharacter.getCharClassName()));
 			character.appendChild(charClass);
 			//
+			// ::::: BEGINNING OF BACKGROUND BLOCK :::::
+			Element background = document.createElement("background");
+			background.appendChild(document.createTextNode(tmpCharacter.getBackground()));
+			character.appendChild(background);
+			//
+			// ::::: BEGINNING OF PLAYERNAME BLOCK :::::
+			Element playerName = document.createElement("playerName");
+			playerName.appendChild(document.createTextNode(tmpCharacter.getPlayerName()));
+			character.appendChild(playerName);
+			//
+			// ::::: BEGINNING OF FACTION BLOCK :::::
+			Element faction = document.createElement("faction");
+			faction.appendChild(document.createTextNode(tmpCharacter.getFaction()));
+			character.appendChild(faction);
+			//
+			// ::::: BEGINNING OF ALIGNMENT BLOCK :::::
+			Element alignment = document.createElement("alignment");
+			alignment.appendChild(document.createTextNode(tmpCharacter.getAlignment()));
+			character.appendChild(alignment);
+			//
+			// ::::: BEGINNING OF EXPERIENCEPOINTS BLOCK :::::
+			Element experiencePoints = document.createElement("experiencePoints");
+			experiencePoints.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getExperiencePoints())));
+			character.appendChild(experiencePoints);
+
+
 			// ::::: BEGINNING OF PROFICIENCIES BLOCK :::::
-			ArrayList<String> tmpProficiencies = tmpCharacter.getProficiencies();
+			ArrayList<String> tmpProficiencies = tmpCharacter.getLists("proficiencies");
 			//
 			if(tmpProficiencies.size() != 0) {
 				Element proficiencies = document.createElement("proficiencies");
@@ -495,6 +598,11 @@ public class ParserOperationsXML {
 					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
 					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
 					Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent());
+					String tmpBackground = eElement.getElementsByTagName("background").item(0).getTextContent();
+					String tmpPlayerName = eElement.getElementsByTagName("playerName").item(0).getTextContent();
+					String tmpFaction = eElement.getElementsByTagName("faction").item(0).getTextContent();
+					String tmpAlignment = eElement.getElementsByTagName("alignment").item(0).getTextContent();
+					int tmpExperiencePoints = Integer.parseInt(eElement.getElementsByTagName("experiencePoints").item(0).getTextContent());
 
 					// The following code block parses the sub elements under "stats"
 					NodeList nListStats = eElement.getElementsByTagName("stats");
@@ -553,6 +661,28 @@ public class ParserOperationsXML {
 					}
 					//
 					//
+					// The following code block parses the sub elements under "equipment" (items)
+					NodeList nListItems = eElement.getElementsByTagName("equipment");
+					//
+					ArrayList<Equipment> tmpItems = new ArrayList();
+					tmpItems.clear();
+					//
+					if (nListItems.getLength() != 0) {
+						Node nNodeItems = nListItems.item(0);
+						Element eElementItems = (Element) nNodeItems;
+						//
+						Equipment tmpItem;
+						//
+						NodeList tmpItemNodeList = eElementItems.getElementsByTagName("item");
+						for (int j = 0; j < tmpItemNodeList.getLength(); j++) {
+							tmpItem = weaponMap.get(eElementItems.getElementsByTagName("item").item(j).getTextContent());
+							tmpItems.add(tmpItem);
+						}
+					} else {
+						System.out.println("no items");
+					}
+					//
+					//
 					// The following code block parses the sub elements under "proficiencies"
 					NodeList nListProficiencies = eElement.getElementsByTagName("proficiencies");
 					//
@@ -573,6 +703,112 @@ public class ParserOperationsXML {
 					} else {
 						System.out.println("no proficiencies");
 					}
+					//
+					// The following code block parses the sub elements under "personalityTraits"
+					NodeList nListPersonalityTraits = eElement.getElementsByTagName("personalityTraits");
+					//
+					ArrayList<String> tmpPersonalityTraits = new ArrayList();
+					tmpPersonalityTraits.clear();
+					//
+					if (nListPersonalityTraits.getLength() != 0) {
+						Node nNodePersonalityTrait = nListPersonalityTraits.item(0);
+						Element eElementPersonalityTraits = (Element) nNodePersonalityTrait;
+						//
+						String tmpPersonalityTrait;
+						//
+						NodeList tmpPersonalityTraitsNodeList = eElementPersonalityTraits.getElementsByTagName("personalityTrait");
+						for (int j = 0; j < tmpPersonalityTraitsNodeList.getLength(); j++) {
+							tmpPersonalityTrait = eElementPersonalityTraits.getElementsByTagName("personalityTrait").item(j).getTextContent();
+							tmpPersonalityTraits.add(tmpPersonalityTrait);
+						}
+					} else {
+						System.out.println("no personalityTraits");
+					}
+					//
+					// The following code block parses the sub elements under "ideals"
+					NodeList nListIdeals = eElement.getElementsByTagName("ideals");
+					//
+					ArrayList<String> tmpIdeals = new ArrayList();
+					tmpIdeals.clear();
+					//
+					if (nListIdeals.getLength() != 0) {
+						Node nNodeIdeal = nListIdeals.item(0);
+						Element eElementIdeals = (Element) nNodeIdeal;
+						//
+						String tmpIdeal;
+						//
+						NodeList tmpIdealsNodeList = eElementIdeals.getElementsByTagName("ideal");
+						for (int j = 0; j < tmpIdealsNodeList.getLength(); j++) {
+							tmpIdeal = eElementIdeals.getElementsByTagName("ideal").item(j).getTextContent();
+							tmpIdeals.add(tmpIdeal);
+						}
+					} else {
+						System.out.println("no ideals");
+					}
+					//
+					// The following code block parses the sub elements under "bonds"
+					NodeList nListBonds = eElement.getElementsByTagName("bonds");
+					//
+					ArrayList<String> tmpBonds = new ArrayList();
+					tmpBonds.clear();
+					//
+					if (nListBonds.getLength() != 0) {
+						Node nNodeBond = nListBonds.item(0);
+						Element eElementBonds = (Element) nNodeBond;
+						//
+						String tmpBond;
+						//
+						NodeList tmpBondsNodeList = eElementBonds.getElementsByTagName("bond");
+						for (int j = 0; j < tmpBondsNodeList.getLength(); j++) {
+							tmpBond = eElementBonds.getElementsByTagName("bond").item(j).getTextContent();
+							tmpBonds.add(tmpBond);
+						}
+					} else {
+						System.out.println("no bonds");
+					}
+					//
+					// The following code block parses the sub elements under "flaws"
+					NodeList nListFlaws = eElement.getElementsByTagName("flaws");
+					//
+					ArrayList<String> tmpFlaws = new ArrayList();
+					tmpFlaws.clear();
+					//
+					if (nListFlaws.getLength() != 0) {
+						Node nNodeFlaw = nListFlaws.item(0);
+						Element eElementFlaws = (Element) nNodeFlaw;
+						//
+						String tmpFlaw;
+						//
+						NodeList tmpFlawsNodeList = eElementFlaws.getElementsByTagName("flaw");
+						for (int j = 0; j < tmpFlawsNodeList.getLength(); j++) {
+							tmpFlaw = eElementFlaws.getElementsByTagName("flaw").item(j).getTextContent();
+							tmpFlaws.add(tmpFlaw);
+						}
+					} else {
+						System.out.println("no flaws");
+					}
+					//
+					// The following code block parses the sub elements under "featureTraits"
+					NodeList nListFeatureTraits = eElement.getElementsByTagName("featuresTraits");
+					//
+					ArrayList<String> tmpFeatureTraits = new ArrayList();
+					tmpFeatureTraits.clear();
+					//
+					if (nListFeatureTraits.getLength() != 0) {
+						Node nNodeFeatureTrait = nListFeatureTraits.item(0);
+						Element eElementFeatureTraits = (Element) nNodeFeatureTrait;
+						//
+						String tmpFeatureTrait;
+						//
+						NodeList tmpFeatureTraitsNodeList = eElementFeatureTraits.getElementsByTagName("featureTrait");
+						for (int j = 0; j < tmpFeatureTraitsNodeList.getLength(); j++) {
+							tmpFeatureTrait = eElementFeatureTraits.getElementsByTagName("featureTrait").item(j).getTextContent();
+							tmpFeatureTraits.add(tmpFeatureTrait);
+						}
+					} else {
+						System.out.println("no featureTraits");
+					}
+					//
 					//
 					// The following code block parses the sub elements under "skills"
 					Skills tmpSkills = new Skills();
@@ -604,7 +840,7 @@ public class ParserOperationsXML {
 
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpEquipment, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
 					tmpCharacter.print();
 				}
 			}

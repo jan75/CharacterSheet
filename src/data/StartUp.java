@@ -5,6 +5,7 @@ import race.*;
 import fx.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -14,42 +15,59 @@ import java.util.Map;
  */
 public class StartUp {
 
-    public static void initializeProgram() {
+    public static DNDCharacter initializeProgram() {
         Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
         Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
         Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
-
+        /*
         Equipment testWeapon = weaponMap.get("Crossbow, Light");
-        Equipment testArmor = armorMap.get("Leather");
         Spell testSpellAnimateObjects = spellMap.get("Animate Objects");
         Spell testSpellAid = spellMap.get("Aid");
+        Equipment tmpShovel = new Item("Shovel", "5", "1s");
+        Equipment tmpRope = new Item("Rope", "1", "2b", "7m long");
+        */
 
         ArrayList<Equipment> tmpPlayerEquipment = new ArrayList();
-
         ArrayList<Equipment> tmpPlayerWeapons = new ArrayList();
-        tmpPlayerWeapons.add(testWeapon);
-
         ArrayList<Spell> tmpPlayerSpells = new ArrayList();
+        ArrayList<String> tmpProficiencies = new ArrayList();
+        ArrayList<Equipment> tmpItems = new ArrayList();
+        ArrayList<String> tmpPersonalityTraits = new ArrayList();
+        ArrayList<String> tmpIdeals = new ArrayList();
+        ArrayList<String> tmpBonds = new ArrayList();
+        ArrayList<String> tmpFlaws = new ArrayList();
+        ArrayList<String> tmpFeaturesTraits = new ArrayList();
+
+        Equipment testArmor = armorMap.get("Leather");
+
+        Skills tmpSkills = new Skills();
+        Race tmpRace = new Dragonborn();
+        CharacterClass tmpClass = new Cleric();
+
+        /*
+        tmpItems.add(tmpRope);
+        tmpItems.add(tmpShovel);
+        tmpPlayerWeapons.add(testWeapon);
         tmpPlayerSpells.add(testSpellAnimateObjects);
         tmpPlayerSpells.add(testSpellAid);
-
-        ArrayList<String> tmpProficiencies = new ArrayList();
         tmpProficiencies.add("Maces");
         tmpProficiencies.add("Swords");
         tmpProficiencies.add("Shields");
+        */
+        tmpPersonalityTraits.add("personalityTrait");
+        tmpIdeals.add("ideal");
+        tmpBonds.add("bond");
+        tmpFlaws.add("flaw");
+        tmpFeaturesTraits.add("featureTrait");
 
-        Skills tmpSkills = new Skills();
 
-        Race tmpRace = new Dragonborn();
-
-        CharacterClass tmpClass = new Cleric();
-
-        //DNDCharacter tmpCharacter = new DNDCharacter("Haudrauf", tmpRace, tmpClass, 1, 2, 3, 4, 5, 6, 2, tmpPlayerEquipment, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills);
+        DNDCharacter defaultCharacter = new DNDCharacter("DefaultCharacter", tmpRace, tmpClass, 5, 5, 5, 5, 5, 5, 0, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills, tmpItems, "DefaultBackground", "DefaultPlayer", "DefaultFaction", "DefaultAlignment", 0, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeaturesTraits);
         //tmpCharacter.print();
         //
-        //ParserOperationsXML.saveCharacterToXML(tmpCharacter);
+        ParserOperationsXML.saveCharacterToXML(defaultCharacter);
         //ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
         //
+        return defaultCharacter;
     }
 
 }

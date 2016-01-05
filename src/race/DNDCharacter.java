@@ -10,31 +10,38 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class DNDCharacter {
-	public int dexterity;
+	public String name;
+	public Race race;
+	public CharacterClass characterClass;
 	public int strength;
+	public int dexterity;
 	public int charisma;
 	public int intelligence;
 	public int wisdom;
 	public int constitution;
 	public int level;
-	public String name;
-	public Race race;
-	public CharacterClass characterClass;
-	public List<Equipment> equipment;
 	public List<Equipment> weapons;
 	public List<Spell> spells;
 	public Equipment armor;
-	public int armorClass;
 	public List<String> proficiencies;
+	public Skills skills;
+	public List<Equipment> items;
+	public String background;
+	public String playerName;
+	public String faction;
+	public String alignment;
+	public int experiencePoints;
 	public List<String> personalityTraits;
 	public List<String> ideals;
 	public List<String> bonds;
 	public List<String> flaws;
 	public List<String> featuresTraits;
-	public int proficencybonus;
-	public Skills skills;
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> equipment, List<Equipment> weapons, List<Spell> spells, Equipment armor, List<String> proficiencies, Skills skills) {
+	public int armorClass;
+	public int proficencybonus;
+	public String dciNumber; // to be decided if this is needed
+
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, Equipment armor, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -45,12 +52,22 @@ public class DNDCharacter {
 		this.wisdom = wisdom;
 		this.charisma = charisma;
 		this.level = level;
-		this.equipment = equipment;
 		this.weapons = weapons;
 		this.spells = spells;
 		this.armor = armor;
 		this.proficiencies = proficiencies;
 		this.skills = skills;
+		this.items = items;
+		this.background  = background;
+		this.playerName = playerName;
+		this.faction = faction;
+		this.alignment = alignment;
+		this.experiencePoints = experiencePoints;
+		this.personalityTraits = personalityTraits;
+		this.ideals = ideals;
+		this.bonds = bonds;
+		this.flaws = flaws;
+		this.featuresTraits = featuresTraits;
 	}
 
 	public int getStatBonus(int stat){
@@ -89,6 +106,10 @@ public class DNDCharacter {
 		return level;
 	}
 
+	public int getExperiencePoints() {
+		return experiencePoints;
+	}
+
 	public String getRaceName() {
 		return race.getName();
 	}
@@ -97,13 +118,46 @@ public class DNDCharacter {
 		return characterClass.getName();
 	}
 
+	public String getBackground() {
+		return background;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public String getFaction() {
+		return faction;
+	}
+
+	public String getAlignment() {
+		return alignment;
+	}
+
 	public Skills getSkills() {
 		return skills;
 	}
 
-	public ArrayList<String> getProficiencies() {
+	public ArrayList<String> getLists(String listToReturn) {
 		ArrayList<String> tmpList = new ArrayList();
-		tmpList.addAll(proficiencies);
+		tmpList.clear();
+		switch (listToReturn) {
+			case "proficiencies": tmpList.addAll(proficiencies);
+				break;
+			case "personalityTraits": tmpList.addAll(personalityTraits);
+				break;
+			case "ideals": tmpList.addAll(ideals);
+				break;
+			case "bonds": tmpList.addAll(bonds);
+				break;
+			case "flaws": tmpList.addAll(flaws);
+				break;
+			case "featuresTraits": tmpList.addAll(featuresTraits);
+				break;
+			default:
+				System.out.println("No lists to return found, wrong parameter?");
+				break;
+		}
 		return tmpList;
 	}
 
@@ -118,7 +172,7 @@ public class DNDCharacter {
 		return tmpList;
 	}
 
-	public ArrayList<String> getEquipmentKeysList(boolean isWeapon) {
+	public ArrayList<String> getItemKeysList(boolean isWeapon) {
 		ArrayList<String> tmpList = new ArrayList();
 		tmpList.clear();
 		//
@@ -126,20 +180,21 @@ public class DNDCharacter {
 			ListIterator<Equipment> tmpIterator = weapons.listIterator();
 			while(tmpIterator.hasNext()) {
 				Equipment equip = tmpIterator.next();
-				tmpList.add(equip.getKey());
+				tmpList.add(equip.getName());
 			}
-		} else if (!isWeapon && equipment.size() != 0) {
-			ListIterator<Equipment> tmpIterator = equipment.listIterator();
+		} else if (!isWeapon && items.size() != 0) {
+			ListIterator<Equipment> tmpIterator = items.listIterator();
 			while(tmpIterator.hasNext()) {
 				Equipment equip = tmpIterator.next();
-				tmpList.add(equip.getKey());
+				System.out.println(equip.getName());
+				tmpList.add(equip.getName());
 			}
 		}
 		return tmpList;
 	}
 
-	public String getEquipmentKey() {
-		return armor.getKey();
+	public String getArmorKey() {
+		return armor.getName();
 	}
 
 	public int getStatSavingThrow(String stat, int val){
