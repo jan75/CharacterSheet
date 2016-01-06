@@ -39,7 +39,6 @@ public class DNDCharacter {
 
 	public int armorClass;
 	public int proficencybonus;
-	public String dciNumber; // to be decided if this is needed
 
 	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, Equipment armor, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;

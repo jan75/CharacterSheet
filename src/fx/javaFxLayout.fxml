@@ -35,10 +35,9 @@
 		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
 		<Label fx:id="lblSpeed" layoutX="557.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="SPEED" />
 		<Label fx:id="lblInitiative" layoutX="466.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="INITIATIVE" />
-		<Label fx:id="lblInspiration" layoutX="185.0" layoutY="206.0" prefWidth="28.000099999997474" text="INSPIRATION" />
 		<Label fx:id="lblProficencyMod" layoutX="185.0" layoutY="262.0" prefWidth="35.0" text="PROFICIENCYMOD" />
 		<TextField fx:id="lblTotalHitDie" layoutX="403.0" layoutY="474.0" prefWidth="74.99990000000253" text="TOTALHITDIE" />
-		
+
 		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="0" />
 		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="0" />
 		<TextField fx:id="txtInt" layoutX="76.0" layoutY="611.0" text="0" />
@@ -52,6 +51,8 @@
 		<CheckBox fx:id="chkInt" layoutX="186.0" layoutY="373.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkWis" layoutX="186.0" layoutY="393.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkCha" layoutX="186.0" layoutY="413.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
+
+		<CheckBox fx:id="chkInspiration" layoutX="190.0" layoutY="202.0" prefWidth="28.000099999997474" />
 
 		<CheckBox fx:id="chkAcrobatics" layoutX="186.0" layoutY="488.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkAnimalHandling" layoutX="186.0" layoutY="508.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
@@ -101,7 +102,6 @@
 		<TextField fx:id="txtRace" layoutX="484.0" layoutY="99.0" prefHeight="21.0" prefWidth="56.0" text="RACE" />
 		<TextField fx:id="txtAlignment" layoutX="617.0" layoutY="97.0" prefHeight="21.0" prefWidth="56.0" text="ALIGNMENT" />
 		<TextField fx:id="txtExperiencePoints" layoutX="789.0" layoutY="99.0" prefHeight="21.0" prefWidth="56.0" text="0" />
-		<TextField fx:id="txtDCINumber" layoutX="933.0" layoutY="99.0" prefHeight="21.0" prefWidth="56.0" text="DCINUMBER" /> <!-- can we leave this one out? -->
 
 		<!-- Add / Subtract Buttons -->
 		<Button fx:id="btnSubtractExperience" layoutX="740.0" layoutY="95.0" mnemonicParsing="false" text="-" onAction="#subtractExp" />

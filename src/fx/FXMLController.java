@@ -20,6 +20,10 @@ import java.util.ResourceBundle;
  * Created by Jan on 02.01.2016.
  */
 public class FXMLController implements Initializable{
+    static Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
+    static Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
+    static Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
+
     @FXML private TextField txtExperiencePoints;
     @FXML private TextField txtDex;
     @FXML private TextField txtCon;
@@ -146,10 +150,6 @@ public class FXMLController implements Initializable{
     private void openCharacter() {
         System.out.println("MenuButton: Open");
 
-        Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
-        Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
-        Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
-
         DNDCharacter tmpCharacter;
 
         String path = null;
@@ -162,7 +162,6 @@ public class FXMLController implements Initializable{
         }
 
         tmpCharacter = ParserOperationsXML.loadCharacterFromXML(path, weaponMap, spellMap, armorMap);
-
         //
         txtDex.setText(Integer.toString(tmpCharacter.getDexterity()));
         txtCha.setText(Integer.toString(tmpCharacter.getCharisma()));
@@ -292,6 +291,7 @@ public class FXMLController implements Initializable{
         if (z > 0) {
             z--;
             txtExperiencePoints.setText(Integer.toString(z));
+
         }
     }
 

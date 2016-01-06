@@ -24,7 +24,7 @@ public class characterOperations {
         Spell testSpellAid = spellMap.get("Aid");
         Equipment tmpShovel = new Item("Shovel", "5", "1s");
         Equipment tmpRope = new Item("Rope", "1", "2b", "7m long");
-        */
+
         Equipment testWeapon = weaponMap.get("Crossbow, Light");
 
         ArrayList<Equipment> tmpPlayerEquipment = new ArrayList();
@@ -45,7 +45,7 @@ public class characterOperations {
         CharacterClass tmpClass = new Cleric();
 
         tmpPlayerWeapons.add(testWeapon);
-        /*
+
         tmpItems.add(tmpRope);
         tmpItems.add(tmpShovel);
         tmpPlayerSpells.add(testSpellAnimateObjects);
@@ -60,11 +60,11 @@ public class characterOperations {
         tmpFeaturesTraits.add("featureTrait");
         */
 
-        DNDCharacter defaultCharacter = new DNDCharacter("DefaultCharacter", tmpRace, tmpClass, 5, 5, 5, 5, 5, 5, 0, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills, tmpItems, "DefaultBackground", "DefaultPlayer", "DefaultFaction", "DefaultAlignment", 0, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeaturesTraits);
+        //DNDCharacter defaultCharacter = new DNDCharacter("DefaultCharacter", tmpRace, tmpClass, 5, 5, 5, 5, 5, 5, 0, tmpPlayerWeapons, tmpPlayerSpells, testArmor, tmpProficiencies, tmpSkills, tmpItems, "DefaultBackground", "DefaultPlayer", "DefaultFaction", "DefaultAlignment", 0, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeaturesTraits);
         //tmpCharacter.print();
         //
-        ParserOperationsXML.saveCharacterToXML(defaultCharacter, "src/files/DefaultCharacter.xml");
-        //ParserOperationsXML.loadCharacterFromXML("src/files/Haudrauf.xml", weaponMap, spellMap, armorMap);
+        //ParserOperationsXML.saveCharacterToXML(defaultCharacter, "src/files/DefaultCharacter.xml");
+        DNDCharacter defaultCharacter = ParserOperationsXML.loadCharacterFromXML("src/files/DefaultCharacter.xml", weaponMap, spellMap, armorMap);
         //
         return defaultCharacter;
     }
