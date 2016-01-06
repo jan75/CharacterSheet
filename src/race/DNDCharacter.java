@@ -10,32 +10,32 @@ import java.util.List;
 import java.util.ListIterator;
 
 public class DNDCharacter {
-	public String name;
-	public Race race;
-	public CharacterClass characterClass;
-	public int strength;
-	public int dexterity;
-	public int charisma;
-	public int intelligence;
-	public int wisdom;
-	public int constitution;
-	public int level;
-	public List<Equipment> weapons;
-	public List<Spell> spells;
-	public Equipment armor;
-	public List<String> proficiencies;
-	public Skills skills;
-	public List<Equipment> items;
-	public String background;
-	public String playerName;
-	public String faction;
-	public String alignment;
-	public int experiencePoints;
-	public List<String> personalityTraits;
-	public List<String> ideals;
-	public List<String> bonds;
-	public List<String> flaws;
-	public List<String> featuresTraits;
+	private String name;
+	private Race race;
+	private CharacterClass characterClass;
+	private int strength;
+	private int dexterity;
+	private int charisma;
+	private int intelligence;
+	private int wisdom;
+	private int constitution;
+	private int level;
+	private List<Equipment> weapons;
+	private List<Spell> spells;
+	private Equipment armor;
+	private List<String> proficiencies;
+	private Skills skills;
+	private List<Equipment> items;
+	private String background;
+	private String playerName;
+	private String faction;
+	private String alignment;
+	private int experiencePoints;
+	private List<String> personalityTraits;
+	private List<String> ideals;
+	private List<String> bonds;
+	private List<String> flaws;
+	private List<String> featuresTraits;
 
 	public int armorClass;
 	public int proficencybonus;
@@ -181,13 +181,16 @@ public class DNDCharacter {
 			while(tmpIterator.hasNext()) {
 				Equipment equip = tmpIterator.next();
 				tmpList.add(equip.getName());
+				//System.out.println("Method getItemKeysList (weapons): " + tmpList);
+				return tmpList;
 			}
 		} else if (!isWeapon && items.size() != 0) {
 			ListIterator<Equipment> tmpIterator = items.listIterator();
 			while(tmpIterator.hasNext()) {
 				Equipment equip = tmpIterator.next();
-				System.out.println(equip.getName());
 				tmpList.add(equip.getName());
+				//System.out.println("Method getItemKeysList (items): " + tmpList);
+				return tmpList;
 			}
 		}
 		return tmpList;

@@ -19,7 +19,7 @@ public class Armor extends Equipment {
 		System.out.println("\n------------------------------------\n");
 	}
 
-	public String getKey() {
+	public String getName() {
 		return armorName;
 	}
 }

@@ -193,7 +193,7 @@ public class ParserOperationsXML {
 	 * The Method "saveCharacterToXML" generates a file(XML) and fills it with the object player. This XML file can be parsed with the method "loadCharacterFromXML"
 	 * @param tmpCharacter
 	 */
-	public static void saveCharacterToXML(DNDCharacter tmpCharacter) {
+	public static void saveCharacterToXML(DNDCharacter tmpCharacter, String path) {
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		try {
 			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -276,6 +276,7 @@ public class ParserOperationsXML {
 					Element item = document.createElement("item");
 					equipment.appendChild(item);
 					item.appendChild(document.createTextNode(tmpItem.get(i)));
+					//System.out.println("Method: saveCharacterToXML: " + tmpItem.get(i));
 				}
 				character.appendChild(equipment);
 			}
@@ -559,7 +560,7 @@ public class ParserOperationsXML {
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(document);
-			StreamResult result = new StreamResult(new File("src/files/" + tmpCharacter.getName() + ".xml"));
+			StreamResult result = new StreamResult(new File(path));
 			//StreamResult result = new StreamResult(System.out);
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
@@ -667,20 +668,25 @@ public class ParserOperationsXML {
 					ArrayList<Equipment> tmpItems = new ArrayList();
 					tmpItems.clear();
 					//
+					/* ::::: TO BE REFINED :::::
+					* Problem is, that right now, only the name of the equipment is stored in the XML and not it's other variables like weight and price. In this case, we can't make a map, since an item can be everything. To properly store items over sessions we'd need to store them via XML-Subnodes (<item>Rope<weight>bbb</weight><price>aaa</price></item>). It would be easier to just store it as a string
 					if (nListItems.getLength() != 0) {
 						Node nNodeItems = nListItems.item(0);
 						Element eElementItems = (Element) nNodeItems;
 						//
-						Equipment tmpItem;
+						String tmpItemString;
 						//
 						NodeList tmpItemNodeList = eElementItems.getElementsByTagName("item");
 						for (int j = 0; j < tmpItemNodeList.getLength(); j++) {
-							tmpItem = weaponMap.get(eElementItems.getElementsByTagName("item").item(j).getTextContent());
+							tmpItemString = eElementItems.getElementsByTagName("item").item(j).getTextContent();
+
+							System.out.println("Method loadCharacterFromXML: parsing items: " + tmpItem.getName());
 							tmpItems.add(tmpItem);
 						}
 					} else {
 						System.out.println("no items");
 					}
+					*/
 					//
 					//
 					// The following code block parses the sub elements under "proficiencies"
