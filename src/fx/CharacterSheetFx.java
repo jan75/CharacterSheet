@@ -14,10 +14,11 @@ public class CharacterSheetFx extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		DNDCharacter currentCharacter = characterOperations.initializeProgram();
-
+		setActiveCharacter(currentCharacter);
 		//System.out.println(this.getClass().getResource("src/fx/javaFxLayout.fxml"));
 		try{
-			AnchorPane root = FXMLLoader.load(this.getClass().getResource("/fx/javaFxLayout.fxml"));
+			FXMLLoader loader= new FXMLLoader();
+			AnchorPane root = loader.load(this.getClass().getResource("/fx/javaFxLayout.fxml"));
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
@@ -28,4 +29,7 @@ public class CharacterSheetFx extends Application {
 		}
 	}
 
+	public void setActiveCharacter(DNDCharacter dndchar){
+		activeCharacter=dndchar;
+	}
 }

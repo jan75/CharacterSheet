@@ -137,6 +137,10 @@ public class DNDCharacter {
 	public Skills getSkills() {
 		return skills;
 	}
+	
+	public String getSpeed(){
+		return Integer.toString(race.speed);
+	}
 
 	public ArrayList<String> getLists(String listToReturn) {
 		ArrayList<String> tmpList = new ArrayList();

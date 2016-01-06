@@ -38,6 +38,7 @@
 		<Label fx:id="lblInspiration" layoutX="185.0" layoutY="206.0" prefWidth="28.000099999997474" text="INSPIRATION" />
 		<Label fx:id="lblProficencyMod" layoutX="185.0" layoutY="262.0" prefWidth="35.0" text="PROFICIENCYMOD" />
 		<TextField fx:id="lblTotalHitDie" layoutX="403.0" layoutY="474.0" prefWidth="74.99990000000253" text="TOTALHITDIE" />
+		
 		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="0" />
 		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="0" />
 		<TextField fx:id="txtInt" layoutX="76.0" layoutY="611.0" text="0" />
@@ -105,17 +106,17 @@
 		<!-- Add / Subtract Buttons -->
 		<Button fx:id="btnSubtractExperience" layoutX="740.0" layoutY="95.0" mnemonicParsing="false" text="-" onAction="#subtractExp" />
 		<Button fx:id="btnAddExperience" layoutX="830.0" layoutY="95.0" mnemonicParsing="false" text="+" onAction="#addExp" />
-		<Button fx:id="btnSubtractStrength" layoutX="35.0" layoutY="265.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddStrength" layoutX="120.0" layoutY="265.0" mnemonicParsing="false" text="+" />
-		<Button fx:id="btnSubtractDexterity" layoutX="35.0" layoutY="380.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddDexterity" layoutX="120.0" layoutY="380.0" mnemonicParsing="false" text="+" />
-		<Button fx:id="btnSubtractConstitution" layoutX="35.0" layoutY="500.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddConstitution" layoutX="120.0" layoutY="500.0" mnemonicParsing="false" text="+" />
-		<Button fx:id="btnSubtractIntelligence" layoutX="35.0" layoutY="615.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddIntelligence" layoutX="120.0" layoutY="615.0" mnemonicParsing="false" text="+" />
-		<Button fx:id="btnSubtractWisdom" layoutX="35.0" layoutY="730.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddWisdom" layoutX="120.0" layoutY="730.0" mnemonicParsing="false" text="+" />
-		<Button fx:id="btnSubtractCharisma" layoutX="35.0" layoutY="850.0" mnemonicParsing="false" text="-" />
-		<Button fx:id="btnAddCharisma" layoutX="120.0" layoutY="850.0" mnemonicParsing="false" text="+" />
+		<Button fx:id="btnSubtractStrength" layoutX="35.0" layoutY="265.0" mnemonicParsing="false" text="-" onAction="#subtractStr" />
+		<Button fx:id="btnAddStrength" layoutX="120.0" layoutY="265.0" mnemonicParsing="false" text="+" onAction="#addStr" />
+		<Button fx:id="btnSubtractDexterity" layoutX="35.0" layoutY="380.0" mnemonicParsing="false" text="-" onAction="#subtractDex" />
+		<Button fx:id="btnAddDexterity" layoutX="120.0" layoutY="380.0" mnemonicParsing="false" text="+" onAction="#addDex" />
+		<Button fx:id="btnSubtractConstitution" layoutX="35.0" layoutY="500.0" mnemonicParsing="false" text="-" onAction="#subtractCon" />
+		<Button fx:id="btnAddConstitution" layoutX="120.0" layoutY="500.0" mnemonicParsing="false" text="+" onAction="#addCon" />
+		<Button fx:id="btnSubtractIntelligence" layoutX="35.0" layoutY="615.0" mnemonicParsing="false" text="-" onAction="#subtractInt" />
+		<Button fx:id="btnAddIntelligence" layoutX="120.0" layoutY="615.0" mnemonicParsing="false" text="+" onAction="#addInt" />
+		<Button fx:id="btnSubtractWisdom" layoutX="35.0" layoutY="730.0" mnemonicParsing="false" text="-" onAction="#subtractWis" />
+		<Button fx:id="btnAddWisdom" layoutX="120.0" layoutY="730.0" mnemonicParsing="false" text="+" onAction="#addWis" />
+		<Button fx:id="btnSubtractCharisma" layoutX="35.0" layoutY="850.0" mnemonicParsing="false" text="-" onAction="#subtractCha" />
+		<Button fx:id="btnAddCharisma" layoutX="120.0" layoutY="850.0" mnemonicParsing="false" text="+" onAction="#addCha" />
 	</children>
 </AnchorPane>
