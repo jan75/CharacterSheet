@@ -22,7 +22,7 @@ public class DNDCharacter {
 	private int level;
 	private List<Equipment> weapons;
 	private List<Spell> spells;
-	private Equipment armor;
+	//private Equipment armor; Armor has been removed
 	private List<String> proficiencies;
 	private Skills skills;
 	private List<Equipment> items;
@@ -36,11 +36,10 @@ public class DNDCharacter {
 	private List<String> bonds;
 	private List<String> flaws;
 	private List<String> featuresTraits;
-
 	public int armorClass;
 	public int proficencybonus;
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, Equipment armor, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -53,7 +52,7 @@ public class DNDCharacter {
 		this.level = level;
 		this.weapons = weapons;
 		this.spells = spells;
-		this.armor = armor;
+		//this.armor = armor; Armor has been removed
 		this.proficiencies = proficiencies;
 		this.skills = skills;
 		this.items = items;
@@ -185,7 +184,9 @@ public class DNDCharacter {
 				Equipment equip = tmpIterator.next();
 				tmpList.add(equip.getName());
 				//System.out.println("Method getItemKeysList (weapons): " + tmpList);
-				return tmpList;
+				if(!tmpIterator.hasNext()) {
+					return tmpList;
+				}
 			}
 		} else if (!isWeapon && items.size() != 0) {
 			ListIterator<Equipment> tmpIterator = items.listIterator();
@@ -193,15 +194,20 @@ public class DNDCharacter {
 				Equipment equip = tmpIterator.next();
 				tmpList.add(equip.getName());
 				//System.out.println("Method getItemKeysList (items): " + tmpList);
-				return tmpList;
+				if(!tmpIterator.hasNext()) {
+					return tmpList;
+				}
 			}
 		}
 		return tmpList;
 	}
 
+	/*
+	* Armor functionality was removed, but the code has been left in if
 	public String getArmorKey() {
 		return armor.getName();
 	}
+	*/
 
 	public int getStatSavingThrow(String stat, int val){
 		switch(stat){

@@ -17,7 +17,7 @@ public class characterOperations {
 
     public static DNDCharacter initializeProgram() {
         Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
-        Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
+        //Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml"); Armor has been removed
         Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
         /*
         Spell testSpellAnimateObjects = spellMap.get("Animate Objects");
@@ -64,7 +64,7 @@ public class characterOperations {
         //tmpCharacter.print();
         //
         //ParserOperationsXML.saveCharacterToXML(defaultCharacter, "src/files/DefaultCharacter.xml");
-        DNDCharacter defaultCharacter = ParserOperationsXML.loadCharacterFromXML("src/files/DefaultCharacter.xml", weaponMap, spellMap, armorMap);
+        DNDCharacter defaultCharacter = ParserOperationsXML.loadCharacterFromXML("src/files/DefaultCharacter.xml", weaponMap, spellMap);
         //
         return defaultCharacter;
     }

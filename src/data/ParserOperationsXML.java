@@ -84,50 +84,6 @@ public class ParserOperationsXML {
 		//
 		return weaponMap;
 	}
-	/**
-	 * The Method "parseArmor" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Armor).
-	 * @param path
-	 * @return Map
-	 */
-	public static Map parseArmor(String path) {
-		Map<String, Armor> armorMap = new HashMap<>();
-		//
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		try {
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document document = dBuilder.parse(path);
-			//
-			document.getDocumentElement().normalize(); // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-			//
-			//
-			NodeList nList = document.getElementsByTagName("name");
-			//
-			for(int i = 0; i < nList.getLength(); i++) {
-				Node nNode = nList.item(i);
-				//
-				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					//
-					String tmpArmor = eElement.getAttribute("armorname");
-					String tmpPrice = eElement.getElementsByTagName("price").item(0).getTextContent();
-					String tmpModifier = eElement.getElementsByTagName("modifier").item(0).getTextContent();
-					String tmpSpeed = eElement.getElementsByTagName("speed").item(0).getTextContent();
-					String tmpStealth = eElement.getElementsByTagName("stealth").item(0).getTextContent();
-					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
-					String tmpClass = eElement.getElementsByTagName("class").item(0).getTextContent();
-
-					Armor tmpArmorObject = new Armor(tmpArmor, tmpPrice, tmpModifier, tmpSpeed, tmpStealth, tmpWeight, tmpClass);
-					//tmpArmorObject.print();
-					armorMap.put(tmpArmor, tmpArmorObject);
-					//
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//
-		return armorMap;
-	}
 
 	/**
 	 * The Method "parseSpells" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Spell).
@@ -358,13 +314,15 @@ public class ParserOperationsXML {
 			}
 			//
 			//
-			// ::::: BEGINNING OF ARMOR BLOCK :::::
+			/* ::::: BEGINNING OF ARMOR BLOCK :::::
+			* armor was removed, but the code has been left in, as it worked previously, but was unfinished
 			if(!tmpCharacter.getArmorKey().isEmpty()) {
 				Element armor = document.createElement("armor");
 				armor.appendChild(document.createTextNode(tmpCharacter.getArmorKey()));
 				//
 				character.appendChild(armor);
 			}
+			*/
 			//
 			// ::::: BEGINNING OF RACE BLOCK :::::
 			Element race = document.createElement("race");
@@ -577,7 +535,7 @@ public class ParserOperationsXML {
 	 * @param path
 	 * @return Map
 	 */
-	public static DNDCharacter loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap, Map<String, Armor> armorMap) {
+	public static DNDCharacter loadCharacterFromXML(String path, Map<String, Equipment> weaponMap, Map<String, Spell> spellMap) {
 		DNDCharacter tmpCharacter = null;
 		//
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -598,7 +556,7 @@ public class ParserOperationsXML {
 					int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
 					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
 					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
-					Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent());
+					//Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent()); Armor has been removed
 					String tmpBackground = eElement.getElementsByTagName("background").item(0).getTextContent();
 					String tmpPlayerName = eElement.getElementsByTagName("playerName").item(0).getTextContent();
 					String tmpFaction = eElement.getElementsByTagName("faction").item(0).getTextContent();
@@ -669,7 +627,7 @@ public class ParserOperationsXML {
 					tmpItems.clear();
 					//
 					/* ::::: TO BE REFINED :::::
-					* Problem is, that right now, only the name of the equipment is stored in the XML and not it's other variables like weight and price. In this case, we can't make a map, since an item can be everything. To properly store items over sessions we'd need to store them via XML-Subnodes (<item>Rope<weight>bbb</weight><price>aaa</price></item>). It would be easier to just store it as a string
+					* Problem is, that right now, only the name of the equipment is stored in the XML and not it's other variables like weight and price. Will be changed to a simple string
 					if (nListItems.getLength() != 0) {
 						Node nNodeItems = nListItems.item(0);
 						Element eElementItems = (Element) nNodeItems;
@@ -846,7 +804,7 @@ public class ParserOperationsXML {
 
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpWeapons, tmpSpells, tmpArmor, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
 					tmpCharacter.print();
 				}
 			}
@@ -855,4 +813,50 @@ public class ParserOperationsXML {
 		}
 		return tmpCharacter;
 	}
+
+	/*
+	/**
+	 * The Method "parseArmor" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Armor).
+	 * @param path
+	 * @return Map
+	public static Map parseArmor(String path) {
+		Map<String, Armor> armorMap = new HashMap<>();
+		//
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		try {
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document document = dBuilder.parse(path);
+			//
+			document.getDocumentElement().normalize(); // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+			//
+			//
+			NodeList nList = document.getElementsByTagName("name");
+			//
+			for(int i = 0; i < nList.getLength(); i++) {
+				Node nNode = nList.item(i);
+				//
+				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
+					Element eElement = (Element) nNode;
+					//
+					String tmpArmor = eElement.getAttribute("armorname");
+					String tmpPrice = eElement.getElementsByTagName("price").item(0).getTextContent();
+					String tmpModifier = eElement.getElementsByTagName("modifier").item(0).getTextContent();
+					String tmpSpeed = eElement.getElementsByTagName("speed").item(0).getTextContent();
+					String tmpStealth = eElement.getElementsByTagName("stealth").item(0).getTextContent();
+					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
+					String tmpClass = eElement.getElementsByTagName("class").item(0).getTextContent();
+
+					Armor tmpArmorObject = new Armor(tmpArmor, tmpPrice, tmpModifier, tmpSpeed, tmpStealth, tmpWeight, tmpClass);
+					//tmpArmorObject.print();
+					armorMap.put(tmpArmor, tmpArmorObject);
+					//
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//
+		return armorMap;
+	}
+	*/
 }

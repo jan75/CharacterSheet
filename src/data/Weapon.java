@@ -1,8 +1,11 @@
 package data;
 
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.ArrayList;
 
-class Weapon extends Equipment {
+public class Weapon extends Equipment {
+
 	String weaponName, weaponDamage, weaponPrice, weaponWeight, weaponGroup;
 	ArrayList<String> weaponProperties, weaponModifiers;
 	//
@@ -24,4 +27,9 @@ class Weapon extends Equipment {
 	public String getName() {
 		return weaponName;
 	}
+
+	public String getWeaponDamage() {
+		return weaponDamage;
+	}
+
 }

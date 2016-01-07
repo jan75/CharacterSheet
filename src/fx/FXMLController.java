@@ -1,27 +1,29 @@
 package fx;
 
 import data.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import race.*;
 
+import javax.swing.text.html.parser.Parser;
 import java.io.File;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by Jan on 02.01.2016.
  */
 public class FXMLController implements Initializable{
     static Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
-    static Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml");
+    //static Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml"); // Armor has been removed
     static Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
 
     @FXML private TextField txtExperiencePoints;
@@ -46,11 +48,10 @@ public class FXMLController implements Initializable{
     @FXML private TextField txtGold;
     @FXML private TextField txtPlatin;
     @FXML private TextField txtName;
-    @FXML private TextField txtClassAndLevel;
+    @FXML private TextField txtLevel;
     @FXML private TextField txtBackground;
     @FXML private TextField txtPlayerName;
     @FXML private TextField txtFaction;
-    @FXML private TextField txtRace;
     @FXML private TextField txtAlignment;
     @FXML private CheckBox chkDex;
     @FXML private CheckBox chkCon;
@@ -84,10 +85,15 @@ public class FXMLController implements Initializable{
     @FXML private TextArea txtBoxIdeals;
     @FXML private TextArea txtBoxBonds;
     @FXML private TextArea txtBoxFlaws;
-    @FXML private TableView<Equipment> tblAttacks;
-    @FXML private TableColumn<Equipment, String> tblColumnName;
-    @FXML private TableColumn<Equipment, String> tblColumnAtkBonus;
-    @FXML private TableColumn<Equipment, String> tblColumnDamage;
+    @FXML private TableView<TableWeapon> tblAttacks;
+    @FXML private TableColumn<Equipment, String> tblWeaponNameId;
+    @FXML private TableColumn<Equipment, String> tblWeaponAtkBonusId;
+    @FXML private TableColumn<Equipment, String> tblWeaponDmgTypeId;
+    @FXML private ComboBox<String> cbAddWeapon;
+    @FXML private Button cbDeleteWeapons;
+    @FXML private ComboBox<String> cbRace;
+    @FXML private ComboBox<String> cbClass;
+    @FXML private Button btnAddMoney;
     
     List<Labeled> strMods;
     List<Labeled> dexMods;
@@ -119,26 +125,69 @@ public class FXMLController implements Initializable{
 	    });
 	    txtInt.textProperty().addListener((observable, oldValue, newValue) -> {
 	    	int z = Integer.parseInt(newValue);
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+	        updateMods(intMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
 	    });
 	    txtWis.textProperty().addListener((observable, oldValue, newValue) -> {
 	    	int z = Integer.parseInt(newValue);
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+	        updateMods(wisMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
 	    });
 	    txtWis.textProperty().addListener((observable, oldValue, newValue) -> {
 	    	int z = Integer.parseInt(newValue);
 	        updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(z));
 	    });
 	    txtCha.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	    });
+            int z = Integer.parseInt(newValue);
+            updateMods(chaMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+        });
 	    txtExperiencePoints.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateLevel(z);
-	    });
+            int z = Integer.parseInt(newValue);
+            updateLevel(z);
+        });
 	    lblSpeed.setText(CharacterSheetFx.activeCharacter.getSpeed());
-	} 
+        //
+        // ::::: Initiating ComboBoxes :::::
+        ObservableList<String> races =
+                FXCollections.observableArrayList(
+                    "Hill Dwarf",
+                    "Mountain Dwarf",
+                    "Drow",
+                    "High Elf",
+                    "Wood Elf",
+                    "Forest Gnome",
+                    "Rock Gnome",
+                    "Lightfoot Halfling",
+                    "Stout Halfling",
+                    "Dragonborn",
+                    "Halfelf",
+                    "Halforc",
+                    "Human",
+                    "Tiefling"
+                );
+        cbRace.setItems(races);
+        //
+        ObservableList<String> classes =
+                FXCollections.observableArrayList(
+                        "Barbarian",
+                        "Bard",
+                        "Cleric",
+                        "Druid",
+                        "Fighter",
+                        "Monk",
+                        "Paladin",
+                        "Ranger",
+                        "Rogue",
+                        "Sorcerer",
+                        "Warlock",
+                        "Wizard"
+                );
+        cbClass.setItems(classes);
+
+        ObservableList<String> weapons = FXCollections.observableArrayList(weaponMap.keySet());
+        cbAddWeapon.setItems(weapons);
+
+        ObservableList<TableWeapon> data = tblAttacks.getItems();
+        data.clear();
+    }
 
 	@FXML
     private void createNewCharacter() {
@@ -161,7 +210,7 @@ public class FXMLController implements Initializable{
             path = selectedFile.getAbsolutePath();
         }
 
-        tmpCharacter = ParserOperationsXML.loadCharacterFromXML(path, weaponMap, spellMap, armorMap);
+        tmpCharacter = ParserOperationsXML.loadCharacterFromXML(path, weaponMap, spellMap);
         //
         txtDex.setText(Integer.toString(tmpCharacter.getDexterity()));
         txtCha.setText(Integer.toString(tmpCharacter.getCharisma()));
@@ -170,11 +219,11 @@ public class FXMLController implements Initializable{
         txtStr.setText(Integer.toString(tmpCharacter.getStrength()));
         txtWis.setText(Integer.toString(tmpCharacter.getWisdom()));
         //
-        txtClassAndLevel.setText(tmpCharacter.getCharClassName() + " " + Integer.toString(tmpCharacter.getLevel()));
+        txtLevel.setText(Integer.toString(tmpCharacter.getLevel()));
         txtBackground.setText(tmpCharacter.getBackground());
         txtPlayerName.setText(tmpCharacter.getPlayerName());
         txtFaction.setText(tmpCharacter.getFaction());
-        txtRace.setText(tmpCharacter.getRaceName());
+        cbRace.setValue(tmpCharacter.getRaceName());
         txtAlignment.setText(tmpCharacter.getAlignment());
         txtExperiencePoints.setText(Integer.toString(tmpCharacter.getExperiencePoints()));
         //
@@ -197,34 +246,25 @@ public class FXMLController implements Initializable{
         chkStealth.setSelected(tmpCharacter.getSkills().isStealth());
         chkSurvival.setSelected(tmpCharacter.getSkills().isSurvival());
 
-        /* to be continued
         ArrayList<String> tmpWeaponKeyList = tmpCharacter.getItemKeysList(true);
+        System.out.println("tmpWeaponkeyList size: " + tmpWeaponKeyList.size());
+        //
+        ObservableList<TableWeapon> data = tblAttacks.getItems();
+        data.clear();
         if(tmpWeaponKeyList.size() != 0) {
             for(String currentKey: tmpWeaponKeyList) {
                 Equipment tmpWeapon = weaponMap.get(currentKey);
-
-
-
+                System.out.println(tmpWeapon.getName());
+                data.add(new TableWeapon(tmpWeapon.getName(), tmpWeapon.getName(), tmpWeapon.getName()));
                 //System.out.println(currentKey);
+                tblWeaponNameId.setText("");
+                tblWeaponAtkBonusId.setText("");
+                tblWeaponDmgTypeId.setText("");
             }
         }
 
-        tblColumnName.setCellValueFactory(new PropertyValueFactory<Equipment, String>("name"));
-        tblColumnAtkBonus.setCellValueFactory(new PropertyValueFactory<Equipment, String>("atkBonus"));
-        tblColumnDamage.setCellValueFactory(new PropertyValueFactory<Equipment, String>("damage"));
-        //
-        tblAttacks.getItems().setAll(parseWeaponsToTable());
-        */
-
-
-
-
-
-
         CharacterSheetFx.activeCharacter = tmpCharacter;
-
     }
-
 
     @FXML
     private void saveCharacter() {
@@ -246,7 +286,36 @@ public class FXMLController implements Initializable{
             System.out.println("File not saved - path not valid");
         }
     }
-    
+
+    @FXML
+    private void addWeapon() {
+        System.out.println("Add weapon");
+        String placeholder = "???";
+        //
+        Weapon tmpTblWeapon = (Weapon) weaponMap.get(cbAddWeapon.getValue());
+
+        ObservableList<TableWeapon> data = tblAttacks.getItems();
+        data.add(new TableWeapon(tmpTblWeapon.getName(), placeholder, tmpTblWeapon.getWeaponDamage()));
+
+        tblWeaponNameId.setText("");
+        tblWeaponAtkBonusId.setText("");
+        tblWeaponDmgTypeId.setText("");
+    }
+
+    @FXML
+    private void deleteWeapons() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Delete Weapons");
+        alert.setHeaderText("This action will delete all currently equipped Weapons!");
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.get() == ButtonType.OK) {
+            ObservableList<TableWeapon> data = tblAttacks.getItems();
+            data.clear();
+        }
+    }
+
+
     private void updateMods(List<Labeled> mods, String mod) {
     	for(Labeled temp: mods){
     		if(temp.getClass().getName()=="javafx.scene.control.CheckBox"){
@@ -269,7 +338,7 @@ public class FXMLController implements Initializable{
     			break;
     		}
     	}
-    	txtClassAndLevel.setText(txtClassAndLevel.getText().split(" ")[0]+" "+Integer.toString(level));
+    	txtLevel.setText(Integer.toString(level));
 	}
 
 	private void updatePerception(int statBonus) {
@@ -283,6 +352,53 @@ public class FXMLController implements Initializable{
     @FXML
     private void exitApplication() {
         System.exit(0);
+    }
+
+    @FXML
+    private void addMoney() {
+        System.out.println("add money");
+        try{
+            FXMLLoader loaderMoney = new FXMLLoader();
+            AnchorPane anchorPaneMoney = loaderMoney.load(this.getClass().getResource("/fx/javaFxLayoutMoney.fxml"));
+            Scene sceneMoney = new Scene(anchorPaneMoney);
+            Stage moneyStage = new Stage();
+            moneyStage.setScene(sceneMoney);
+            moneyStage.setResizable(false);
+            moneyStage.show();
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+
+        /*
+        TextInputControl addMoneyAlert = new TextInputDialog("55");
+        addMoneyAlert.setTitle("Add Money");
+        addMoneyAlert.setHeaderText("Enter the amount and click on the corresponding entity");
+
+        ButtonType buttonTypeCopperMoney = new ButtonType("CP");
+        ButtonType buttonTypeSilverMoney = new ButtonType("SP");
+        ButtonType buttonTypeEteriumMoney = new ButtonType("EP");
+        ButtonType buttonTypeGoldMoney = new ButtonType("GP");
+        ButtonType buttonTypePlatinMoney = new ButtonType("PP");
+        ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        TextArea textAreaAmountMoney = new TextArea();
+
+        //addMoneyAlert.getButtonTypes().setAll(buttonTypeCopperMoney, buttonTypeSilverMoney, buttonTypeEteriumMoney, buttonTypeGoldMoney, buttonTypePlatinMoney, buttonTypeCancel);
+
+        /*
+        Optional<ButtonType> result = addMoneyAlert.showAndWait();
+        if (result.get() == buttonTypeCopperMoney) {
+            System.out.println("Copper");
+        } else if (result.get() == buttonTypeSilverMoney) {
+            System.out.println("Silver");
+        } else if (result.get() == buttonTypeEteriumMoney) {
+            System.out.println("Eterium");
+        } else if (result.get() == buttonTypeGoldMoney) {
+            System.out.println("Gold");
+        } else if (result.get() == buttonTypePlatinMoney) {
+            System.out.println("Platin");
+        }
+        */
     }
 
     @FXML
