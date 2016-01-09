@@ -21,7 +21,7 @@
 		<TextArea fx:id="txtBoxFeatures" layoutX="956.0" layoutY="191.0" prefHeight="391.0" prefWidth="252.0" wrapText="true" />
 		<TextArea fx:id="txtBoxEquipment" layoutX="1027.0" layoutY="615.0" prefHeight="244.0" prefWidth="181.0" wrapText="true" />
 		<TextArea fx:id="txtBoxProficiencies" layoutX="661.0" layoutY="662.0" prefHeight="197.0" prefWidth="252.0" wrapText="true" />
-		<TextArea fx:id="txtBoxSpells" layoutX="366.0" layoutY="720.0" prefWidth="259.0" prefHeight="120.0" wrapText="true" editable="false" />
+		<TextArea fx:id="txtBoxSpells" layoutX="368.0" layoutY="720.0" prefWidth="254.0" prefHeight="100.0" wrapText="true" editable="false" />
 		<TextArea fx:id="txtBoxTraits" layoutX="673.0" layoutY="222.0" prefHeight="66.99990000000253" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxIdeals" layoutX="673.0" layoutY="321.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxBonds" layoutX="673.0" layoutY="408.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
@@ -109,8 +109,8 @@
 		<Button fx:id="btnDeleteWeapons" layoutX="510" layoutY="690" text="Remove Weapons" onAction="#deleteWeapons"></Button>
 		<ComboBox fx:id="cbAddWeapon" layoutX="370" layoutY="690" prefHeight="21" maxWidth="130" promptText="Add Weapon" onAction="#addWeapon"></ComboBox>
 
-		<Button fx:id="btnDeleteSpells" layoutX="510" layoutY="845" text="Remove Spells" onAction="#deleteSpells"></Button>
-		<ComboBox fx:id="cbAddSpell" layoutX="370" layoutY="845" prefHeight="21" maxWidth="130" promptText="Add Spell" onAction="#addSpell"></ComboBox>
+		<Button fx:id="btnDeleteSpells" layoutX="510" layoutY="825" text="Remove Spells" onAction="#deleteSpells"></Button>
+		<ComboBox fx:id="cbAddSpell" layoutX="370" layoutY="825" prefHeight="21" maxWidth="130" promptText="Add Spell" onAction="#addSpell"></ComboBox>
 
 		<TextField fx:id="txtHitPointsMax" layoutX="480.0" layoutY="289.0" prefWidth="127.0" text="Label" />
 		<TextField fx:id="txtCopper" layoutX="966.0" layoutY="623.0" prefHeight="25.0" prefWidth="45.999900000002526" text="COPPER" />

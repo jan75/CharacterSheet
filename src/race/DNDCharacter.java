@@ -107,6 +107,10 @@ public class DNDCharacter {
 		return experiencePoints;
 	}
 
+	public void setExperiencePoints(int experiencePoints) {
+		this.experiencePoints = experiencePoints;
+	}
+
 	public String getRaceName() {
 		return race.getName();
 	}

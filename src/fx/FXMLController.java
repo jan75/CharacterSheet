@@ -188,9 +188,11 @@ public class FXMLController implements Initializable{
         cbClass.setItems(classes);
 
         ObservableList<String> weapons = FXCollections.observableArrayList(weaponMap.keySet());
+        Collections.sort(weapons);
         cbAddWeapon.setItems(weapons);
 
         ObservableList<String> spells = FXCollections.observableArrayList(spellMap.keySet());
+        Collections.sort(spells);
         cbAddSpell.setItems(spells);
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
@@ -324,15 +326,6 @@ public class FXMLController implements Initializable{
     }
 
     @FXML
-    private void addSpell() {
-        System.out.println("Add spell");
-        //
-        txtBoxSpells.appendText(cbAddSpell.getValue() + "\n");
-        //
-        CharacterSheetFx.activeCharacter.addSpell(spellMap.get(cbAddSpell.getValue()));
-    }
-
-    @FXML
     private void deleteWeapons() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Weapons");
@@ -345,6 +338,15 @@ public class FXMLController implements Initializable{
             CharacterSheetFx.activeCharacter.getWeapons().clear();
             System.out.println(CharacterSheetFx.activeCharacter.getWeapons());
         }
+    }
+
+    @FXML
+    private void addSpell() {
+        System.out.println("Add spell");
+        //
+        txtBoxSpells.appendText(cbAddSpell.getValue() + "\n");
+        //
+        CharacterSheetFx.activeCharacter.addSpell(spellMap.get(cbAddSpell.getValue()));
     }
 
     @FXML
@@ -424,7 +426,7 @@ public class FXMLController implements Initializable{
         if (z > 0) {
             z--;
             txtExperiencePoints.setText(Integer.toString(z));
-
+            CharacterSheetFx.activeCharacter.setExperiencePoints(z);
         }
     }
 
@@ -433,6 +435,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtExperiencePoints.getText());
         z++;
         txtExperiencePoints.setText(Integer.toString(z));
+        CharacterSheetFx.activeCharacter.setExperiencePoints(z);
     }
     
     @FXML
