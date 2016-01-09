@@ -39,7 +39,7 @@ public class DNDCharacter {
 	public int armorClass;
 	public int proficencybonus;
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -49,7 +49,6 @@ public class DNDCharacter {
 		this.intelligence = intelligence;
 		this.wisdom = wisdom;
 		this.charisma = charisma;
-		this.level = level;
 		this.weapons = weapons;
 		this.spells = spells;
 		//this.armor = armor; Armor has been removed
@@ -140,6 +139,10 @@ public class DNDCharacter {
 		return Integer.toString(race.speed);
 	}
 
+	public List<Equipment> getWeapons() {
+		return weapons;
+	}
+
 	public ArrayList<String> getLists(String listToReturn) {
 		ArrayList<String> tmpList = new ArrayList();
 		tmpList.clear();
@@ -172,6 +175,14 @@ public class DNDCharacter {
 			tmpList.add(spell.getKey());
 		}
 		return tmpList;
+	}
+
+	public void addSpell(Spell spell) {
+		this.spells.add(spell);
+	}
+
+	public void setSpells(List<Spell> spells) {
+		this.spells = spells;
 	}
 
 	public ArrayList<String> getItemKeysList(boolean isWeapon) {

@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <?import javafx.scene.Group?>
-<AnchorPane id="AnchorPane" minHeight="100.0" minWidth="410.0" prefHeight="100.0" prefWidth="410.0" maxHeight="100.0" maxWidth="410.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane id="AnchorPane" minHeight="100.0" minWidth="410.0" prefHeight="100.0" prefWidth="410.0" maxHeight="100.0" maxWidth="410.0" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="fx.FXMLControllerMoney" xmlns:fx="http://javafx.com/fxml/1">
 	<children>
 		<Label layoutX="10.0" layoutY="10.0" text="Enter the amount and choose the corresponding entity" />
 
@@ -18,11 +18,11 @@
 		</fx:define>
 		<RadioButton fx:id="copperRadioButton" toggleGroup="$toggleGroupMoney" text="CP" layoutX="170.0" layoutY="40.0"/>
 		<RadioButton fx:id="silverRadioButton" toggleGroup="$toggleGroupMoney" text="SP" layoutX="220.0" layoutY="40.0"/>
-		<RadioButton fx:id="eteriumRadioButton" toggleGroup="$toggleGroupMoney" text="SP" layoutX="270.0" layoutY="40.0"/>
-		<RadioButton fx:id="goldRadioButton" toggleGroup="$toggleGroupMoney" text="SP" layoutX="320.0" layoutY="40.0"/>
-		<RadioButton fx:id="platinRadioButton" toggleGroup="$toggleGroupMoney" text="SP" layoutX="370.0" layoutY="40.0"/>
-		<Button fx:id="btnConfirmMoney" layoutX="290.0" layoutY="75.0" mnemonicParsing="false" text="Confirm" />
-		<Button fx:id="btnCancelMoney" layoutX="360.0" layoutY="75.0" mnemonicParsing="false" cancelButton="true" text="Cancel" />
+		<RadioButton fx:id="eteriumRadioButton" toggleGroup="$toggleGroupMoney" text="EP" layoutX="270.0" layoutY="40.0"/>
+		<RadioButton fx:id="goldRadioButton" toggleGroup="$toggleGroupMoney" text="GP" layoutX="320.0" layoutY="40.0"/>
+		<RadioButton fx:id="platinRadioButton" toggleGroup="$toggleGroupMoney" text="PP" layoutX="370.0" layoutY="40.0"/>
+		<Button fx:id="btnConfirmMoney" layoutX="275.0" layoutY="70.0" mnemonicParsing="false" text="Confirm" onAction="#confirmMoney" />
+		<Button fx:id="btnCancelMoney" layoutX="340.0" layoutY="70.0" mnemonicParsing="false" text="Cancel" onAction="#cancelMoney" />
 
 	</children>
 </AnchorPane>

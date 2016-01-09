@@ -163,10 +163,12 @@ public class ParserOperationsXML {
 			//
 			character.setAttribute("name", tmpCharacter.getName());
 			//
-			// ::::: BEGINNING OF LEVEL BLOCK :::::
+			/* ::::: BEGINNING OF LEVEL BLOCK :::::
+			* This is already handled by ExperiencePoints and initialize class
 			Element level = document.createElement("level");
 			level.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
 			character.appendChild(level);
+			*/
 			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
@@ -553,7 +555,7 @@ public class ParserOperationsXML {
 					Element eElement = (Element) nNode;
 					//
 					String tmpName = eElement.getAttribute("name");
-					int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
+					//int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent()); this is already handled via "ExperiencePoints" and the initialize class
 					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
 					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
 					//Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent()); Armor has been removed
@@ -804,7 +806,7 @@ public class ParserOperationsXML {
 
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
 					tmpCharacter.print();
 				}
 			}
