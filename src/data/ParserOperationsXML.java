@@ -625,11 +625,9 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "equipment" (items)
 					NodeList nListItems = eElement.getElementsByTagName("equipment");
 					//
-					ArrayList<Equipment> tmpItems = new ArrayList();
+					ArrayList<String> tmpItems = new ArrayList();
 					tmpItems.clear();
 					//
-					/* ::::: TO BE REFINED :::::
-					* Problem is, that right now, only the name of the equipment is stored in the XML and not it's other variables like weight and price. Will be changed to a simple string
 					if (nListItems.getLength() != 0) {
 						Node nNodeItems = nListItems.item(0);
 						Element eElementItems = (Element) nNodeItems;
@@ -639,14 +637,11 @@ public class ParserOperationsXML {
 						NodeList tmpItemNodeList = eElementItems.getElementsByTagName("item");
 						for (int j = 0; j < tmpItemNodeList.getLength(); j++) {
 							tmpItemString = eElementItems.getElementsByTagName("item").item(j).getTextContent();
-
-							System.out.println("Method loadCharacterFromXML: parsing items: " + tmpItem.getName());
-							tmpItems.add(tmpItem);
+							tmpItems.add(tmpItemString);
 						}
 					} else {
 						System.out.println("no items");
 					}
-					*/
 					//
 					//
 					// The following code block parses the sub elements under "proficiencies"

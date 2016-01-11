@@ -197,6 +197,8 @@ public class FXMLController implements Initializable{
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.clear();
+
+        openCharacter("src/files/DefaultCharacter.xml");
     }
 
 	@FXML
@@ -269,6 +271,48 @@ public class FXMLController implements Initializable{
             }
         }
 
+        if(!tmpCharacter.getLists("proficiencies").isEmpty()) {
+            for(String currentProficiency: tmpCharacter.getLists("proficiencies")) {
+                txtBoxProficiencies.appendText(currentProficiency + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("equipment").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("equipment")) {
+                txtBoxEquipment.appendText(currentItem + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("personalityTraits").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("personalityTraits")) {
+                txtBoxTraits.appendText(currentItem + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("ideals").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("ideals")) {
+                txtBoxIdeals.appendText(currentItem + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("bonds").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("bonds")) {
+                txtBoxBonds.appendText(currentItem + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("flaws").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("flaws")) {
+                txtBoxFlaws.appendText(currentItem + "\n");
+            }
+        }
+
+        if(!tmpCharacter.getLists("featuresTraits").isEmpty()) {
+            for(String currentItem: tmpCharacter.getLists("featuresTraits")) {
+                txtBoxFeatures.appendText(currentItem + "\n");
+            }
+        }
+
         CharacterSheetFx.activeCharacter = tmpCharacter;
     }
 
@@ -307,6 +351,41 @@ public class FXMLController implements Initializable{
         } else {
             System.out.println("File not saved - path not valid");
         }
+    }
+
+    @FXML
+    private void updateProficiencies() {
+        CharacterSheetFx.activeCharacter.setLists("proficiencies", txtBoxProficiencies.getParagraphs());
+    }
+
+    @FXML
+    private void updateEquipment() {
+        CharacterSheetFx.activeCharacter.setLists("equipment", txtBoxEquipment.getParagraphs());
+    }
+
+    @FXML
+    private void updatePersonalityTraits() {
+        CharacterSheetFx.activeCharacter.setLists("personalityTraits", txtBoxTraits.getParagraphs());
+    }
+
+    @FXML
+    private void updateIdeals() {
+        CharacterSheetFx.activeCharacter.setLists("ideals", txtBoxIdeals.getParagraphs());
+    }
+
+    @FXML
+    private void updateBonds() {
+        CharacterSheetFx.activeCharacter.setLists("bonds", txtBoxBonds.getParagraphs());
+    }
+
+    @FXML
+    private void updateFlaws() {
+        CharacterSheetFx.activeCharacter.setLists("flaws", txtBoxFlaws.getParagraphs());
+    }
+
+    @FXML
+    private void updateFeaturesTraits() {
+        CharacterSheetFx.activeCharacter.setLists("featuresTraits", txtBoxTraits.getParagraphs());
     }
 
     @FXML
@@ -406,7 +485,7 @@ public class FXMLController implements Initializable{
 
     @FXML
     private void addMoney() {
-        System.out.println("add money");
+        //System.out.println("add money");
         try{
             Stage stageMoney = new Stage();
             Parent root = FXMLLoader.load(FXMLController.class.getResource("/fx/javaFxLayoutMoney.fxml"));
@@ -424,7 +503,7 @@ public class FXMLController implements Initializable{
     private void subtractExp() {
         int z = Integer.parseInt(txtExperiencePoints.getText());
         if (z > 0) {
-            z--;
+            z -= 50;
             txtExperiencePoints.setText(Integer.toString(z));
             CharacterSheetFx.activeCharacter.setExperiencePoints(z);
         }
@@ -433,7 +512,7 @@ public class FXMLController implements Initializable{
     @FXML
     private void addExp() {
         int z = Integer.parseInt(txtExperiencePoints.getText());
-        z++;
+        z += 50;
         txtExperiencePoints.setText(Integer.toString(z));
         CharacterSheetFx.activeCharacter.setExperiencePoints(z);
     }
