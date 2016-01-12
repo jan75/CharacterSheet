@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<character>
+    <dndcharacter name="DefaultCharacter">
+        <level>0</level>
+        <stats>
+            <strength>10</strength>
+            <dexterity>10</dexterity>
+            <constitution>10</constitution>
+            <intelligence>10</intelligence>
+            <wisdom>10</wisdom>
+            <charisma>10</charisma>
+        </stats>
+        <race>Dragonborn</race>
+        <charClass>Cleric</charClass>
+        <background>enter Background</background>
+        <playerName>enter Playername</playerName>
+        <faction>enter Faction</faction>
+        <alignment>enter Alignment</alignment>
+        <experiencePoints>0</experiencePoints>
+        <equipment>
+            <item>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</item>
+        </equipment>
+        <personalityTraits>
+            <personalityTrait>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</personalityTrait>
+        </personalityTraits>
+        <ideals>
+            <ideal>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</ideal>
+        </ideals>
+        <bonds>
+            <bond>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</bond>
+        </bonds>
+        <flaws>
+            <flaw>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</flaw>
+        </flaws>
+        <featuresTraits>
+            <featureTrait>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</featureTrait>
+        </featuresTraits>
+        <proficiencies>
+            <proficiency>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</proficiency>
+        </proficiencies>
+        <skills>
+            <acrobatics>false</acrobatics>
+            <animalHandling>false</animalHandling>
+            <arcana>false</arcana>
+            <athletics>false</athletics>
+            <deception>false</deception>
+            <history>false</history>
+            <insight>false</insight>
+            <intimidation>false</intimidation>
+            <investigation>false</investigation>
+            <medicine>false</medicine>
+            <nature>true</nature>
+            <perception>false</perception>
+            <performance>false</performance>
+            <persuasion>false</persuasion>
+            <religion>true</religion>
+            <sleightOfHand>false</sleightOfHand>
+            <stealth>false</stealth>
+            <survival>false</survival>
+        </skills>
+    </dndcharacter>
+</character>
