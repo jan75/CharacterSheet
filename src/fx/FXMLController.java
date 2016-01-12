@@ -467,6 +467,7 @@ public class FXMLController implements Initializable{
     			break;
     		}
     	}
+    	CharacterSheetFx.activeCharacter.setLevel(level);
     	txtLevel.setText(Integer.toString(level));
 	}
 
@@ -493,6 +494,14 @@ public class FXMLController implements Initializable{
             stageMoney.setTitle("Add Money");
             stageMoney.initModality(Modality.WINDOW_MODAL);
             stageMoney.initOwner(tblAttacks.getScene().getWindow());
+            stageMoney.setOnCloseRequest((observable)-> {
+                    Money money=CharacterSheetFx.activeCharacter.getMoney();
+                    txtCopper.setText(Integer.toString(money.getCopper()));
+                    txtSilver.setText(Integer.toString(money.Silver()));
+                    txtEterium.setText(Integer.toString(money.getEterium()));
+                    txtGold.setText(Integer.toString(money.getGold()));
+                    txtPlatin.setText(Integer.toString(money.getPlatinium()));
+                });
             stageMoney.show();
         } catch(Exception e) {
             e.printStackTrace();

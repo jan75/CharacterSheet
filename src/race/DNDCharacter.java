@@ -3,6 +3,7 @@ package race;
 import characterClass.CharacterClass;
 import data.Equipment;
 import data.Item;
+import data.Money;
 import data.Skills;
 import data.Spell;
 import javafx.collections.ObservableList;
@@ -40,6 +41,8 @@ public class DNDCharacter {
 	private List<String> featuresTraits;
 	public int armorClass;
 	public int proficencybonus;
+	private Money money;
+
 
 	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;
@@ -297,5 +300,17 @@ public class DNDCharacter {
 
 	public void print() {
 		System.out.println("Character '" + name + "' has been generated.");
+	}
+
+	public void setLevel(int level) {
+		this.level=level;	
+	}
+	
+	public Money getMoney(){
+		return this.money;
+	}
+	
+	public void setMoney(Money money){
+		this.money=money;
 	}
 }
