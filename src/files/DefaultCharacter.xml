@@ -18,25 +18,25 @@
         <alignment>enter Alignment</alignment>
         <experiencePoints>0</experiencePoints>
         <equipment>
-            <item>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</item>
+            <item>Enter text here...</item>
         </equipment>
         <personalityTraits>
-            <personalityTrait>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</personalityTrait>
+            <personalityTrait>Enter text here...</personalityTrait>
         </personalityTraits>
         <ideals>
-            <ideal>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</ideal>
+            <ideal>Enter text here...</ideal>
         </ideals>
         <bonds>
-            <bond>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</bond>
+            <bond>Enter text here...</bond>
         </bonds>
         <flaws>
-            <flaw>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</flaw>
+            <flaw>Enter text here...</flaw>
         </flaws>
         <featuresTraits>
-            <featureTrait>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</featureTrait>
+            <featureTrait>Enter text here...</featureTrait>
         </featuresTraits>
         <proficiencies>
-            <proficiency>Each newline represents an entry. Minimum entry size: 3 character. Update via button below</proficiency>
+            <proficiency>Enter text here...</proficiency>
         </proficiencies>
         <skills>
             <acrobatics>false</acrobatics>
@@ -49,11 +49,11 @@
             <intimidation>false</intimidation>
             <investigation>false</investigation>
             <medicine>false</medicine>
-            <nature>true</nature>
+            <nature>false</nature>
             <perception>false</perception>
             <performance>false</performance>
             <persuasion>false</persuasion>
-            <religion>true</religion>
+            <religion>false</religion>
             <sleightOfHand>false</sleightOfHand>
             <stealth>false</stealth>
             <survival>false</survival>
