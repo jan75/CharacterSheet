@@ -6,7 +6,7 @@
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="900.0" maxWidth="1280.0" minHeight="900.0" minWidth="1280.0" prefHeight="900.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.FXMLController">
+<AnchorPane id="AnchorPane" maxHeight="900.0" maxWidth="1270.0" minHeight="890.0" minWidth="1270.0" prefHeight="890.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.FXMLController">
 	<children>
 		<MenuButton layoutX="10" layoutY="10" text="File">
 			<items>
@@ -26,12 +26,12 @@
 		<TextArea fx:id="txtBoxIdeals" layoutX="673.0" layoutY="321.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxBonds" layoutX="673.0" layoutY="408.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxFlaws" layoutX="673.0" layoutY="488.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
-		<Label fx:id="lblDexMod" layoutX="52.0" layoutY="323.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblConMod" layoutX="52.0" layoutY="441.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblIntMod" layoutX="52.0" layoutY="562.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblWisMod" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblStrMod" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblChaMod" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblDexMod" layoutX="52.0" layoutY="323.0" prefHeight="41.0" minWidth="75.0" text="0" />
+		<Label fx:id="lblConMod" layoutX="52.0" layoutY="441.0" prefHeight="41.0" minWidth="75.0" text="0" />
+		<Label fx:id="lblIntMod" layoutX="52.0" layoutY="562.0" prefHeight="41.0" minWidth="75.0" text="0" />
+		<Label fx:id="lblWisMod" layoutX="52.0" layoutY="677.0" prefHeight="41.0" minWidth="75.0" text="0" />
+		<Label fx:id="lblStrMod" layoutX="52.0" layoutY="208.0" prefHeight="41.0" minWidth="75.0" text="0" />
+		<Label fx:id="lblChaMod" layoutX="52.0" layoutY="792.0" prefHeight="41.0" minWidth="75.0" text="0" />
 		<Label fx:id="lblPassivePerception" layoutX="658.0" layoutY="615.0" text="Label" />
 		<TextField fx:id="txtName" layoutX="264.0" layoutY="107.0" prefHeight="26.0" prefWidth="180.99990000000253" text="NAME" />
 		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
@@ -40,12 +40,12 @@
 		<Label fx:id="lblProficencyMod" layoutX="185.0" layoutY="262.0" prefWidth="35.0" text="PROFICIENCYMOD" />
 		<TextField fx:id="lblTotalHitDie" layoutX="403.0" layoutY="474.0" prefWidth="74.99990000000253" text="TOTALHITDIE" />
 
-		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="0" />
-		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="0" />
-		<TextField fx:id="txtInt" layoutX="76.0" layoutY="611.0" text="0" />
-		<TextField fx:id="txtWis" layoutX="76.0" layoutY="729.0" text="0" />
-		<TextField fx:id="txtCha" layoutX="76.0" layoutY="846.0" text="0" />
-		<TextField fx:id="txtStr" layoutX="76.0" layoutY="262.0" text="0" />
+		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="0" prefWidth="25" />
+		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="0" prefWidth="25" />
+		<TextField fx:id="txtInt" layoutX="76.0" layoutY="611.0" text="0" prefWidth="25" />
+		<TextField fx:id="txtWis" layoutX="76.0" layoutY="729.0" text="0" prefWidth="25" />
+		<TextField fx:id="txtCha" layoutX="76.0" layoutY="846.0" text="0" prefWidth="25" />
+		<TextField fx:id="txtStr" layoutX="76.0" layoutY="262.0" text="0" prefWidth="25" />
 
 		<CheckBox fx:id="chkStr" layoutX="186.0" layoutY="313.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkDex" layoutX="186.0" layoutY="333.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
@@ -62,8 +62,8 @@
 		<CheckBox fx:id="chkAthletics" layoutX="186.0" layoutY="548.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkDeception" layoutX="186.0" layoutY="568.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkHistory" layoutX="186.0" layoutY="588.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
-		<CheckBox fx:id="chkInsight" layoutX="186.0" layoutY="628.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
-		<CheckBox fx:id="chkIntimidation" layoutX="186.0" layoutY="608.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
+		<CheckBox fx:id="chkInsight" layoutX="186.0" layoutY="608.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
+		<CheckBox fx:id="chkIntimidation" layoutX="186.0" layoutY="628.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkInvestigation" layoutX="186.0" layoutY="648.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkMedicine" layoutX="186.0" layoutY="670.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
 		<CheckBox fx:id="chkNature" layoutX="186.0" layoutY="690.0" minWidth="-1.0" mnemonicParsing="false" prefWidth="98.0" text="+X" />
@@ -119,14 +119,14 @@
 		<TextField fx:id="txtTempHitpoints" layoutX="384.0" layoutY="395.0" prefHeight="41.0" prefWidth="224.0" text="TEMPHITPOINTS" />
 		<TextField fx:id="txtHitDie" layoutX="380.0" layoutY="499.0" prefHeight="25.0" prefWidth="98.0" text="HITDIE" />
 		<Button fx:id="btnAddMoney" layoutX="961.0" layoutY="830.0" mnemonicParsing="false" text="Money" onAction="#addMoney" />
-		<TextField fx:id="txtLevel" layoutX="585.0" layoutY="59.0" prefHeight="21.0" prefWidth="60.0" text="0" />
+		<TextField fx:id="txtLevel" layoutX="585.0" layoutY="59.0" prefHeight="21.0" prefWidth="15.0" text="0" />
 		<ComboBox fx:id="cbClass" layoutX="480.0" layoutY="55.0" prefHeight="21.0" prefWidth="100.0" promptText="Class" />
-		<TextField fx:id="txtBackground" layoutX="617.0" layoutY="59.0" prefHeight="21.0" prefWidth="56.0" text="BACKGROUND" />
-		<TextField fx:id="txtPlayerName" layoutX="789.0" layoutY="59.0" prefHeight="21.0" prefWidth="56.0" text="PLAYERNAME" />
-		<TextField fx:id="txtFaction" layoutX="933.0" layoutY="59.0" prefHeight="21.0" prefWidth="56.0" text="FACTION" />
+		<TextField fx:id="txtBackground" layoutX="617.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="BACKGROUND" />
+		<TextField fx:id="txtPlayerName" layoutX="754.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="PLAYERNAME" />
+		<TextField fx:id="txtFaction" layoutX="915.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="FACTION" />
 		<ComboBox fx:id="cbRace" layoutX="480.0" layoutY="96.0" prefHeight="21.0" prefWidth="120.0" promptText="Race" />
-		<TextField fx:id="txtAlignment" layoutX="617.0" layoutY="97.0" prefHeight="21.0" prefWidth="56.0" text="ALIGNMENT" />
-		<TextField fx:id="txtExperiencePoints" layoutX="789.0" layoutY="99.0" prefHeight="21.0" prefWidth="56.0" text="0" />
+		<TextField fx:id="txtAlignment" layoutX="617.0" layoutY="97.0" prefHeight="21.0" prefWidth="80.0" text="ALIGNMENT" />
+		<TextField fx:id="txtExperiencePoints" layoutX="754.0" layoutY="99.0" prefHeight="21.0" prefWidth="80.0" text="0" />
 
 		<!-- Add / Subtract Buttons -->
 		<Button fx:id="btnSubtractExperience" layoutX="740.0" layoutY="95.0" mnemonicParsing="false" text="-" onAction="#subtractExp" />

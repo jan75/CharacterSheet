@@ -4,6 +4,11 @@ TextField {
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0;
+	-fx-alignment: center;
+}
+
+Label{
+	-fx-alignment: center;
 }
 
 AnchorPane {
