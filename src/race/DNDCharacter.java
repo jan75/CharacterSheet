@@ -2,8 +2,11 @@ package race;
 
 import characterClass.CharacterClass;
 import data.Equipment;
+import data.Item;
+import data.Money;
 import data.Skills;
 import data.Spell;
+import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,7 @@ public class DNDCharacter {
 	//private Equipment armor; Armor has been removed
 	private List<String> proficiencies;
 	private Skills skills;
-	private List<Equipment> items;
+	private List<String> items;
 	private String background;
 	private String playerName;
 	private String faction;
@@ -38,8 +41,10 @@ public class DNDCharacter {
 	private List<String> featuresTraits;
 	public int armorClass;
 	public int proficencybonus;
+	private Money money;
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, int level, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<Equipment> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
+
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -49,7 +54,6 @@ public class DNDCharacter {
 		this.intelligence = intelligence;
 		this.wisdom = wisdom;
 		this.charisma = charisma;
-		this.level = level;
 		this.weapons = weapons;
 		this.spells = spells;
 		//this.armor = armor; Armor has been removed
@@ -108,6 +112,10 @@ public class DNDCharacter {
 		return experiencePoints;
 	}
 
+	public void setExperiencePoints(int experiencePoints) {
+		this.experiencePoints = experiencePoints;
+	}
+
 	public String getRaceName() {
 		return race.getName();
 	}
@@ -140,6 +148,10 @@ public class DNDCharacter {
 		return Integer.toString(race.speed);
 	}
 
+	public List<Equipment> getWeapons() {
+		return weapons;
+	}
+
 	public ArrayList<String> getLists(String listToReturn) {
 		ArrayList<String> tmpList = new ArrayList();
 		tmpList.clear();
@@ -147,6 +159,8 @@ public class DNDCharacter {
 			case "proficiencies": tmpList.addAll(proficiencies);
 				break;
 			case "personalityTraits": tmpList.addAll(personalityTraits);
+				break;
+			case "equipment": tmpList.addAll(items);
 				break;
 			case "ideals": tmpList.addAll(ideals);
 				break;
@@ -163,6 +177,61 @@ public class DNDCharacter {
 		return tmpList;
 	}
 
+	public void setLists(String listToStore, List list) {
+		//System.out.println("Method setLists called");
+		ArrayList<String> tmpList = new ArrayList();
+		tmpList.clear();
+		//
+		String tmpString;
+		//System.out.println("Before: " + list + " Size: " + list.size());
+		//
+		for(Object currentListItem: list) {
+			if(currentListItem instanceof CharSequence) {
+				//System.out.println("for loop in setLists");
+				tmpString = currentListItem.toString();
+				if(tmpString.length() >= 3) {
+					tmpList.add(tmpString);
+				} else {
+					System.out.println("Input too short");
+				}
+			}
+		}
+		//
+		switch (listToStore) {
+			case "proficiencies":
+				proficiencies.clear();
+				proficiencies.addAll(tmpList);
+				break;
+			case "personalityTraits":
+				personalityTraits.clear();
+				personalityTraits.addAll(tmpList);
+				break;
+			case "equipment": // equipment represents items
+				items.clear();
+				items.addAll(tmpList);
+				break;
+			case "ideals":
+				ideals.clear();
+				ideals.addAll(tmpList);
+				break;
+			case "bonds":
+				bonds.clear();
+				bonds.addAll(tmpList);
+				break;
+			case "flaws":
+				flaws.clear();
+				flaws.addAll(tmpList);
+				break;
+			case "featuresTraits":
+				featuresTraits.clear();
+				featuresTraits.addAll(tmpList);
+				break;
+			default:
+				System.out.println("No lists to return found, wrong parameter?");
+				break;
+		}
+	}
+
 	public ArrayList<String> getSpellKeysList() {
 		ArrayList<String> tmpList = new ArrayList();
 		tmpList.clear();
@@ -172,6 +241,14 @@ public class DNDCharacter {
 			tmpList.add(spell.getKey());
 		}
 		return tmpList;
+	}
+
+	public void addSpell(Spell spell) {
+		this.spells.add(spell);
+	}
+
+	public void setSpells(List<Spell> spells) {
+		this.spells = spells;
 	}
 
 	public ArrayList<String> getItemKeysList(boolean isWeapon) {
@@ -189,15 +266,8 @@ public class DNDCharacter {
 				}
 			}
 		} else if (!isWeapon && items.size() != 0) {
-			ListIterator<Equipment> tmpIterator = items.listIterator();
-			while(tmpIterator.hasNext()) {
-				Equipment equip = tmpIterator.next();
-				tmpList.add(equip.getName());
-				//System.out.println("Method getItemKeysList (items): " + tmpList);
-				if(!tmpIterator.hasNext()) {
-					return tmpList;
-				}
-			}
+			tmpList.addAll(items);
+			return tmpList;
 		}
 		return tmpList;
 	}
@@ -230,5 +300,17 @@ public class DNDCharacter {
 
 	public void print() {
 		System.out.println("Character '" + name + "' has been generated.");
+	}
+
+	public void setLevel(int level) {
+		this.level=level;	
+	}
+	
+	public Money getMoney(){
+		return this.money;
+	}
+	
+	public void setMoney(Money money){
+		this.money=money;
 	}
 }

@@ -163,10 +163,12 @@ public class ParserOperationsXML {
 			//
 			character.setAttribute("name", tmpCharacter.getName());
 			//
-			// ::::: BEGINNING OF LEVEL BLOCK :::::
+			/* ::::: BEGINNING OF LEVEL BLOCK :::::
+			* This is already handled by ExperiencePoints and initialize class
 			Element level = document.createElement("level");
 			level.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
 			character.appendChild(level);
+			*/
 			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
@@ -553,7 +555,7 @@ public class ParserOperationsXML {
 					Element eElement = (Element) nNode;
 					//
 					String tmpName = eElement.getAttribute("name");
-					int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent());
+					//int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent()); this is already handled via "ExperiencePoints" and the initialize class
 					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
 					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
 					//Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent()); Armor has been removed
@@ -623,11 +625,9 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "equipment" (items)
 					NodeList nListItems = eElement.getElementsByTagName("equipment");
 					//
-					ArrayList<Equipment> tmpItems = new ArrayList();
+					ArrayList<String> tmpItems = new ArrayList();
 					tmpItems.clear();
 					//
-					/* ::::: TO BE REFINED :::::
-					* Problem is, that right now, only the name of the equipment is stored in the XML and not it's other variables like weight and price. Will be changed to a simple string
 					if (nListItems.getLength() != 0) {
 						Node nNodeItems = nListItems.item(0);
 						Element eElementItems = (Element) nNodeItems;
@@ -637,14 +637,11 @@ public class ParserOperationsXML {
 						NodeList tmpItemNodeList = eElementItems.getElementsByTagName("item");
 						for (int j = 0; j < tmpItemNodeList.getLength(); j++) {
 							tmpItemString = eElementItems.getElementsByTagName("item").item(j).getTextContent();
-
-							System.out.println("Method loadCharacterFromXML: parsing items: " + tmpItem.getName());
-							tmpItems.add(tmpItem);
+							tmpItems.add(tmpItemString);
 						}
 					} else {
 						System.out.println("no items");
 					}
-					*/
 					//
 					//
 					// The following code block parses the sub elements under "proficiencies"
@@ -804,7 +801,7 @@ public class ParserOperationsXML {
 
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpLevel, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
 					tmpCharacter.print();
 				}
 			}
