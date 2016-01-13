@@ -1,11 +1,7 @@
 package data;
 
-import characterClass.*;
-import race.*;
-import fx.*;
+import race.DNDCharacter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
 

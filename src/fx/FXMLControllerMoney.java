@@ -1,25 +1,11 @@
 package fx;
 
-import data.Equipment;
-import data.ParserOperationsXML;
-import data.Spell;
-import data.Weapon;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
-import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
+import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
-import race.DNDCharacter;
-
-import javax.xml.soap.Node;
-import java.io.File;
-import java.net.URL;
-import java.util.*;
 
 /**
  * Created by Jan on 02.01.2016.

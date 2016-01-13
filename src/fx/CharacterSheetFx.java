@@ -1,12 +1,10 @@
 package fx;
-	
-import data.*;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import race.DNDCharacter;
 
 public class CharacterSheetFx extends Application {
@@ -14,8 +12,6 @@ public class CharacterSheetFx extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		DNDCharacter currentCharacter = characterOperations.initializeProgram();
-		setActiveCharacter(currentCharacter);
 		//System.out.println(this.getClass().getResource("src/fx/javaFxLayout.fxml"));
 		try{
 			FXMLLoader loader= new FXMLLoader();
@@ -30,9 +26,5 @@ public class CharacterSheetFx extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void setActiveCharacter(DNDCharacter dndchar){
-		activeCharacter = dndchar;
 	}
 }

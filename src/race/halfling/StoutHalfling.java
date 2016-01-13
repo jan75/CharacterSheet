@@ -1,7 +1,5 @@
 package race.halfling;
 
-import java.util.List;
-
 import race.Halfling;
 
 public class StoutHalfling extends Halfling{

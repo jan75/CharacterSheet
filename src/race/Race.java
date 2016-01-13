@@ -1,9 +1,13 @@
 package race;
 
-import race.dwarf.*;
-import race.elf.*;
-import race.gnome.*;
-import race.halfling.*;
+import race.dwarf.HillDwarf;
+import race.dwarf.MountainDwarf;
+import race.elf.Drow;
+import race.elf.HighElf;
+import race.elf.WoodElf;
+import race.gnome.ForestGnome;
+import race.gnome.RockGnome;
+import race.halfling.LightfootHalfling;
 
 import java.util.List;
 

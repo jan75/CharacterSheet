@@ -1,7 +1,5 @@
 package data;
 
-import race.*;
-
 import race.DNDCharacter;
 
 public class Skills {

@@ -1,7 +1,5 @@
 package race;
 
-import java.util.List;
-
 public class HalfElf extends Race{
 
 	public HalfElf() {

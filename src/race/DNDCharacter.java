@@ -2,11 +2,9 @@ package race;
 
 import characterClass.CharacterClass;
 import data.Equipment;
-import data.Item;
 import data.Money;
 import data.Skills;
 import data.Spell;
-import javafx.collections.ObservableList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -183,7 +181,7 @@ public class DNDCharacter {
 	}
 
 	public ArrayList<String> getLists(String listToReturn) {
-		ArrayList<String> tmpList = new ArrayList();
+		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
 		switch (listToReturn) {
 			case "proficiencies": tmpList.addAll(proficiencies);
@@ -209,7 +207,7 @@ public class DNDCharacter {
 
 	public void setLists(String listToStore, List list) {
 		//System.out.println("Method setLists called");
-		ArrayList<String> tmpList = new ArrayList();
+		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
 		//
 		String tmpString;
@@ -263,7 +261,7 @@ public class DNDCharacter {
 	}
 
 	public ArrayList<String> getSpellKeysList() {
-		ArrayList<String> tmpList = new ArrayList();
+		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
 		ListIterator<Spell> tmpIterator = spells.listIterator();
 		while(tmpIterator.hasNext()) {
@@ -282,7 +280,7 @@ public class DNDCharacter {
 	}
 
 	public ArrayList<String> getItemKeysList(boolean isWeapon) {
-		ArrayList<String> tmpList = new ArrayList();
+		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
 		//
 		if(isWeapon && weapons.size() != 0) {

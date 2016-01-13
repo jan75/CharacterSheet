@@ -1,5 +1,4 @@
 package race.halfling;
-import java.util.List;
 
 import race.Halfling;
 

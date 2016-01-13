@@ -1,7 +1,5 @@
 package race;
 
-import java.util.List;
-
 public class Human extends Race{
 
 	public Human() {

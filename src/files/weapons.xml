@@ -8,9 +8,7 @@
 			<property>-</property>
 		</properties>
 		<group>Mace</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Greatclub">
 		<price>2 SP</price>
@@ -20,9 +18,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Mace</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Handaxe">
 		<price>5 GP</price>
@@ -32,9 +28,7 @@
 			<property>Range 30/120</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Improvised Object">
 		<price>-</price>
@@ -44,9 +38,7 @@
 			<property>-</property>
 		</properties>
 		<group>-</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Improvised Object">
 		<price>-</price>
@@ -56,9 +48,7 @@
 			<property>-</property>
 		</properties>
 		<group>-</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Mace">
 		<price>5 GP</price>
@@ -68,9 +58,7 @@
 			<property>-</property>
 		</properties>
 		<group>Mace</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Scythe">
 		<price>5 SP</price>
@@ -80,9 +68,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Sickle">
 		<price>2 SP</price>
@@ -92,9 +78,7 @@
 			<property>-</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Spear">
 		<price>1 GP</price>
@@ -104,9 +88,7 @@
 			<property>-</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Trident">
 		<price>5 GP</price>
@@ -116,9 +98,7 @@
 			<property>-</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Unarmed Strike">
 		<price>-</price>
@@ -128,9 +108,7 @@
 			<property>-</property>
 		</properties>
 		<group>Unarmed</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="War Pick">
 		<price>5 GP</price>
@@ -140,9 +118,7 @@
 			<property>-</property>
 		</properties>
 		<group>Pick</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 
 	<name weaponname="Dagger">
@@ -153,10 +129,7 @@
 			<property>Range 20/80</property>
 		</properties>
 		<group>Dagger</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Katana">
 		<price>35 GP</price>
@@ -166,10 +139,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Quarterstaff">
 		<price>2 SP</price>
@@ -179,10 +149,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Staff</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Rapier">
 		<price>25 GP</price>
@@ -192,10 +159,7 @@
 			<property>-</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Scimitar">
 		<price>25 GP</price>
@@ -205,10 +169,7 @@
 			<property>-</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Short Sword">
 		<price>10 GP</price>
@@ -218,10 +179,7 @@
 			<property>-</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Spiked Chain">
 		<price>15 GP</price>
@@ -232,10 +190,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Whip</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Whip">
 		<price>2 GP</price>
@@ -245,10 +200,7 @@
 			<property>Reach</property>
 		</properties>
 		<group>Whip</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Versatile</modifier>
 	</name>
 	<name weaponname="Bastard Sword">
 		<price>35 GP</price>
@@ -258,9 +210,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Battleaxe">
 		<price>10 GP</price>
@@ -270,9 +220,7 @@
 			<property>-</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Flail">
 		<price>10 GP</price>
@@ -282,9 +230,7 @@
 			<property>-</property>
 		</properties>
 		<group>Flail</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Longsword">
 		<price>15 GP</price>
@@ -294,9 +240,7 @@
 			<property>-</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Morningstar">
 		<price>15 GP</price>
@@ -306,9 +250,7 @@
 			<property>-</property>
 		</properties>
 		<group>Mace</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Shield">
 		<price>10 GP</price>
@@ -318,9 +260,7 @@
 			<property>-</property>
 		</properties>
 		<group>Shield</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Throwing-Axe">
 		<price>5 GP</price>
@@ -330,9 +270,7 @@
 			<property>Range 20/80</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Warhammer">
 		<price>15 GP</price>
@@ -342,9 +280,7 @@
 			<property>-</property>
 		</properties>
 		<group>Hammer</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Glaive">
 		<price>10 GP</price>
@@ -355,9 +291,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Greataxe">
 		<price>30 GP</price>
@@ -367,9 +301,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Greatsword">
 		<price>50 GP</price>
@@ -379,9 +311,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Sword</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Lance">
 		<price>10 GP</price>
@@ -393,9 +323,7 @@
 			<property>Special</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Longspear">
 		<price>5 GP</price>
@@ -406,9 +334,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Halberd">
 		<price>10 GP</price>
@@ -419,9 +345,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Axe</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Maul">
 		<price>10 GP</price>
@@ -431,9 +355,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Hammer</group>
-		<modifiers>
-			<modifier>Strength</modifier>
-		</modifiers>
+		<modifier>Strength</modifier>
 	</name>
 	<name weaponname="Crossbow, Hand">
 		<price>10 GP</price>
@@ -444,9 +366,7 @@
 			<property>Special</property>
 		</properties>
 		<group>Crossbow</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Dart">
 		<price>5 CP, each</price>
@@ -456,9 +376,7 @@
 			<property>Range 30/120</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Improvised Object">
 		<price>-</price>
@@ -468,9 +386,7 @@
 			<property>-</property>
 		</properties>
 		<group>-</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Sling">
 		<price>1 SP</price>
@@ -480,9 +396,7 @@
 			<property>Range 30/120</property>
 		</properties>
 		<group>Sling</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Crossbow, Light">
 		<price>25 GP</price>
@@ -494,9 +408,7 @@
 			<property>Special</property>
 		</properties>
 		<group>Crossbow</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Javelin">
 		<price>5 SP</price>
@@ -506,9 +418,7 @@
 			<property>Range 30/120</property>
 		</properties>
 		<group>Spear</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Shortbow">
 		<price>25 GP</price>
@@ -519,9 +429,7 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Bow</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Throwing Hammer">
 		<price>2 GP</price>
@@ -531,9 +439,7 @@
 			<property>Range 20/80</property>
 		</properties>
 		<group>Hammer</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Crossbow, Heavy">
 		<price>50 GP</price>
@@ -545,9 +451,7 @@
 			<property>Special</property>
 		</properties>
 		<group>Crossbow</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 	<name weaponname="Longbow">
 		<price>50 GP</price>
@@ -558,8 +462,6 @@
 			<property>Two-Handed</property>
 		</properties>
 		<group>Bow</group>
-		<modifiers>
-			<modifier>Dexterity</modifier>
-		</modifiers>
+		<modifier>Dexterity</modifier>
 	</name>
 </weapons>

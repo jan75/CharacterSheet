@@ -1,5 +1,4 @@
 package race.gnome;
-import java.util.List;
 
 import race.Gnome;
 

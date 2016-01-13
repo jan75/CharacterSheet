@@ -1,10 +1,15 @@
 package data;
 
-import characterClass.*;
-import race.*;
+import characterClass.CharacterClass;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import race.DNDCharacter;
+import race.Race;
 
-import org.w3c.dom.*;
-import javax.xml.parsers.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
@@ -50,6 +55,7 @@ public class ParserOperationsXML {
 					String tmpDamage = eElement.getElementsByTagName("damage").item(0).getTextContent();
 					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
 					String tmpGroup = eElement.getElementsByTagName("group").item(0).getTextContent();
+					String tmpModifier = eElement.getElementsByTagName("modifier").item(0).getTextContent();
 					//
 					// The following code block parses the sub elements "property" under "properties"
 					NodeList nListProperties = eElement.getElementsByTagName("properties");
@@ -61,18 +67,9 @@ public class ParserOperationsXML {
 						arrayWeaponProperties.add(weaponProperties.item(j).getTextContent());
 					}
 					//
-					// The following code block parses the sub elements "modifier" under "modifiers"
-					NodeList nListModifiers = eElement.getElementsByTagName("modifiers");
-					Node nNodeModifiers = nListModifiers.item(0);
-					Element eElementModifiers = (Element) nNodeModifiers;
-					//
-					NodeList weaponModifiers = eElementModifiers.getElementsByTagName("modifier");
-					for (int k = 0; k < weaponModifiers.getLength(); k++) {
-						arrayWeaponModifiers.add(weaponModifiers.item(k).getTextContent());
-					}
 					//
 					// Creating a Weapon object and adding the weapon to the Map, which will later be returned
-					Weapon tmpWeaponObject = new Weapon(tmpWeapon, tmpPrice, tmpDamage, tmpWeight, arrayWeaponProperties, tmpGroup, arrayWeaponModifiers);
+					Weapon tmpWeaponObject = new Weapon(tmpWeapon, tmpDamage, tmpPrice, tmpWeight, arrayWeaponProperties, tmpGroup, tmpModifier);
 					//tmpWeaponObject.print();
 					weaponMap.put(tmpWeapon, tmpWeaponObject);
 					//
@@ -842,10 +839,6 @@ public class ParserOperationsXML {
 					tmpSkills.setIntelligence(Boolean.parseBoolean(eElementSkills.getElementsByTagName("intelligence").item(0).getTextContent()));
 					tmpSkills.setWisdom(Boolean.parseBoolean(eElementSkills.getElementsByTagName("wisdom").item(0).getTextContent()));
 					tmpSkills.setCharisma(Boolean.parseBoolean(eElementSkills.getElementsByTagName("charisma").item(0).getTextContent()));
-					
-					//
-					// ::::: The following code is to be refined
-					ArrayList<Equipment> tmpEquipment = new ArrayList();
 					
 					//
 					// ::::: The following code block parses the sub elements under "money"

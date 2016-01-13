@@ -1,5 +1,4 @@
 package race.elf;
-import java.util.List;
 
 import race.Elf;
 

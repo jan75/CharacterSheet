@@ -6,19 +6,14 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import race.*;
+import race.DNDCharacter;
 
-import javax.swing.event.DocumentEvent.EventType;
-import javax.swing.text.html.parser.Parser;
-import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URL;
 import java.util.*;
@@ -113,7 +108,10 @@ public class FXMLController implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+        openCharacter("src/files/DefaultCharacter.xml");
+
+        lblSpeed.setText(CharacterSheetFx.activeCharacter.getSpeed());
+
 		strMods=Arrays.asList(lblStrMod,chkStr,chkAthletics);
 	    dexMods=Arrays.asList(lblDexMod,chkDex,lblInitiative,chkAcrobatics,chkSleightOfHand, chkStealth);
 	    conMods=Arrays.asList(lblConMod,chkCon);
@@ -278,9 +276,7 @@ public class FXMLController implements Initializable{
 	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
 	        CharacterSheetFx.activeCharacter.getSkills().setSurvival(newValue);
         });
-        
-        
-	    lblSpeed.setText(CharacterSheetFx.activeCharacter.getSpeed());
+
         //
         txtBoxProficiencies.focusedProperty().addListener(((observable, oldValue, newValue) -> {
             if(!txtBoxProficiencies.isFocused()) {
@@ -391,8 +387,6 @@ public class FXMLController implements Initializable{
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.clear();
-
-        openCharacter("src/files/DefaultCharacter.xml");
     }
 
 	@FXML
@@ -524,30 +518,30 @@ public class FXMLController implements Initializable{
         File selectedFile = fileChooser.showOpenDialog(txtDex.getScene().getWindow());
         if(selectedFile != null) {
             path = selectedFile.getAbsolutePath();
+            //
+            openCharacter(path);
         }
         //
-        openCharacter(path);
     }
 
     @FXML
     private void saveCharacter() {
         System.out.println("MenuButton: Save");
 
-        String path = null;
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Save Character");
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Files", "*.xml"));
-        File selectedFile = fileChooser.showSaveDialog(txtDex.getScene().getWindow());
-        if(selectedFile != null) {
-            path = selectedFile.getAbsolutePath();
+        try {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Save Character");
+            fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Files", "*.xml"));
+            File selectedFile = fileChooser.showSaveDialog(txtDex.getScene().getWindow());
+            if (selectedFile != null) {
+                String path = selectedFile.getAbsolutePath();
+                ParserOperationsXML.saveCharacterToXML(CharacterSheetFx.activeCharacter, path);
+                System.out.println("File saved under " + path);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         //
-        if(path != null) {
-            ParserOperationsXML.saveCharacterToXML(CharacterSheetFx.activeCharacter, path);
-            System.out.println("File saved under " + path);
-        } else {
-            System.out.println("File not saved - path not valid");
-        }
     }
 
     @FXML
@@ -602,17 +596,16 @@ public class FXMLController implements Initializable{
     @FXML
     private void addWeapon() {
         System.out.println("Add weapon");
-        String placeholder = "???";
         //
         Weapon tmpTblWeapon = (Weapon) weaponMap.get(cbAddWeapon.getValue());
         CharacterSheetFx.activeCharacter.getWeapons().add(weaponMap.get(cbAddWeapon.getValue()));
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
-        data.add(new TableWeapon(tmpTblWeapon.getName(), placeholder, tmpTblWeapon.getWeaponDamage()));
+        data.add(new TableWeapon(tmpTblWeapon.getName(), tmpTblWeapon.getWeaponModifier(), tmpTblWeapon.getWeaponDamage()));
 
-        tblWeaponNameId.setText("");
-        tblWeaponAtkBonusId.setText("");
-        tblWeaponDmgTypeId.setText("");
+        //tblWeaponNameId.setText("");
+        //tblWeaponAtkBonusId.setText("");
+        //tblWeaponDmgTypeId.setText("");
     }
 
     @FXML
@@ -649,7 +642,7 @@ public class FXMLController implements Initializable{
         if(result.get() == ButtonType.OK) {
             txtBoxSpells.setText("");
             //
-            List<Spell> tmpSpellsNull = new ArrayList();
+            List<Spell> tmpSpellsNull = new ArrayList<Spell>();
             tmpSpellsNull.clear();
             CharacterSheetFx.activeCharacter.setSpells(tmpSpellsNull);
         }
