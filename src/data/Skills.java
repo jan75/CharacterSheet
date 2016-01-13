@@ -24,6 +24,13 @@ public class Skills {
 	boolean sleightOfHand;
 	boolean stealth;
 	boolean survival;
+	
+	boolean strength;
+	boolean dexterity;
+	boolean constitution;
+	boolean intelligence;
+	boolean wisdom;
+	boolean charisma;
 
 	public Skills() {
 
@@ -134,7 +141,7 @@ public class Skills {
 	}
 
 	public int getInvestigation(DNDCharacter DNDCharacter) {
-		return intimidation? DNDCharacter.getStatBonus(DNDCharacter.getIntelligence())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getIntelligence());
+		return investigation? DNDCharacter.getStatBonus(DNDCharacter.getIntelligence())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getIntelligence());
 	}
 
 	public boolean isMedicine() {
@@ -146,7 +153,7 @@ public class Skills {
 	}
 
 	public int getMedicine(DNDCharacter DNDCharacter) {
-		return intimidation? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
+		return medicine? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
 	}
 
 	public boolean isNature() {
@@ -170,7 +177,7 @@ public class Skills {
 	}
 
 	public int getPerception(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
+		return perception? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
 	}
 
 	public boolean isPerformance() {
@@ -182,7 +189,7 @@ public class Skills {
 	}
 
 	public int getPerformance(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getCharisma())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getCharisma());
+		return performance? DNDCharacter.getStatBonus(DNDCharacter.getCharisma())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getCharisma());
 	}
 
 	public boolean isPersuasion() {
@@ -194,7 +201,7 @@ public class Skills {
 	}
 
 	public int getPersuasion(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getCharisma())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getCharisma());
+		return persuasion? DNDCharacter.getStatBonus(DNDCharacter.getCharisma())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getCharisma());
 	}
 
 	public boolean isReligion() {
@@ -206,7 +213,7 @@ public class Skills {
 	}
 
 	public int getReligion(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getIntelligence())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getIntelligence());
+		return religion? DNDCharacter.getStatBonus(DNDCharacter.getIntelligence())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getIntelligence());
 	}
 
 	public boolean isSleightOfHand() {
@@ -218,7 +225,7 @@ public class Skills {
 	}
 
 	public int getSleightOfHand(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getDexterity())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getDexterity());
+		return sleightOfHand? DNDCharacter.getStatBonus(DNDCharacter.getDexterity())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getDexterity());
 	}
 
 	public boolean isStealth() {
@@ -230,7 +237,7 @@ public class Skills {
 	}
 
 	public int getStealth(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getDexterity())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getDexterity());
+		return stealth? DNDCharacter.getStatBonus(DNDCharacter.getDexterity())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getDexterity());
 	}
 
 	public boolean isSurvival() {
@@ -242,6 +249,78 @@ public class Skills {
 	}
 
 	public int getSurvival(DNDCharacter DNDCharacter) {
-		return nature? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
+		return survival? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
+	}
+
+	public boolean isStrength() {
+		return strength;
+	}
+
+	public void setStrength(boolean strength) {
+		this.strength = strength;
+	}
+
+	public int getStrength(DNDCharacter DNDCharacter) {
+		return strength? DNDCharacter.getStatBonus(DNDCharacter.getStrength())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getStrength());
+	}
+	
+	public boolean isDexterity() {
+		return dexterity;
+	}
+
+	public void setDexterity(boolean dexterity) {
+		this.dexterity = dexterity;
+	}
+
+	public int getDexterity(DNDCharacter DNDCharacter) {
+		return dexterity? DNDCharacter.getStatBonus(DNDCharacter.getDexterity())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getDexterity());
+	}
+	
+	public boolean isConstitution() {
+		return constitution;
+	}
+
+	public void setConstitution(boolean constitution) {
+		this.constitution = constitution;
+	}
+
+	public int getConstitution(DNDCharacter DNDCharacter) {
+		return constitution? DNDCharacter.getStatBonus(DNDCharacter.getConstitution())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getConstitution());
+	}
+	
+	public boolean isIntelligence() {
+		return intelligence;
+	}
+
+	public void setIntelligence(boolean intelligence) {
+		this.intelligence = intelligence;
+	}
+
+	public int getIntelligence(DNDCharacter DNDCharacter) {
+		return intelligence? DNDCharacter.getStatBonus(DNDCharacter.getIntelligence())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getIntelligence());
+	}
+	
+	public boolean isWisdom() {
+		return wisdom;
+	}
+
+	public void setWisdom(boolean wisdom) {
+		this.wisdom = wisdom;
+	}
+
+	public int getWisdom(DNDCharacter DNDCharacter) {
+		return wisdom? DNDCharacter.getStatBonus(DNDCharacter.getWisdom())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getWisdom());
+	}
+	
+	public boolean isCharisma() {
+		return charisma;
+	}
+
+	public void setCharisma(boolean constitution) {
+		this.charisma = constitution;
+	}
+
+	public int getCharisma(DNDCharacter DNDCharacter) {
+		return charisma? DNDCharacter.getStatBonus(DNDCharacter.getCharisma())+ DNDCharacter.proficencybonus: DNDCharacter.getStatBonus(DNDCharacter.getCharisma());
 	}
 }

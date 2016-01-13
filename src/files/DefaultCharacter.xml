@@ -57,6 +57,12 @@
             <sleightOfHand>false</sleightOfHand>
             <stealth>false</stealth>
             <survival>false</survival>
+            <strength>false</strength>
+            <dexterity>false</dexterity>
+            <constitution>false</constitution>
+            <intelligence>false</intelligence>
+            <wisdom>false</wisdom>
+            <charisma>false</charisma>
         </skills>
         <money>
         	<copper>0</copper>

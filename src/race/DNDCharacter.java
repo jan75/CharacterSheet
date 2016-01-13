@@ -314,4 +314,29 @@ public class DNDCharacter {
 	public void setMoney(Money money){
 		this.money=money;
 	}
+
+	public void setStrength(int str) {
+		// TODO Auto-generated method stub
+		this.strength=str;
+	}
+	public void setDexterity(int dex) {
+		// TODO Auto-generated method stub
+		this.dexterity=dex;
+	}
+	public void setConstitution(int con) {
+		// TODO Auto-generated method stub
+		this.constitution=con;
+	}
+	public void setIntelligence(int intel) {
+		// TODO Auto-generated method stub
+		this.intelligence=intel;
+	}
+	public void setWisdom(int wis) {
+		// TODO Auto-generated method stub
+		this.wisdom=wis;
+	}
+	public void setCharisma(int cha) {
+		// TODO Auto-generated method stub
+		this.charisma=cha;
+	}
 }

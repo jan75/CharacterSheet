@@ -378,8 +378,6 @@ public class ParserOperationsXML {
 			}
 			//
 			// ::::: BEGINNING OF SKILLS BLOCK :::::
-			Skills tmpSkills = tmpCharacter.getSkills();
-			String[] allSkills = {"acrobatics", "animalHandling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medecine", "nature", "perception", "performance", "persuasion", "religion", "sleightOfHand", "stealth", "survival"};
 			//
 			Element skills = document.createElement("skills");
 			//
@@ -401,6 +399,13 @@ public class ParserOperationsXML {
 			Element sleightOfHand = document.createElement("sleightOfHand");
 			Element stealth = document.createElement("stealth");
 			Element survival = document.createElement("survival");
+			Element strengthProf = document.createElement("strength");
+			Element dexterityProf = document.createElement("dexterity");
+			Element constitutionProf = document.createElement("constitution");
+			Element intelligenceProf = document.createElement("survival");
+			Element wisdomProf = document.createElement("survival");
+			Element charismaProf = document.createElement("survival");
+			
 			skills.appendChild(acrobatics);
 			skills.appendChild(animalHandling);
 			skills.appendChild(arcana);
@@ -419,6 +424,12 @@ public class ParserOperationsXML {
 			skills.appendChild(sleightOfHand);
 			skills.appendChild(stealth);
 			skills.appendChild(survival);
+			skills.appendChild(strengthProf);
+			skills.appendChild(dexterityProf);
+			skills.appendChild(constitutionProf);
+			skills.appendChild(intelligenceProf);
+			skills.appendChild(wisdomProf);
+			skills.appendChild(charismaProf);
 			if(tmpCharacter.getSkills().isAcrobatics()) {
 				acrobatics.appendChild(document.createTextNode("true"));
 			} else {
@@ -508,6 +519,36 @@ public class ParserOperationsXML {
 				survival.appendChild(document.createTextNode("true"));
 			} else {
 				survival.appendChild(document.createTextNode("false"));
+			}
+			if(tmpCharacter.getSkills().isStrength()) {
+				strengthProf.appendChild(document.createTextNode("true"));
+			} else {
+				strengthProf.appendChild(document.createTextNode("false"));
+			}			
+			if(tmpCharacter.getSkills().isDexterity()) {
+				dexterityProf.appendChild(document.createTextNode("true"));
+			} else {
+				dexterityProf.appendChild(document.createTextNode("false"));
+			}			
+			if(tmpCharacter.getSkills().isConstitution()) {
+				constitutionProf.appendChild(document.createTextNode("true"));
+			} else {
+				constitutionProf.appendChild(document.createTextNode("false"));
+			}			
+			if(tmpCharacter.getSkills().isIntelligence()) {
+				intelligenceProf.appendChild(document.createTextNode("true"));
+			} else {
+				intelligenceProf.appendChild(document.createTextNode("false"));
+			}			
+			if(tmpCharacter.getSkills().isWisdom()) {
+				wisdomProf.appendChild(document.createTextNode("true"));
+			} else {
+				wisdomProf.appendChild(document.createTextNode("false"));
+			}			
+			if(tmpCharacter.getSkills().isCharisma()) {
+				charismaProf.appendChild(document.createTextNode("true"));
+			} else {
+				charismaProf.appendChild(document.createTextNode("false"));
 			}
 			character.appendChild(skills);
 			//
@@ -795,6 +836,13 @@ public class ParserOperationsXML {
 					tmpSkills.setSleightOfHand(Boolean.parseBoolean(eElementSkills.getElementsByTagName("sleightOfHand").item(0).getTextContent()));
 					tmpSkills.setStealth(Boolean.parseBoolean(eElementSkills.getElementsByTagName("stealth").item(0).getTextContent()));
 					tmpSkills.setSurvival(Boolean.parseBoolean(eElementSkills.getElementsByTagName("survival").item(0).getTextContent()));
+					tmpSkills.setStrength(Boolean.parseBoolean(eElementSkills.getElementsByTagName("strength").item(0).getTextContent()));
+					tmpSkills.setDexterity(Boolean.parseBoolean(eElementSkills.getElementsByTagName("dexterity").item(0).getTextContent()));
+					tmpSkills.setConstitution(Boolean.parseBoolean(eElementSkills.getElementsByTagName("constitution").item(0).getTextContent()));
+					tmpSkills.setIntelligence(Boolean.parseBoolean(eElementSkills.getElementsByTagName("intelligence").item(0).getTextContent()));
+					tmpSkills.setWisdom(Boolean.parseBoolean(eElementSkills.getElementsByTagName("wisdom").item(0).getTextContent()));
+					tmpSkills.setCharisma(Boolean.parseBoolean(eElementSkills.getElementsByTagName("charisma").item(0).getTextContent()));
+					
 					//
 					// ::::: The following code is to be refined
 					ArrayList<Equipment> tmpEquipment = new ArrayList();
