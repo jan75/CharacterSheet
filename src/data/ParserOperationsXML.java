@@ -399,9 +399,9 @@ public class ParserOperationsXML {
 			Element strengthProf = document.createElement("strength");
 			Element dexterityProf = document.createElement("dexterity");
 			Element constitutionProf = document.createElement("constitution");
-			Element intelligenceProf = document.createElement("survival");
-			Element wisdomProf = document.createElement("survival");
-			Element charismaProf = document.createElement("survival");
+			Element intelligenceProf = document.createElement("intelligence");
+			Element wisdomProf = document.createElement("wisdom");
+			Element charismaProf = document.createElement("charisma");
 			
 			skills.appendChild(acrobatics);
 			skills.appendChild(animalHandling);

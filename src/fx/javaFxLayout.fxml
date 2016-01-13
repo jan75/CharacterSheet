@@ -30,7 +30,7 @@
 		<Label fx:id="lblWisMod" id="statsMods" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="0" />
 		<Label fx:id="lblStrMod" id="statsMods" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="0" />
 		<Label fx:id="lblChaMod" id="statsMods" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblPassivePerception" layoutX="658.0" layoutY="615.0" text="Label" />
+		<Label fx:id="lblPassivePerception" layoutX="662.0" layoutY="610.0" text="Label" />
 		<TextField fx:id="txtName" layoutX="264.0" layoutY="107.0" prefHeight="26.0" prefWidth="180.99990000000253" text="NAME" />
 		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
 		<Label fx:id="lblSpeed" layoutX="557.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="SPEED" />

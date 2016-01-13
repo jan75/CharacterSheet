@@ -118,7 +118,15 @@ public class FXMLController implements Initializable{
 	    intMods=Arrays.asList(lblIntMod,chkInt,chkArcana, chkHistory, chkInvestigation, chkNature, chkReligion);
 	    wisMods=Arrays.asList(lblWisMod,chkWis,chkAnimalHandling, chkInsight, chkMedicine, chkPerception, chkSurvival);
 	    chaMods=Arrays.asList(lblChaMod,chkCha,chkDeception,chkIntimidation, chkPerformance, chkPersuasion);
-	    txtStr.textProperty().addListener((observable, oldValue, newValue) -> {
+	    updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())));
+	    updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())));
+	    updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())));
+	    updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())));
+	    updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())));
+	    updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())));
+	    updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom()));
+	    
+        txtStr.textProperty().addListener((observable, oldValue, newValue) -> {
 	    	int z = Integer.parseInt(newValue);
 	        updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
 	        CharacterSheetFx.activeCharacter.setStrength(z);
@@ -182,7 +190,7 @@ public class FXMLController implements Initializable{
 	    });
         chkCon.selectedProperty().addListener((observable,oldValue,newValue)->{
         	int z = CharacterSheetFx.activeCharacter.getConstitution();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+	        updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
 	        CharacterSheetFx.activeCharacter.getSkills().setConstitution(newValue);
 	    });
         
