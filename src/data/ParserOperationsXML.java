@@ -1,6 +1,8 @@
 package data;
 
 import characterClass.CharacterClass;
+import fx.CharacterSheetFx;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -384,6 +386,11 @@ public class ParserOperationsXML {
 			Element eterium = document.createElement("eterium");
 			Element gold = document.createElement("gold");
 			Element platin = document.createElement("platin");
+			copper.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMoney().getCopper())));
+			silver.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMoney().getSilver())));
+			eterium.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMoney().getEterium())));
+			gold.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMoney().getGold())));
+			platin.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMoney().getPlatin())));
 			money.appendChild(copper);
 			money.appendChild(silver);
 			money.appendChild(eterium);
