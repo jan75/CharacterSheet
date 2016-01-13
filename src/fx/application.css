@@ -14,3 +14,8 @@ Label{
 AnchorPane {
     -fx-background-image: url("javaFx_Background.jpg");
 }
+
+#statsMods {
+    -fx-font-size: 22pt;
+    -fx-font-weight: bold;
+}

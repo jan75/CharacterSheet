@@ -17,20 +17,20 @@
 				<MenuItem onAction="#exitApplication" text="Exit" />
 			</items>
 		</MenuButton>
-		<TextArea fx:id="txtBoxFeatures" layoutX="956.0" layoutY="191.0" prefHeight="351.0" prefWidth="252.0" wrapText="true" />
-		<TextArea fx:id="txtBoxEquipment" layoutX="1027.0" layoutY="615.0" prefHeight="209.0" prefWidth="181.0" wrapText="true" />
-		<TextArea fx:id="txtBoxProficiencies" layoutX="661.0" layoutY="662.0" prefHeight="159.0" prefWidth="252.0" wrapText="true" />
+		<TextArea fx:id="txtBoxFeatures" layoutX="956.0" layoutY="191.0" prefHeight="361.0" prefWidth="252.0" wrapText="true" />
+		<TextArea fx:id="txtBoxEquipment" layoutX="1027.0" layoutY="615.0" prefHeight="239.0" prefWidth="181.0" wrapText="true" />
+		<TextArea fx:id="txtBoxProficiencies" layoutX="661.0" layoutY="662.0" prefHeight="189.0" prefWidth="252.0" wrapText="true" />
+		<TextArea fx:id="txtBoxTraits" layoutX="673.0" layoutY="222.0" prefHeight="66" prefWidth="231.0" wrapText="true" />
+		<TextArea fx:id="txtBoxIdeals" layoutX="673.0" layoutY="321.0" prefHeight="49.0" prefWidth="231.0" wrapText="true" />
+		<TextArea fx:id="txtBoxBonds" layoutX="673.0" layoutY="408.0" prefHeight="52.0" prefWidth="231.0" wrapText="true" />
+		<TextArea fx:id="txtBoxFlaws" layoutX="673.0" layoutY="488.0" prefHeight="57.0" prefWidth="231.0" wrapText="true" />
 		<TextArea fx:id="txtBoxSpells" layoutX="368.0" layoutY="720.0" prefWidth="254.0" prefHeight="100.0" wrapText="true" editable="false" />
-		<TextArea fx:id="txtBoxTraits" layoutX="673.0" layoutY="222.0" prefHeight="56" prefWidth="231.0" wrapText="true" />
-		<TextArea fx:id="txtBoxIdeals" layoutX="673.0" layoutY="321.0" prefHeight="42.0" prefWidth="231.0" wrapText="true" />
-		<TextArea fx:id="txtBoxBonds" layoutX="673.0" layoutY="408.0" prefHeight="42.0" prefWidth="231.0" wrapText="true" />
-		<TextArea fx:id="txtBoxFlaws" layoutX="673.0" layoutY="488.0" prefHeight="47.0" prefWidth="231.0" wrapText="true" />
-		<Label fx:id="lblDexMod" layoutX="52.0" layoutY="323.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblConMod" layoutX="52.0" layoutY="441.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblIntMod" layoutX="52.0" layoutY="562.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblWisMod" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblStrMod" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="0" />
-		<Label fx:id="lblChaMod" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblDexMod" id="statsMods" layoutX="52.0" layoutY="323.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblConMod" id="statsMods" layoutX="52.0" layoutY="441.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblIntMod" id="statsMods" layoutX="52.0" layoutY="562.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblWisMod" id="statsMods" layoutX="52.0" layoutY="677.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblStrMod" id="statsMods" layoutX="52.0" layoutY="208.0" prefHeight="41.0" prefWidth="75.0" text="0" />
+		<Label fx:id="lblChaMod" id="statsMods" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="0" />
 		<Label fx:id="lblPassivePerception" layoutX="658.0" layoutY="615.0" text="Label" />
 		<TextField fx:id="txtName" layoutX="264.0" layoutY="107.0" prefHeight="26.0" prefWidth="180.99990000000253" text="NAME" />
 		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
@@ -111,14 +111,6 @@
 		<Button fx:id="btnDeleteSpells" layoutX="510" layoutY="825" text="Remove Spells" onAction="#deleteSpells"></Button>
 		<ComboBox fx:id="cbAddSpell" layoutX="370" layoutY="825" prefHeight="21" maxWidth="130" promptText="Add Spell" onAction="#addSpell"></ComboBox>
 
-		<Button fx:id="btnUpdateProficiencies" layoutX="665" layoutY="825" text="Update Proficiencies" onAction="#updateProficiencies"></Button>
-		<Button fx:id="btnUpdateEquipment" layoutX="1030" layoutY="830" text="Update Equipment" onAction="#updateEquipment"></Button>
-		<Button fx:id="btnUpdateFeaturesTraits" layoutX="959" layoutY="550" text="Update Features / Traits" onAction="#updateFeaturesTraits"></Button>
-		<Button fx:id="btnUpdatePersonalityTraits" layoutX="710" layoutY="285" prefHeight="20" text="Update Personality Traits" onAction="#updatePersonalityTraits"></Button>
-		<Button fx:id="btnUpdateIdeals" layoutX="740" layoutY="370" prefHeight="20" text="Update Ideals" onAction="#updateIdeals"></Button>
-		<Button fx:id="btnUpdateBonds" layoutX="740" layoutY="455" prefHeight="20" text="Update Bonds" onAction="#updateBonds"></Button>
-		<Button fx:id="btnUpdateFlaws" layoutX="740" layoutY="540" prefHeight="20" text="Update Flaws" onAction="#updateFlaws"></Button>
-
 
 		<TextField fx:id="txtHitPointsMax" layoutX="480.0" layoutY="289.0" prefWidth="127.0" text="Label" />
 		<TextField fx:id="txtCopper" layoutX="966.0" layoutY="623.0" prefHeight="25.0" prefWidth="45.999900000002526" text="COPPER" />
@@ -131,11 +123,11 @@
 		<TextField fx:id="txtHitDie" layoutX="380.0" layoutY="499.0" prefHeight="25.0" prefWidth="98.0" text="HITDIE" />
 		<Button fx:id="btnAddMoney" layoutX="961.0" layoutY="830.0" mnemonicParsing="false" text="Money" onAction="#addMoney" />
 		<TextField fx:id="txtLevel" layoutX="585.0" layoutY="59.0" prefHeight="21.0" prefWidth="15.0" text="0" />
-		<ComboBox fx:id="cbClass" layoutX="480.0" layoutY="55.0" prefHeight="21.0" prefWidth="100.0" promptText="Class" />
+		<ComboBox fx:id="cbClass" layoutX="480.0" layoutY="55.0" prefHeight="21.0" prefWidth="100.0" promptText="Class" onAction="#changeClass" />
 		<TextField fx:id="txtBackground" layoutX="617.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="BACKGROUND" />
 		<TextField fx:id="txtPlayerName" layoutX="754.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="PLAYERNAME" />
 		<TextField fx:id="txtFaction" layoutX="915.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="FACTION" />
-		<ComboBox fx:id="cbRace" layoutX="480.0" layoutY="96.0" prefHeight="21.0" prefWidth="120.0" promptText="Race" />
+		<ComboBox fx:id="cbRace" layoutX="480.0" layoutY="96.0" prefHeight="21.0" prefWidth="120.0" promptText="Race" onAction="#changeRace" />
 		<TextField fx:id="txtAlignment" layoutX="617.0" layoutY="97.0" prefHeight="21.0" prefWidth="80.0" text="ALIGNMENT" />
 		<TextField fx:id="txtExperiencePoints" layoutX="754.0" layoutY="99.0" prefHeight="21.0" prefWidth="80.0" text="0" />
 

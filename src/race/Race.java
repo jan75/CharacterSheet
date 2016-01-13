@@ -17,27 +17,27 @@ public abstract class Race {
 	public static Race createRace(String name) {
 		Race tmpRace;
 		switch (name) {
-			case "HillDwarf": tmpRace = new HillDwarf();
+			case "Hill Dwarf": tmpRace = new HillDwarf();
 				break;
-			case "MountainDwarf": tmpRace = new MountainDwarf();
+			case "Mountain Dwarf": tmpRace = new MountainDwarf();
 				break;
 			case "Drow": tmpRace = new Drow();
 				break;
-			case "HighElf": tmpRace = new HighElf();
+			case "High Elf": tmpRace = new HighElf();
 				break;
-			case "WoodElf": tmpRace = new WoodElf();
+			case "Wood Elf": tmpRace = new WoodElf();
 				break;
-			case "ForestGnome": tmpRace = new ForestGnome();
+			case "Forest Gnome": tmpRace = new ForestGnome();
 				break;
-			case "RockGnome": tmpRace = new RockGnome();
+			case "Rock Gnome": tmpRace = new RockGnome();
 				break;
-			case "LightfootHalfling": tmpRace = new LightfootHalfling();
+			case "Lightfoot Halfling": tmpRace = new LightfootHalfling();
 				break;
 			case "Dragonborn": tmpRace = new Dragonborn();
 				break;
-			case "HalfElf": tmpRace = new HalfElf();
+			case "Half Elf": tmpRace = new HalfElf();
 				break;
-			case "HalfOrc": tmpRace = new HalfOrc();
+			case "Half Orc": tmpRace = new HalfOrc();
 				break;
 			case "Human": tmpRace = new Human();
 				break;

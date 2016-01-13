@@ -18,6 +18,7 @@ import race.*;
 
 import javax.swing.event.DocumentEvent.EventType;
 import javax.swing.text.html.parser.Parser;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URL;
 import java.util.*;
@@ -281,6 +282,68 @@ public class FXMLController implements Initializable{
         
 	    lblSpeed.setText(CharacterSheetFx.activeCharacter.getSpeed());
         //
+        txtBoxProficiencies.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxProficiencies.isFocused()) {
+                updateProficiencies();
+            }
+        }));
+
+        txtBoxTraits.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxTraits.isFocused()) {
+                updatePersonalityTraits();
+            }
+        }));
+
+        txtBoxIdeals.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxIdeals.isFocused()) {
+                updateIdeals();
+            }
+        }));
+
+        txtBoxBonds.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxBonds.isFocused()) {
+                updateBonds();
+            }
+        }));
+
+        txtBoxFlaws.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxFlaws.isFocused()) {
+                updateFlaws();
+            }
+        }));
+
+        txtBoxFeatures.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxFeatures.isFocused()) {
+                updateFeaturesTraits();
+            }
+        }));
+
+        txtBoxEquipment.focusedProperty().addListener(((observable, oldValue, newValue) -> {
+            if(!txtBoxEquipment.isFocused()) {
+                updateEquipment();
+            }
+        }));
+
+        txtName.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setName(newValue);
+        }));
+
+        txtBackground.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setBackground(newValue);
+        }));
+
+        txtAlignment.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setAlignment(newValue);
+        }));
+
+        txtPlayerName.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setPlayerName(newValue);
+        }));
+
+        txtFaction.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setFaction(newValue);
+        }));
+
         // ::::: Initiating ComboBoxes :::::
         ObservableList<String> races =
                 FXCollections.observableArrayList(
@@ -356,6 +419,7 @@ public class FXMLController implements Initializable{
         txtBackground.setText(tmpCharacter.getBackground());
         txtPlayerName.setText(tmpCharacter.getPlayerName());
         txtFaction.setText(tmpCharacter.getFaction());
+        txtName.setText(tmpCharacter.getName());
         cbRace.setValue(tmpCharacter.getRaceName());
         txtAlignment.setText(tmpCharacter.getAlignment());
         txtExperiencePoints.setText(Integer.toString(tmpCharacter.getExperiencePoints()));
@@ -518,7 +582,21 @@ public class FXMLController implements Initializable{
 
     @FXML
     private void updateFeaturesTraits() {
-        CharacterSheetFx.activeCharacter.setLists("featuresTraits", txtBoxTraits.getParagraphs());
+        CharacterSheetFx.activeCharacter.setLists("featuresTraits", txtBoxFeatures.getParagraphs());
+    }
+
+    @FXML
+    private void changeClass() {
+        System.out.println("Change class");
+        //
+        CharacterSheetFx.activeCharacter.setClass(cbClass.getValue());
+    }
+
+    @FXML
+    private void changeRace() {
+        System.out.println("Change race");
+        //
+        CharacterSheetFx.activeCharacter.setRace(cbRace.getValue());
     }
 
     @FXML
@@ -608,6 +686,7 @@ public class FXMLController implements Initializable{
     
     private void updateProficiencyBonus(){
     	String tmp;
+
     	switch(CharacterSheetFx.activeCharacter.getLevel()){
     	case 0:
     	case 1:
@@ -615,7 +694,7 @@ public class FXMLController implements Initializable{
     	case 3:
     	case 4:
     		tmp="+2";
-    		break;
+            break;
     	case 5:
     	case 6:
     	case 7:

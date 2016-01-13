@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <character>
     <dndcharacter name="DefaultCharacter">
-        <level>0</level>
         <stats>
             <strength>10</strength>
             <dexterity>10</dexterity>

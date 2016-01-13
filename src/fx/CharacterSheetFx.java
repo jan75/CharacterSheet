@@ -33,6 +33,6 @@ public class CharacterSheetFx extends Application {
 	}
 
 	public void setActiveCharacter(DNDCharacter dndchar){
-		activeCharacter=dndchar;
+		activeCharacter = dndchar;
 	}
 }

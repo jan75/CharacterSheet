@@ -81,6 +81,11 @@ public class DNDCharacter {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+		System.out.println("name has been set to " + name);
+	}
+
 	public int getStrength() {
 		return strength;
 	}
@@ -121,24 +126,48 @@ public class DNDCharacter {
 		return race.getName();
 	}
 
+	public void setRace(String race) {
+		this.race = Race.createRace(race);
+	}
+
 	public String getCharClassName() {
 		return characterClass.getName();
+	}
+
+	public void setClass(String charClass) {
+		this.characterClass = CharacterClass.createCharClass(charClass);
 	}
 
 	public String getBackground() {
 		return background;
 	}
 
+	public void setBackground(String background) {
+		this.background = background;
+	}
+
 	public String getPlayerName() {
 		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
 	}
 
 	public String getFaction() {
 		return faction;
 	}
 
+	public void setFaction(String faction) {
+		this.faction = faction;
+	}
+
 	public String getAlignment() {
 		return alignment;
+	}
+
+	public void setAlignment(String alignment) {
+		this.alignment = alignment;
 	}
 
 	public Skills getSkills() {
