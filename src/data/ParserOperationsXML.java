@@ -373,6 +373,23 @@ public class ParserOperationsXML {
 				//
 				character.appendChild(proficiencies);
 			}
+
+			//
+			// ::::: BEGINNING OF MONEY BLOCK :::::
+			//
+			Element money = document.createElement("money");
+			//
+			Element copper = document.createElement("copper");
+			Element silver = document.createElement("silver");
+			Element eterium = document.createElement("eterium");
+			Element gold = document.createElement("gold");
+			Element platin = document.createElement("platin");
+			money.appendChild(copper);
+			money.appendChild(silver);
+			money.appendChild(eterium);
+			money.appendChild(gold);
+			money.appendChild(platin);
+			character.appendChild(money);
 			//
 			// ::::: BEGINNING OF SKILLS BLOCK :::::
 			//

@@ -159,6 +159,7 @@ public class FXMLController implements Initializable{
 	    });
 	    txtExperiencePoints.textProperty().addListener((observable, oldValue, newValue) -> {
             int z = Integer.parseInt(newValue);
+            CharacterSheetFx.activeCharacter.setExperiencePoints(z);
             updateLevel(z);
         });
 	    
