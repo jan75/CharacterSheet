@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import race.DNDCharacter;
 
@@ -23,6 +24,8 @@ public class CharacterSheetFx extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setResizable(false);
+			primaryStage.setTitle("CharacterSheet");
+			//primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("file:/src/fx/DnDLogo.png")));
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

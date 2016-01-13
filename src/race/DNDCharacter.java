@@ -44,7 +44,7 @@ public class DNDCharacter {
 	private Money money;
 
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits) {
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits, Money money) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -70,6 +70,7 @@ public class DNDCharacter {
 		this.bonds = bonds;
 		this.flaws = flaws;
 		this.featuresTraits = featuresTraits;
+		this.money=money;
 	}
 
 	public int getStatBonus(int stat){

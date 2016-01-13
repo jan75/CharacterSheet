@@ -798,10 +798,23 @@ public class ParserOperationsXML {
 					//
 					// ::::: The following code is to be refined
 					ArrayList<Equipment> tmpEquipment = new ArrayList();
-
+					
+					//
+					// ::::: The following code block parses the sub elements under "money"
+					Money tmpMoney=new Money(0,0,0,0,0);
+					NodeList nListMoney = eElement.getElementsByTagName("money");
+					Node nNodeMoney = nListMoney.item(0);
+					Element eElementMoney = (Element) nNodeMoney;
+					//
+					int cp = Integer.parseInt(eElementMoney.getElementsByTagName("copper").item(0).getTextContent());
+					int sp = Integer.parseInt(eElementMoney.getElementsByTagName("silver").item(0).getTextContent());
+					int ep = Integer.parseInt(eElementMoney.getElementsByTagName("eterium").item(0).getTextContent());
+					int gp = Integer.parseInt(eElementMoney.getElementsByTagName("gold").item(0).getTextContent());
+					int pp = Integer.parseInt(eElementMoney.getElementsByTagName("platin").item(0).getTextContent());
+					tmpMoney.updateMoney(cp, sp, ep, gp, pp);
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits,tmpMoney);
 					tmpCharacter.print();
 				}
 			}

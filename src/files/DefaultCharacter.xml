@@ -58,5 +58,12 @@
             <stealth>false</stealth>
             <survival>false</survival>
         </skills>
+        <money>
+        	<copper>0</copper>
+        	<silver>0</silver>
+        	<eterium>0</eterium>
+        	<gold>0</gold>
+        	<platin>0</platin>
+        </money>
     </dndcharacter>
 </character>

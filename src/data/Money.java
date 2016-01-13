@@ -20,21 +20,37 @@ public class Money {
 		this.ep+=ep;
 		this.gp+=gp;
 		this.pp+=pp;
-		while(this.cp>10){
+		while(this.cp>=10){
 			this.cp-=10;
 			this.sp+=1;
 		}
-		while(this.sp>5){
+		while(this.cp<0){
+			this.cp+=10;
+			this.sp-=1;
+		}
+		while(this.sp>=5){
 			this.sp-=5;
 			this.ep+=1;
 		}
-		while(this.ep>2){
+		while(this.sp<0){
+			this.sp+=5;
+			this.ep-=1;
+		}
+		while(this.ep>=2){
 			this.ep-=2;
 			this.gp+=1;
 		}
-		while(this.gp>10){
+		while(this.ep<0){
+			this.ep+=2;
+			this.gp-=1;
+		}
+		while(this.gp>=10){
 			this.gp-=10;
 			this.pp+=1;
+		}
+		while(this.gp<0){
+			this.gp+=10;
+			this.pp-=1;
 		}
 		return this;
 	}
@@ -42,11 +58,6 @@ public class Money {
 	public int getCopper() {
 		// TODO Auto-generated method stub
 		return cp;
-	}
-
-	public int Silver() {
-		// TODO Auto-generated method stub
-		return sp;
 	}
 
 	public int getEterium() {
@@ -59,8 +70,13 @@ public class Money {
 		return gp;
 	}
 
-	public int getPlatinium() {
+	public int getPlatin() {
 		// TODO Auto-generated method stub
 		return pp;
+	}
+
+	public int getSilver() {
+		// TODO Auto-generated method stub
+		return sp;
 	}
 }
