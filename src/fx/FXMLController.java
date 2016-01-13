@@ -445,6 +445,12 @@ public class FXMLController implements Initializable{
         chkSleightOfHand.setSelected(tmpCharacter.getSkills().isSleightOfHand());
         chkStealth.setSelected(tmpCharacter.getSkills().isStealth());
         chkSurvival.setSelected(tmpCharacter.getSkills().isSurvival());
+        chkStr.setSelected(tmpCharacter.getSkills().isStrength());
+        chkDex.setSelected(tmpCharacter.getSkills().isDexterity());
+        chkCon.setSelected(tmpCharacter.getSkills().isConstitution());
+        chkInt.setSelected(tmpCharacter.getSkills().isIntelligence());
+        chkWis.setSelected(tmpCharacter.getSkills().isWisdom());
+        chkCha.setSelected(tmpCharacter.getSkills().isCharisma());
         
         
         ArrayList<String> tmpWeaponKeyList = tmpCharacter.getItemKeysList(true);
