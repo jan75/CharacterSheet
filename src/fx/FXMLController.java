@@ -409,6 +409,14 @@ public class FXMLController implements Initializable{
         DNDCharacter tmpCharacter;
 
         tmpCharacter = ParserOperationsXML.loadCharacterFromXML(path, weaponMap, spellMap);
+        txtBoxFeatures.clear();
+        txtBoxProficiencies.clear();
+        txtBoxEquipment.clear();
+        txtBoxBonds.clear();
+        txtBoxFlaws.clear();
+        txtBoxIdeals.clear();
+        txtBoxTraits.clear();
+        txtBoxSpells.clear();
         //
         txtDex.setText(Integer.toString(tmpCharacter.getDexterity()));
         txtCha.setText(Integer.toString(tmpCharacter.getCharisma()));
@@ -460,13 +468,10 @@ public class FXMLController implements Initializable{
         data.clear();
         if(tmpWeaponKeyList.size() != 0) {
             for(String currentKey: tmpWeaponKeyList) {
-                Equipment tmpWeapon = weaponMap.get(currentKey);
-                System.out.println(tmpWeapon.getName());
-                data.add(new TableWeapon(tmpWeapon.getName(), tmpWeapon.getName(), tmpWeapon.getName()));
+                Weapon tmpWeapon = (Weapon) weaponMap.get(currentKey);
+
+                addWeapon(tmpWeapon);
                 //System.out.println(currentKey);
-                tblWeaponNameId.setText("");
-                tblWeaponAtkBonusId.setText("");
-                tblWeaponDmgTypeId.setText("");
             }
         }
 
@@ -547,6 +552,7 @@ public class FXMLController implements Initializable{
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Save Character");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("XML Files", "*.xml"));
+            fileChooser.setInitialFileName(CharacterSheetFx.activeCharacter.getName().replace(" ", "_"));
             File selectedFile = fileChooser.showSaveDialog(txtDex.getScene().getWindow());
             if (selectedFile != null) {
                 String path = selectedFile.getAbsolutePath();
@@ -617,6 +623,17 @@ public class FXMLController implements Initializable{
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.add(new TableWeapon(tmpTblWeapon.getName(), tmpTblWeapon.getWeaponModifier(), tmpTblWeapon.getWeaponDamage()));
+
+        //tblWeaponNameId.setText("");
+        //tblWeaponAtkBonusId.setText("");
+        //tblWeaponDmgTypeId.setText("");
+    }
+
+    private void addWeapon(Weapon weapon) {
+        System.out.println("Add weapon");
+
+        ObservableList<TableWeapon> data = tblAttacks.getItems();
+        data.add(new TableWeapon(weapon.getName(), weapon.getWeaponModifier(), weapon.getWeaponDamage()));
 
         //tblWeaponNameId.setText("");
         //tblWeaponAtkBonusId.setText("");
