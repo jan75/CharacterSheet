@@ -17,14 +17,19 @@ import race.DNDCharacter;
 import java.io.File;
 import java.net.URL;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Jan on 02.01.2016.
  */
 public class FXMLController implements Initializable{
+    private final static Logger LOGGER = Logger.getLogger("");
+
     static Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
     //static Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml"); // Armor has been removed
     static Map<String, Spell> spellMap = ParserOperationsXML.parseSpells("src/files/spells.xml");
+
 
     @FXML private TextField txtExperiencePoints;
     @FXML private TextField txtDex;
@@ -396,11 +401,13 @@ public class FXMLController implements Initializable{
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.clear();
+
+        LOGGER.log(Level.INFO, "Initialized functions in GUI");
     }
 
 	@FXML
     private void createNewCharacter() {
-        System.out.println("MenuButton: New");
+        LOGGER.log(Level.INFO, "Pressed Menubutton 'New'");
         //
         openCharacter("src/files/DefaultCharacter.xml");
     }
@@ -425,7 +432,6 @@ public class FXMLController implements Initializable{
         txtStr.setText(Integer.toString(tmpCharacter.getStrength()));
         txtWis.setText(Integer.toString(tmpCharacter.getWisdom()));
         //
-        //txtLevel.setText(Integer.toString(tmpCharacter.getLevel())); handled by ExperiencePoints and events (which get called on change)
         cbClass.setValue(tmpCharacter.getCharClassName());
         txtBackground.setText(tmpCharacter.getBackground());
         txtPlayerName.setText(tmpCharacter.getPlayerName());
@@ -462,7 +468,6 @@ public class FXMLController implements Initializable{
         
         
         ArrayList<String> tmpWeaponKeyList = tmpCharacter.getItemKeysList(true);
-        //System.out.println("tmpWeaponkeyList size: " + tmpWeaponKeyList.size());
         //
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.clear();
@@ -471,54 +476,61 @@ public class FXMLController implements Initializable{
                 Weapon tmpWeapon = (Weapon) weaponMap.get(currentKey);
 
                 addWeapon(tmpWeapon);
-                //System.out.println(currentKey);
             }
         }
 
         if(tmpCharacter.getSpellKeysList().size() != 0) {
             for(String currentKey: tmpCharacter.getSpellKeysList()) {
+                LOGGER.log(Level.INFO, "Added Spell to GUI: " + currentKey);
                 txtBoxSpells.appendText(currentKey + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("proficiencies").isEmpty()) {
             for(String currentProficiency: tmpCharacter.getLists("proficiencies")) {
+                LOGGER.log(Level.INFO, "Added Proficiency to GUI: " + currentProficiency);
                 txtBoxProficiencies.appendText(currentProficiency + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("equipment").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("equipment")) {
+                LOGGER.log(Level.INFO, "Added Item to GUI: " + currentItem);
                 txtBoxEquipment.appendText(currentItem + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("personalityTraits").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("personalityTraits")) {
+                LOGGER.log(Level.INFO, "Added personality trait to GUI: " + currentItem);
                 txtBoxTraits.appendText(currentItem + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("ideals").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("ideals")) {
+                LOGGER.log(Level.INFO, "Added Ideal to GUI: " + currentItem);
                 txtBoxIdeals.appendText(currentItem + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("bonds").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("bonds")) {
+                LOGGER.log(Level.INFO, "Added Bond to GUI: " + currentItem);
                 txtBoxBonds.appendText(currentItem + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("flaws").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("flaws")) {
+                LOGGER.log(Level.INFO, "Added Flaw to GUI: " + currentItem);
                 txtBoxFlaws.appendText(currentItem + "\n");
             }
         }
 
         if(!tmpCharacter.getLists("featuresTraits").isEmpty()) {
             for(String currentItem: tmpCharacter.getLists("featuresTraits")) {
+                LOGGER.log(Level.INFO, "Added feature trait to GUI: " + currentItem);
                 txtBoxFeatures.appendText(currentItem + "\n");
             }
         }
@@ -529,7 +541,7 @@ public class FXMLController implements Initializable{
 
     @FXML
     private void openCharacterFileChooser() {
-        System.out.println("MenuButton: Open");
+        LOGGER.log(Level.INFO, "Pressed Menubutton 'Open'");
 
         String path = null;
         FileChooser fileChooser = new FileChooser();
@@ -539,6 +551,8 @@ public class FXMLController implements Initializable{
         if(selectedFile != null) {
             path = selectedFile.getAbsolutePath();
             //
+            LOGGER.log(Level.INFO, "Path to open file: " + path);
+            //
             openCharacter(path);
         }
         //
@@ -546,7 +560,7 @@ public class FXMLController implements Initializable{
 
     @FXML
     private void saveCharacter() {
-        System.out.println("MenuButton: Save");
+        LOGGER.log(Level.INFO, "Pressed Menubutton 'Save'");
 
         try {
             FileChooser fileChooser = new FileChooser();
@@ -556,11 +570,11 @@ public class FXMLController implements Initializable{
             File selectedFile = fileChooser.showSaveDialog(txtDex.getScene().getWindow());
             if (selectedFile != null) {
                 String path = selectedFile.getAbsolutePath();
+                LOGGER.log(Level.INFO, "Path to save file: " + path);
                 ParserOperationsXML.saveCharacterToXML(CharacterSheetFx.activeCharacter, path);
-                System.out.println("File saved under " + path);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.getMessage());
         }
         //
     }
@@ -602,35 +616,31 @@ public class FXMLController implements Initializable{
 
     @FXML
     private void changeClass() {
-        System.out.println("Change class");
+        LOGGER.log(Level.INFO, "Changed Class to: " + cbClass.getValue());
         //
         CharacterSheetFx.activeCharacter.setClass(cbClass.getValue());
     }
 
     @FXML
     private void changeRace() {
-        System.out.println("Change race");
+        LOGGER.log(Level.INFO, "Changed Race to: " + cbRace.getValue());
         //
         CharacterSheetFx.activeCharacter.setRace(cbRace.getValue());
     }
 
     @FXML
     private void addWeapon() {
-        System.out.println("Add weapon");
+        LOGGER.log(Level.INFO, "Added Weapon: " + cbAddWeapon.getValue());
         //
         Weapon tmpTblWeapon = (Weapon) weaponMap.get(cbAddWeapon.getValue());
         CharacterSheetFx.activeCharacter.getWeapons().add(weaponMap.get(cbAddWeapon.getValue()));
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.add(new TableWeapon(tmpTblWeapon.getName(), tmpTblWeapon.getWeaponModifier(), tmpTblWeapon.getWeaponDamage()));
-
-        //tblWeaponNameId.setText("");
-        //tblWeaponAtkBonusId.setText("");
-        //tblWeaponDmgTypeId.setText("");
     }
 
     private void addWeapon(Weapon weapon) {
-        System.out.println("Add weapon");
+        LOGGER.log(Level.INFO, "Added Weapon: " + weapon.getName());
 
         ObservableList<TableWeapon> data = tblAttacks.getItems();
         data.add(new TableWeapon(weapon.getName(), weapon.getWeaponModifier(), weapon.getWeaponDamage()));
@@ -645,19 +655,20 @@ public class FXMLController implements Initializable{
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Weapons");
         alert.setHeaderText("This action will delete all currently equipped Weapons!");
-
         Optional<ButtonType> result = alert.showAndWait();
+        //
         if(result.get() == ButtonType.OK) {
             ObservableList<TableWeapon> data = tblAttacks.getItems();
             data.clear();
             CharacterSheetFx.activeCharacter.getWeapons().clear();
             System.out.println(CharacterSheetFx.activeCharacter.getWeapons());
+            LOGGER.log(Level.INFO, "Deleted all Weapons");
         }
     }
 
     @FXML
     private void addSpell() {
-        System.out.println("Add spell");
+        LOGGER.log(Level.INFO, "Added Spell: " + cbAddSpell.getValue());
         //
         txtBoxSpells.appendText(cbAddSpell.getValue() + "\n");
         //
@@ -677,6 +688,7 @@ public class FXMLController implements Initializable{
             List<Spell> tmpSpellsNull = new ArrayList<Spell>();
             tmpSpellsNull.clear();
             CharacterSheetFx.activeCharacter.setSpells(tmpSpellsNull);
+            LOGGER.log(Level.INFO, "Deleted all Spells");
         }
     }
 
@@ -751,7 +763,7 @@ public class FXMLController implements Initializable{
     }
 
 	private void updatePerception(int statBonus) {
-		int perception=10+statBonus;
+		int perception = 10 + statBonus;
 		if(chkPerception.isSelected()){
 			perception+=Integer.parseInt(lblProficencyMod.getText());
 		}
@@ -760,12 +772,13 @@ public class FXMLController implements Initializable{
 	
     @FXML
     private void exitApplication() {
+        LOGGER.log(Level.INFO, "Exit application");
         System.exit(0);
     }
 
     @FXML
     private void addMoney() {
-        //System.out.println("add money");
+        LOGGER.log(Level.INFO, "Add Money");
         try{
             Stage stageMoney = new Stage();
             Parent root = FXMLLoader.load(FXMLController.class.getResource("/fx/javaFxLayoutMoney.fxml"));
@@ -778,12 +791,12 @@ public class FXMLController implements Initializable{
                 });
             stageMoney.show();
         } catch(Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.getMessage());
         }
     }
 
     private void updateMoney() {
-    	Money money=CharacterSheetFx.activeCharacter.getMoney();
+    	Money money = CharacterSheetFx.activeCharacter.getMoney();
         txtCopper.setText(Integer.toString(money.getCopper()));
         txtSilver.setText(Integer.toString(money.getSilver()));
         txtEterium.setText(Integer.toString(money.getEterium()));
@@ -796,6 +809,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtExperiencePoints.getText());
         if (z > 0) {
             z -= 50;
+            LOGGER.log(Level.INFO, "Subtracted 50 Experience Points to " + z);
             txtExperiencePoints.setText(Integer.toString(z));
             CharacterSheetFx.activeCharacter.setExperiencePoints(z);
         }
@@ -805,6 +819,7 @@ public class FXMLController implements Initializable{
     private void addExp() {
         int z = Integer.parseInt(txtExperiencePoints.getText());
         z += 50;
+        LOGGER.log(Level.INFO, "Added 50 Experience Points to " + z);
         txtExperiencePoints.setText(Integer.toString(z));
         CharacterSheetFx.activeCharacter.setExperiencePoints(z);
     }
@@ -814,6 +829,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtStr.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Strength Point to " + z);
             txtStr.setText(Integer.toString(z));
         }
     }
@@ -823,6 +839,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtStr.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Strength Point to " + z);
 	        txtStr.setText(Integer.toString(z));
         }
     }
@@ -832,6 +849,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtDex.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Dexterity Point to " + z);
             txtDex.setText(Integer.toString(z));
         }
     }
@@ -841,6 +859,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtDex.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Dexterity Point to " + z);
 	        txtDex.setText(Integer.toString(z));
         }
     }
@@ -850,6 +869,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtCon.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Constitution Point to " + z);
             txtCon.setText(Integer.toString(z));
         }
     }
@@ -859,6 +879,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtCon.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Constitution Point to " + z);
 	        txtCon.setText(Integer.toString(z));
         }
     }
@@ -868,6 +889,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtInt.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Intelligence Point to " + z);
             txtInt.setText(Integer.toString(z));
         }
     }
@@ -877,6 +899,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtInt.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Intelligence Point to " + z);
 	        txtInt.setText(Integer.toString(z));
         }
     }
@@ -886,6 +909,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtWis.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Wisdom Point to " + z);
             txtWis.setText(Integer.toString(z));
         }
     }
@@ -895,6 +919,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtWis.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Wisdom Point to " + z);
 	        txtWis.setText(Integer.toString(z));
         }
     }
@@ -904,6 +929,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtCha.getText());
         if (z > 0) {
             z--;
+            LOGGER.log(Level.INFO, "Subtracted 1 Charisma Point to " + z);
             txtCha.setText(Integer.toString(z));
         }
     }
@@ -913,6 +939,7 @@ public class FXMLController implements Initializable{
         int z = Integer.parseInt(txtCha.getText());
         if( z < 20 ) {
 	        z++;
+            LOGGER.log(Level.INFO, "Added 1 Charisma Point to " + z);
 	        txtCha.setText(Integer.toString(z));
         }
     }

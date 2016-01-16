@@ -21,15 +21,22 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ParserOperationsXML {
+	private final static Logger LOGGER = Logger.getLogger("");
+
 	/**
 	 * The Method "parseWeapons" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Weapon).
 	 * @param path
 	 * @return Map
 	 */
-    public static Map parseWeapons(String path) {
+	public static Map parseWeapons(String path) {
 		Map<String, Weapon> weaponMap = new HashMap<>();
+		//
+		LOGGER.log(Level.INFO, "Path to weapons.xml: " + path);
+		//
 		ArrayList<String> arrayWeaponProperties = new ArrayList(); //used for sub node "property" of "properties"
 		ArrayList<String> arrayWeaponModifiers = new ArrayList(); //used for sub node "modifier" of "modifiers"
 		//
@@ -72,13 +79,13 @@ public class ParserOperationsXML {
 					//
 					// Creating a Weapon object and adding the weapon to the Map, which will later be returned
 					Weapon tmpWeaponObject = new Weapon(tmpWeapon, tmpDamage, tmpPrice, tmpWeight, arrayWeaponProperties, tmpGroup, tmpModifier);
-					//tmpWeaponObject.print();
+					LOGGER.log(Level.INFO, "Parsed Weapon: " + tmpWeaponObject.getName());
 					weaponMap.put(tmpWeapon, tmpWeaponObject);
 					//
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 		//
 		return weaponMap;
@@ -91,6 +98,9 @@ public class ParserOperationsXML {
 	 */
 	public static Map parseSpells(String path) {
 		Map<String, Spell> spellMap = new HashMap<>();
+
+		LOGGER.log(Level.INFO, "Path to spells.xml: " + path);
+
 		ArrayList<String> arraySpellClasses = new ArrayList(); //used for sub node "property" of "properties"
 		//
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -123,7 +133,7 @@ public class ParserOperationsXML {
 					Node nNodeClasses = nListClasses.item(0);
 					Element eElementClasses = (Element) nNodeClasses;
 					//
-					 //getTagName());
+					//getTagName());
 					for(int j = 0; j < allClasses.length; j++) {
 						if (eElementClasses.getElementsByTagName(allClasses[j]).item(0) != null) {
 							arraySpellClasses.add(allClasses[j]);
@@ -132,13 +142,13 @@ public class ParserOperationsXML {
 					//
 					// Creating a Spell object and adding the Object to the Map, which will later be returned
 					Spell tmpSpellObject = new Spell(tmpSpell, tmpLevel, tmpSchool, tmpRitual, tmpPage, arraySpellClasses);
-					//tmpSpellObject.print();
+					LOGGER.log(Level.INFO, "Parsed Spell: " + tmpSpellObject.getKey());
 					spellMap.put(tmpSpell, tmpSpellObject);
 					//
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 		//
 		return spellMap;
@@ -161,13 +171,6 @@ public class ParserOperationsXML {
 			rootElement.appendChild(character);
 			//
 			character.setAttribute("name", tmpCharacter.getName());
-			//
-			/* ::::: BEGINNING OF LEVEL BLOCK :::::
-			* This is already handled by ExperiencePoints and initialize class
-			Element level = document.createElement("level");
-			level.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getLevel())));
-			character.appendChild(level);
-			*/
 			//
 			// ::::: BEGINNING OF STATS BLOCK :::::
 			Element stats = document.createElement("stats");
@@ -314,17 +317,6 @@ public class ParserOperationsXML {
 				character.appendChild(featuresTraits);
 			}
 			//
-			//
-			/* ::::: BEGINNING OF ARMOR BLOCK :::::
-			* armor was removed, but the code has been left in, as it worked previously, but was unfinished
-			if(!tmpCharacter.getArmorKey().isEmpty()) {
-				Element armor = document.createElement("armor");
-				armor.appendChild(document.createTextNode(tmpCharacter.getArmorKey()));
-				//
-				character.appendChild(armor);
-			}
-			*/
-			//
 			// ::::: BEGINNING OF RACE BLOCK :::::
 			Element race = document.createElement("race");
 			race.appendChild(document.createTextNode(tmpCharacter.getRaceName()));
@@ -426,7 +418,7 @@ public class ParserOperationsXML {
 			Element intelligenceProf = document.createElement("intelligence");
 			Element wisdomProf = document.createElement("wisdom");
 			Element charismaProf = document.createElement("charisma");
-			
+
 			skills.appendChild(acrobatics);
 			skills.appendChild(animalHandling);
 			skills.appendChild(arcana);
@@ -545,37 +537,33 @@ public class ParserOperationsXML {
 				strengthProf.appendChild(document.createTextNode("true"));
 			} else {
 				strengthProf.appendChild(document.createTextNode("false"));
-			}			
+			}
 			if(tmpCharacter.getSkills().isDexterity()) {
 				dexterityProf.appendChild(document.createTextNode("true"));
 			} else {
 				dexterityProf.appendChild(document.createTextNode("false"));
-			}			
+			}
 			if(tmpCharacter.getSkills().isConstitution()) {
 				constitutionProf.appendChild(document.createTextNode("true"));
 			} else {
 				constitutionProf.appendChild(document.createTextNode("false"));
-			}			
+			}
 			if(tmpCharacter.getSkills().isIntelligence()) {
 				intelligenceProf.appendChild(document.createTextNode("true"));
 			} else {
 				intelligenceProf.appendChild(document.createTextNode("false"));
-			}			
+			}
 			if(tmpCharacter.getSkills().isWisdom()) {
 				wisdomProf.appendChild(document.createTextNode("true"));
 			} else {
 				wisdomProf.appendChild(document.createTextNode("false"));
-			}			
+			}
 			if(tmpCharacter.getSkills().isCharisma()) {
 				charismaProf.appendChild(document.createTextNode("true"));
 			} else {
 				charismaProf.appendChild(document.createTextNode("false"));
 			}
 			character.appendChild(skills);
-			//
-			//
-			//
-			//
 			//
 			//
 			// ::::: BEGINNING OF FINISHING BLOCK :::::
@@ -590,7 +578,7 @@ public class ParserOperationsXML {
 			transformer.transform(source, result);
 			//
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 	}
 
@@ -617,10 +605,8 @@ public class ParserOperationsXML {
 					Element eElement = (Element) nNode;
 					//
 					String tmpName = eElement.getAttribute("name");
-					//int tmpLevel = Integer.parseInt(eElement.getElementsByTagName("level").item(0).getTextContent()); this is already handled via "ExperiencePoints" and the initialize class
 					Race tmpRace = Race.createRace(eElement.getElementsByTagName("race").item(0).getTextContent());
 					CharacterClass tmpCharClass = CharacterClass.createCharClass(eElement.getElementsByTagName("charClass").item(0).getTextContent());
-					//Equipment tmpArmor = armorMap.get(eElement.getElementsByTagName("armor").item(0).getTextContent()); Armor has been removed
 					String tmpBackground = eElement.getElementsByTagName("background").item(0).getTextContent();
 					String tmpPlayerName = eElement.getElementsByTagName("playerName").item(0).getTextContent();
 					String tmpFaction = eElement.getElementsByTagName("faction").item(0).getTextContent();
@@ -658,7 +644,7 @@ public class ParserOperationsXML {
 							tmpSpells.add(tmpSpell);
 						}
 					} else {
-						System.out.println("no spells");
+						LOGGER.log(Level.INFO, "No Spells to load from character " + path);
 					}
 					//
 					//
@@ -680,7 +666,7 @@ public class ParserOperationsXML {
 							tmpWeapons.add(tmpWeapon);
 						}
 					} else {
-						System.out.println("no weapons");
+						LOGGER.log(Level.INFO, "No Weapons to load from character " + path);
 					}
 					//
 					//
@@ -702,7 +688,7 @@ public class ParserOperationsXML {
 							tmpItems.add(tmpItemString);
 						}
 					} else {
-						System.out.println("no items");
+						LOGGER.log(Level.INFO, "No Items to load from character " + path);
 					}
 					//
 					//
@@ -724,7 +710,7 @@ public class ParserOperationsXML {
 							tmpProficiencies.add(tmpProficiency);
 						}
 					} else {
-						System.out.println("no proficiencies");
+						LOGGER.log(Level.INFO, "No Proficiencies to load from character " + path);
 					}
 					//
 					// The following code block parses the sub elements under "personalityTraits"
@@ -745,7 +731,7 @@ public class ParserOperationsXML {
 							tmpPersonalityTraits.add(tmpPersonalityTrait);
 						}
 					} else {
-						System.out.println("no personalityTraits");
+						LOGGER.log(Level.INFO, "No PersonalityTraits to load from character " + path);
 					}
 					//
 					// The following code block parses the sub elements under "ideals"
@@ -766,7 +752,7 @@ public class ParserOperationsXML {
 							tmpIdeals.add(tmpIdeal);
 						}
 					} else {
-						System.out.println("no ideals");
+						LOGGER.log(Level.INFO, "No Ideals to load from character " + path);
 					}
 					//
 					// The following code block parses the sub elements under "bonds"
@@ -787,7 +773,7 @@ public class ParserOperationsXML {
 							tmpBonds.add(tmpBond);
 						}
 					} else {
-						System.out.println("no bonds");
+						LOGGER.log(Level.INFO, "No Bonds to load from character " + path);
 					}
 					//
 					// The following code block parses the sub elements under "flaws"
@@ -808,7 +794,7 @@ public class ParserOperationsXML {
 							tmpFlaws.add(tmpFlaw);
 						}
 					} else {
-						System.out.println("no flaws");
+						LOGGER.log(Level.INFO, "No Flaws to load from character " + path);
 					}
 					//
 					// The following code block parses the sub elements under "featureTraits"
@@ -829,7 +815,7 @@ public class ParserOperationsXML {
 							tmpFeatureTraits.add(tmpFeatureTrait);
 						}
 					} else {
-						System.out.println("no featureTraits");
+						LOGGER.log(Level.INFO, "No FeaturesTraits to load from character " + path);
 					}
 					//
 					//
@@ -863,7 +849,7 @@ public class ParserOperationsXML {
 					tmpSkills.setIntelligence(Boolean.parseBoolean(eElementSkills.getElementsByTagName("intelligence").item(0).getTextContent()));
 					tmpSkills.setWisdom(Boolean.parseBoolean(eElementSkills.getElementsByTagName("wisdom").item(0).getTextContent()));
 					tmpSkills.setCharisma(Boolean.parseBoolean(eElementSkills.getElementsByTagName("charisma").item(0).getTextContent()));
-					
+
 					//
 					// ::::: The following code block parses the sub elements under "money"
 					Money tmpMoney=new Money(0,0,0,0,0);
@@ -884,7 +870,7 @@ public class ParserOperationsXML {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 		return tmpCharacter;
 	}
@@ -922,13 +908,13 @@ public class ParserOperationsXML {
 					String tmpClass = eElement.getElementsByTagName("class").item(0).getTextContent();
 
 					Armor tmpArmorObject = new Armor(tmpArmor, tmpPrice, tmpModifier, tmpSpeed, tmpStealth, tmpWeight, tmpClass);
-					//tmpArmorObject.print();
+					LOGGER.log(Level.INFO, "Parsed armor: " + tmpArmorObject.getKey());
 					armorMap.put(tmpArmor, tmpArmorObject);
 					//
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LOGGER.log(Level.SEVERE, e.getMessage());
 		}
 		//
 		return armorMap;

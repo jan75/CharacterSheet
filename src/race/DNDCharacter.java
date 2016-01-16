@@ -9,8 +9,12 @@ import data.Spell;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DNDCharacter {
+	private final static Logger LOGGER = Logger.getLogger("");
+
 	private String name;
 	private Race race;
 	private CharacterClass characterClass;
@@ -81,7 +85,7 @@ public class DNDCharacter {
 
 	public void setName(String name) {
 		this.name = name;
-		System.out.println("name has been set to " + name);
+		LOGGER.log(Level.INFO, "Name has been set to " + name);
 	}
 
 	public int getStrength() {
@@ -199,7 +203,7 @@ public class DNDCharacter {
 			case "featuresTraits": tmpList.addAll(featuresTraits);
 				break;
 			default:
-				System.out.println("No lists to return found, wrong parameter?");
+				LOGGER.log(Level.SEVERE, "No lists to return found, wrong parameter?");
 				break;
 		}
 		return tmpList;
