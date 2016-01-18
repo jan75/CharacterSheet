@@ -41,12 +41,17 @@ public class DNDCharacter {
 	private List<String> bonds;
 	private List<String> flaws;
 	private List<String> featuresTraits;
-	public int armorClass;
-	public int proficencybonus;
+	private int armorClass;
 	private Money money;
+	private int maxHitPoints;
+	private int hitPoints;
+	private int tmpHitPoints;
+	public int proficencybonus;
+	private int hitDie;
+	
 
 
-	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits, Money money) {
+	public DNDCharacter(String name, Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma, List<Equipment> weapons, List<Spell> spells, List<String> proficiencies, Skills skills, List<String> items, String background, String playerName, String faction, String alignment, int experiencePoints, List<String> personalityTraits, List<String> ideals, List<String> bonds, List<String> flaws, List<String> featuresTraits, Money money, int maxHitPoints, int hitPoints, int tmpHitPoints, int hitDie, int armorClass) {
 		this.name = name;
 		this.race = race;
 		this.characterClass = characterClass;
@@ -73,6 +78,12 @@ public class DNDCharacter {
 		this.flaws = flaws;
 		this.featuresTraits = featuresTraits;
 		this.money=money;
+		this.maxHitPoints=maxHitPoints;
+		this.hitPoints=hitPoints;
+		this.tmpHitPoints=tmpHitPoints;
+		this.hitDie=hitDie;
+		this.armorClass=armorClass;
+		
 	}
 
 	public int getStatBonus(int stat){
@@ -134,6 +145,10 @@ public class DNDCharacter {
 
 	public String getCharClassName() {
 		return characterClass.getName();
+	}
+	
+	public CharacterClass getCharacterClass(){
+		return characterClass;
 	}
 
 	public void setClass(String charClass) {
@@ -209,7 +224,7 @@ public class DNDCharacter {
 		return tmpList;
 	}
 
-	public void setLists(String listToStore, List list) {
+	public void setLists(String listToStore, List<CharSequence> list) {
 		//System.out.println("Method setLists called");
 		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
@@ -347,27 +362,61 @@ public class DNDCharacter {
 	}
 
 	public void setStrength(int str) {
-		// TODO Auto-generated method stub
 		this.strength=str;
 	}
 	public void setDexterity(int dex) {
-		// TODO Auto-generated method stub
 		this.dexterity=dex;
 	}
 	public void setConstitution(int con) {
-		// TODO Auto-generated method stub
 		this.constitution=con;
 	}
 	public void setIntelligence(int intel) {
-		// TODO Auto-generated method stub
 		this.intelligence=intel;
 	}
 	public void setWisdom(int wis) {
-		// TODO Auto-generated method stub
 		this.wisdom=wis;
 	}
 	public void setCharisma(int cha) {
-		// TODO Auto-generated method stub
 		this.charisma=cha;
+	}
+	
+	public int getArmorClass(){
+		return armorClass;
+	}
+	
+	public void setArmorClass(int armorClass){
+		this.armorClass=armorClass;
+	}
+
+	public int getHitDie() {
+		return hitDie;
+	}
+
+	public void setHitDie(int hitDie) {
+		this.hitDie = hitDie;
+	}
+
+	public int getTmpHitPoints() {
+		return tmpHitPoints;
+	}
+
+	public void setTmpHitPoints(int tmpHitPoints) {
+		this.tmpHitPoints = tmpHitPoints;
+	}
+
+	public int getHitPoints() {
+		return hitPoints;
+	}
+
+	public void setHitPoints(int hitPoints) {
+		this.hitPoints = hitPoints;
+	}
+
+	public int getMaxHitPoints() {
+		return maxHitPoints;
+	}
+
+	public void setMaxHitPoints(int maxHitPoints) {
+		this.maxHitPoints = maxHitPoints;
 	}
 }

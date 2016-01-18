@@ -1,14 +1,11 @@
 package data;
 
-import characterClass.CharacterClass;
-import fx.CharacterSheetFx;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import race.DNDCharacter;
-import race.Race;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -17,12 +14,15 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import characterClass.CharacterClass;
+import race.DNDCharacter;
+import race.Race;
 
 public class ParserOperationsXML {
 	private final static Logger LOGGER = Logger.getLogger("");
@@ -32,13 +32,13 @@ public class ParserOperationsXML {
 	 * @param path
 	 * @return Map
 	 */
-	public static Map parseWeapons(String path) {
-		Map<String, Weapon> weaponMap = new HashMap<>();
+	public static Map<String, Equipment> parseWeapons(String path) {
+		Map<String, Equipment> weaponMap = new HashMap<>();
 		//
 		LOGGER.log(Level.INFO, "Path to weapons.xml: " + path);
 		//
-		ArrayList<String> arrayWeaponProperties = new ArrayList(); //used for sub node "property" of "properties"
-		ArrayList<String> arrayWeaponModifiers = new ArrayList(); //used for sub node "modifier" of "modifiers"
+		ArrayList<String> arrayWeaponProperties = new ArrayList<String>(); //used for sub node "property" of "properties"
+		ArrayList<String> arrayWeaponModifiers = new ArrayList<String>(); //used for sub node "modifier" of "modifiers"
 		//
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		try {
@@ -96,12 +96,12 @@ public class ParserOperationsXML {
 	 * @param path
 	 * @return Map
 	 */
-	public static Map parseSpells(String path) {
-		Map<String, Spell> spellMap = new HashMap<>();
+	public static Map<String, Spell> parseSpells(String path) {
+		Map<String, Spell> spellMap = new HashMap<String,Spell>();
 
 		LOGGER.log(Level.INFO, "Path to spells.xml: " + path);
 
-		ArrayList<String> arraySpellClasses = new ArrayList(); //used for sub node "property" of "properties"
+		ArrayList<String> arraySpellClasses = new ArrayList<	>(); //used for sub node "property" of "properties"
 		//
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		try {
@@ -565,6 +565,24 @@ public class ParserOperationsXML {
 			}
 			character.appendChild(skills);
 			//
+			// ::::: BEGINNING OF HitPoint BLOCK :::::
+			//
+			Element maxHitPoints = document.createElement("maxHitPoints");
+			Element hitPoints = document.createElement("hitPoints");
+			Element tempHitPoints = document.createElement("tempHitPoints");
+			Element hitDie = document.createElement("hitDie");
+			Element armorClass = document.createElement("armorClass");
+			maxHitPoints.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getMaxHitPoints())));
+			hitPoints.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getHitPoints())));
+			tempHitPoints.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getTmpHitPoints())));
+			hitDie.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getHitDie())));
+			armorClass.appendChild(document.createTextNode(Integer.toString(tmpCharacter.getArmorClass())));
+			character.appendChild(maxHitPoints);
+			character.appendChild(hitPoints);
+			character.appendChild(tempHitPoints);
+			character.appendChild(hitDie);
+			character.appendChild(armorClass);
+			//
 			//
 			// ::::: BEGINNING OF FINISHING BLOCK :::::
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -612,6 +630,11 @@ public class ParserOperationsXML {
 					String tmpFaction = eElement.getElementsByTagName("faction").item(0).getTextContent();
 					String tmpAlignment = eElement.getElementsByTagName("alignment").item(0).getTextContent();
 					int tmpExperiencePoints = Integer.parseInt(eElement.getElementsByTagName("experiencePoints").item(0).getTextContent());
+					int tmpMaxHitPoints = Integer.parseInt(eElement.getElementsByTagName("maxHitPoints").item(0).getTextContent());
+					int tmpHitPoints = Integer.parseInt(eElement.getElementsByTagName("hitPoints").item(0).getTextContent());
+					int tmpTempHitPoints = Integer.parseInt(eElement.getElementsByTagName("tempHitPoints").item(0).getTextContent());
+					int tmpHitDie = Integer.parseInt(eElement.getElementsByTagName("hitDie").item(0).getTextContent());
+					int tmpArmorClass = Integer.parseInt(eElement.getElementsByTagName("armorClass").item(0).getTextContent());
 
 					// The following code block parses the sub elements under "stats"
 					NodeList nListStats = eElement.getElementsByTagName("stats");
@@ -629,7 +652,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "spells"
 					NodeList nListSpells = eElement.getElementsByTagName("spells");
 					//
-					ArrayList<Spell> tmpSpells = new ArrayList();
+					ArrayList<Spell> tmpSpells = new ArrayList<Spell>();
 					tmpSpells.clear();
 					//
 					if (nListSpells.getLength() != 0) {
@@ -651,7 +674,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "weapons"
 					NodeList nListWeapons = eElement.getElementsByTagName("weapons");
 					//
-					ArrayList<Equipment> tmpWeapons = new ArrayList();
+					ArrayList<Equipment> tmpWeapons = new ArrayList<Equipment>();
 					tmpWeapons.clear();
 					//
 					if (nListWeapons.getLength() != 0) {
@@ -673,7 +696,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "equipment" (items)
 					NodeList nListItems = eElement.getElementsByTagName("equipment");
 					//
-					ArrayList<String> tmpItems = new ArrayList();
+					ArrayList<String> tmpItems = new ArrayList<String>();
 					tmpItems.clear();
 					//
 					if (nListItems.getLength() != 0) {
@@ -695,7 +718,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "proficiencies"
 					NodeList nListProficiencies = eElement.getElementsByTagName("proficiencies");
 					//
-					ArrayList<String> tmpProficiencies = new ArrayList();
+					ArrayList<String> tmpProficiencies = new ArrayList<String>();
 					tmpProficiencies.clear();
 					//
 					if (nListProficiencies.getLength() != 0) {
@@ -716,7 +739,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "personalityTraits"
 					NodeList nListPersonalityTraits = eElement.getElementsByTagName("personalityTraits");
 					//
-					ArrayList<String> tmpPersonalityTraits = new ArrayList();
+					ArrayList<String> tmpPersonalityTraits = new ArrayList<String>();
 					tmpPersonalityTraits.clear();
 					//
 					if (nListPersonalityTraits.getLength() != 0) {
@@ -737,7 +760,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "ideals"
 					NodeList nListIdeals = eElement.getElementsByTagName("ideals");
 					//
-					ArrayList<String> tmpIdeals = new ArrayList();
+					ArrayList<String> tmpIdeals = new ArrayList<String>();
 					tmpIdeals.clear();
 					//
 					if (nListIdeals.getLength() != 0) {
@@ -758,7 +781,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "bonds"
 					NodeList nListBonds = eElement.getElementsByTagName("bonds");
 					//
-					ArrayList<String> tmpBonds = new ArrayList();
+					ArrayList<String> tmpBonds = new ArrayList<String>();
 					tmpBonds.clear();
 					//
 					if (nListBonds.getLength() != 0) {
@@ -779,7 +802,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "flaws"
 					NodeList nListFlaws = eElement.getElementsByTagName("flaws");
 					//
-					ArrayList<String> tmpFlaws = new ArrayList();
+					ArrayList<String> tmpFlaws = new ArrayList<String>();
 					tmpFlaws.clear();
 					//
 					if (nListFlaws.getLength() != 0) {
@@ -800,7 +823,7 @@ public class ParserOperationsXML {
 					// The following code block parses the sub elements under "featureTraits"
 					NodeList nListFeatureTraits = eElement.getElementsByTagName("featuresTraits");
 					//
-					ArrayList<String> tmpFeatureTraits = new ArrayList();
+					ArrayList<String> tmpFeatureTraits = new ArrayList<String>();
 					tmpFeatureTraits.clear();
 					//
 					if (nListFeatureTraits.getLength() != 0) {
@@ -863,9 +886,10 @@ public class ParserOperationsXML {
 					int gp = Integer.parseInt(eElementMoney.getElementsByTagName("gold").item(0).getTextContent());
 					int pp = Integer.parseInt(eElementMoney.getElementsByTagName("platin").item(0).getTextContent());
 					tmpMoney.updateMoney(cp, sp, ep, gp, pp);
+					
 					//
 					// ::::: Creating a DNDCharacter object to be returned
-					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits,tmpMoney);
+					tmpCharacter = new DNDCharacter(tmpName, tmpRace, tmpCharClass, tmpStrength, tmpDexterity, tmpConstitution, tmpIntelligence, tmpWisdom, tmpCharisma, tmpWeapons, tmpSpells, tmpProficiencies, tmpSkills, tmpItems, tmpBackground, tmpPlayerName, tmpFaction, tmpAlignment, tmpExperiencePoints, tmpPersonalityTraits, tmpIdeals, tmpBonds, tmpFlaws, tmpFeatureTraits,tmpMoney,tmpMaxHitPoints,tmpHitPoints,tmpTempHitPoints,tmpHitDie,tmpArmorClass);
 					tmpCharacter.print();
 				}
 			}

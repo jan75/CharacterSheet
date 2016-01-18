@@ -5,6 +5,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
 <AnchorPane id="AnchorPane" maxHeight="900.0" maxWidth="1270.0" minHeight="890.0" minWidth="1270.0" prefHeight="890.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.FXMLController">
 	<children>
 		<MenuButton layoutX="10" layoutY="10" text="File">
@@ -32,11 +33,10 @@
 		<Label fx:id="lblChaMod" id="statsMods" layoutX="52.0" layoutY="792.0" prefHeight="41.0" prefWidth="75.0" text="0" />
 		<Label fx:id="lblPassivePerception" layoutX="662.0" layoutY="610.0" text="Label" />
 		<TextField fx:id="txtName" layoutX="264.0" layoutY="107.0" prefHeight="26.0" prefWidth="180.99990000000253" text="NAME" />
-		<TextField fx:id="txtArmorclass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
+		<TextField fx:id="txtArmorClass" layoutX="385.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="ARMORCLASS" />
 		<Label fx:id="lblSpeed" layoutX="557.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="SPEED" />
 		<Label fx:id="lblInitiative" layoutX="466.0" layoutY="214.0" prefHeight="28.000099999997474" prefWidth="46.0" text="" />
 		<Label fx:id="lblProficencyMod" layoutX="185.0" layoutY="262.0" prefWidth="35.0" text="PROFICIENCYMOD" />
-		<TextField fx:id="lblTotalHitDie" layoutX="403.0" layoutY="474.0" prefWidth="74.99990000000253" text="TOTALHITDIE" />
 
 		<TextField fx:id="txtDex" layoutX="76.0" layoutY="376.0" text="0" prefWidth="25" />
 		<TextField fx:id="txtCon" layoutX="76.0" layoutY="496.0" text="0" prefWidth="25" />
@@ -111,16 +111,21 @@
 		<ComboBox fx:id="cbAddSpell" layoutX="370" layoutY="825" prefHeight="21" maxWidth="130" promptText="Add Spell" onAction="#addSpell"></ComboBox>
 
 
-		<TextField fx:id="txtHitPointsMax" layoutX="480.0" layoutY="289.0" prefWidth="127.0" text="Label" />
+		<TextField fx:id="txtHitPointsMax" layoutX="500.0" layoutY="289.0" prefWidth="100.0" text="Label" />
+		<TextField fx:id="txtHitPoints" layoutX="384.0" layoutY="313.0" prefHeight="41.0" prefWidth="224.0" text="HITPOINTS" />
+		<TextField fx:id="txtTempHitpoints" layoutX="384.0" layoutY="395.0" prefHeight="41.0" prefWidth="224.0" text="TEMPHITPOINTS" />
+		<TextField fx:id="txtHitDie" layoutX="380.0" layoutY="499.0" prefHeight="25.0" prefWidth="98.0" text="HITDIE" />
+		<Label fx:id="lblHitDice" layoutX="450.0" layoutY="474.0" prefWidth="20" text="dX" />
+		<TextField fx:id="txtTotalHitDie" layoutX="400.0" layoutY="474.0" prefWidth="50" text="TOTALHITDIE" />
+		
 		<TextField fx:id="txtCopper" layoutX="966.0" layoutY="623.0" prefHeight="25.0" prefWidth="45.999900000002526" text="COPPER" />
 		<TextField fx:id="txtSilver" layoutX="966.0" layoutY="664.0" prefHeight="25.0" prefWidth="45.999900000002526" text="SILVER" />
 		<TextField fx:id="txtEterium" layoutX="966.0" layoutY="700.0" prefHeight="25.0" prefWidth="45.999900000002526" text="ETERIUM" />
 		<TextField fx:id="txtGold" layoutX="966.0" layoutY="741.0" prefHeight="25.0" prefWidth="45.999900000002526" text="GOLD" />
 		<TextField fx:id="txtPlatin" layoutX="966.0" layoutY="782.0" prefHeight="25.0" prefWidth="45.999900000002526" text="PLATIN" />
-		<TextField fx:id="txtHitPoints" layoutX="384.0" layoutY="313.0" prefHeight="41.0" prefWidth="224.0" text="HITPOINTS" />
-		<TextField fx:id="txtTempHitpoints" layoutX="384.0" layoutY="395.0" prefHeight="41.0" prefWidth="224.0" text="TEMPHITPOINTS" />
-		<TextField fx:id="txtHitDie" layoutX="380.0" layoutY="499.0" prefHeight="25.0" prefWidth="98.0" text="HITDIE" />
+		
 		<Button fx:id="btnAddMoney" layoutX="961.0" layoutY="830.0" mnemonicParsing="false" text="Money" onAction="#addMoney" />
+		
 		<TextField fx:id="txtLevel" layoutX="585.0" layoutY="59.0" prefHeight="21.0" prefWidth="15.0" text="0" />
 		<ComboBox fx:id="cbClass" layoutX="480.0" layoutY="55.0" prefHeight="21.0" prefWidth="100.0" promptText="Class" onAction="#changeClass" />
 		<TextField fx:id="txtBackground" layoutX="617.0" layoutY="59.0" prefHeight="21.0" prefWidth="80.0" text="BACKGROUND" />

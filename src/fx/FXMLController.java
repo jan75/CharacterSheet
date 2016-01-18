@@ -20,6 +20,8 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.sun.corba.se.spi.orbutil.fsm.Action;
+
 /**
  * Created by Jan on 02.01.2016.
  */
@@ -59,6 +61,12 @@ public class FXMLController implements Initializable{
     @FXML private TextField txtPlayerName;
     @FXML private TextField txtFaction;
     @FXML private TextField txtAlignment;
+    @FXML private TextField txtHitPoints;
+    @FXML private TextField txtHitPointsMax;
+    @FXML private TextField txtTempHitpoints;
+    @FXML private TextField txtHitDie;
+    @FXML private TextField txtTotalHitDie;
+	@FXML private Label lblHitDice;
     @FXML private CheckBox chkDex;
     @FXML private CheckBox chkCon;
     @FXML private CheckBox chkInt;
@@ -91,6 +99,7 @@ public class FXMLController implements Initializable{
     @FXML private TextArea txtBoxIdeals;
     @FXML private TextArea txtBoxBonds;
     @FXML private TextArea txtBoxFlaws;
+    @FXML private TextField txtArmorClass;
     @FXML private TableView<TableWeapon> tblAttacks;
     @FXML private TableColumn<Equipment, String> tblWeaponNameId;
     @FXML private TableColumn<Equipment, String> tblWeaponAtkBonusId;
@@ -353,7 +362,24 @@ public class FXMLController implements Initializable{
         txtFaction.textProperty().addListener(((observable, oldValue, newValue) -> {
             CharacterSheetFx.activeCharacter.setFaction(newValue);
         }));
+        
+        txtHitPoints.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setHitPoints(Integer.parseInt(newValue));
+        }));
+        txtHitPointsMax.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setMaxHitPoints(Integer.parseInt(newValue));
+        }));
+        txtTempHitpoints.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setTmpHitPoints(Integer.parseInt(newValue));
+        }));
+        txtHitDie.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setHitDie(Integer.parseInt(newValue));
+        }));
 
+        txtArmorClass.textProperty().addListener(((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setArmorClass(Integer.parseInt(newValue));
+        }));
+        
         // ::::: Initiating ComboBoxes :::::
         ObservableList<String> races =
                 FXCollections.observableArrayList(
@@ -465,6 +491,13 @@ public class FXMLController implements Initializable{
         chkInt.setSelected(tmpCharacter.getSkills().isIntelligence());
         chkWis.setSelected(tmpCharacter.getSkills().isWisdom());
         chkCha.setSelected(tmpCharacter.getSkills().isCharisma());
+        //
+        txtHitPointsMax.setText(Integer.toString(tmpCharacter.getMaxHitPoints()));
+        txtHitPoints.setText(Integer.toString(tmpCharacter.getHitPoints()));
+        txtHitDie.setText(Integer.toString(tmpCharacter.getHitDie()));
+        txtTempHitpoints.setText(Integer.toString(tmpCharacter.getTmpHitPoints()));
+        lblHitDice.setText(String.format("d%d",tmpCharacter.getCharacterClass().getHitDie()));
+        txtArmorClass.setText((Integer.toString(tmpCharacter.getArmorClass())));
         
         
         ArrayList<String> tmpWeaponKeyList = tmpCharacter.getItemKeysList(true);
@@ -718,6 +751,7 @@ public class FXMLController implements Initializable{
     	}
     	CharacterSheetFx.activeCharacter.setLevel(level);
     	txtLevel.setText(Integer.toString(level));
+    	txtTotalHitDie.setText(Integer.toString(level));
         updateProficiencyBonus();
 	}
     

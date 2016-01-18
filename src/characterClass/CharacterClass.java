@@ -82,4 +82,8 @@ boolean strProf=false;
 		}
 		return tmpCharClass;
 	}
+	public int getHitDie() {
+		// TODO Auto-generated method stub
+		return hitDie;
+	}
 }
