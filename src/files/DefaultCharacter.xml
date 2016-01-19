@@ -16,6 +16,11 @@
         <faction>enter Faction</faction>
         <alignment>enter Alignment</alignment>
         <experiencePoints>0</experiencePoints>
+        <maxHitPoints>0</maxHitPoints>
+        <hitPoints>0</hitPoints>
+        <tempHitPoints>0</tempHitPoints>
+        <hitDie>0</hitDie>
+        <armorClass>0</armorClass>
         <equipment>
             <item>Enter text here...</item>
         </equipment>
