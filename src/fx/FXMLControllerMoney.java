@@ -7,10 +7,14 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * Created by Jan on 02.01.2016.
  */
 public class FXMLControllerMoney {
+    private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
 
     @FXML private Button btnCancelMoney;
     @FXML private ToggleGroup toggleGroupMoney;
@@ -43,37 +47,36 @@ public class FXMLControllerMoney {
                 int valueMoney = Integer.parseInt(txtMoney.getText());
                 switch (selectedToggleMoneyText) {
                     case "CP":
-                        System.out.println("Added " + valueMoney + " Copper");
+                        LOGGER.log(Level.INFO, "Added " + valueMoney + " Copper");
                         cp=valueMoney;
                         break;
                     case "SP":
-                        System.out.println("Added " + valueMoney + " Silver");
+                        LOGGER.log(Level.INFO, "Added " + valueMoney + " Silver");
                         sp=valueMoney;
                         break;
                     case "EP":
-                        System.out.println("Added " + valueMoney + " Eterium");
+                        LOGGER.log(Level.INFO, "Added " + valueMoney + " Eterium");
                         ep=valueMoney;
                         break;
                     case "GP":
-                        System.out.println("Added " + valueMoney + " Gold");
+                        LOGGER.log(Level.INFO, "Added " + valueMoney + " Gold");
                         gp=valueMoney;
                         break;
                     case "PP":
-                        System.out.println("Added " + valueMoney + " Platinum");
+                        LOGGER.log(Level.INFO, "Added " + valueMoney + " Platinum");
                         pp=valueMoney;
                         break;
                     default:
-                        System.out.println("Enter a number and choose an entity");
+                        LOGGER.log(Level.INFO, "Enter a number and choose an entity before clicking on confirm");
                         break;
                 }
 				CharacterSheetFx.activeCharacter.setMoney(CharacterSheetFx.activeCharacter.getMoney().updateMoney(cp, sp, ep, gp, pp));
 				cancelMoney();
             } catch(Exception e){
-                System.out.println("Enter a number (only numeric values)");
-                //e.printStackTrace();
+                LOGGER.log(Level.SEVERE, "Enter a number (only numeric values)");
             }
         } else {
-            System.out.println("Enter a number and choose an entity");
+            LOGGER.log(Level.INFO, "Enter a number and choose an entity");
         }
     }
  

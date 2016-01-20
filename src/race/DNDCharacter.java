@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DNDCharacter {
-	private final static Logger LOGGER = Logger.getLogger("");
+	private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
 
 	private String name;
 	private Race race;
@@ -225,21 +225,19 @@ public class DNDCharacter {
 	}
 
 	public void setLists(String listToStore, List<CharSequence> list) {
-		//System.out.println("Method setLists called");
+		LOGGER.log(Level.INFO, "Method setLists called with parameter " + listToStore);
 		ArrayList<String> tmpList = new ArrayList<String>();
 		tmpList.clear();
 		//
 		String tmpString;
-		//System.out.println("Before: " + list + " Size: " + list.size());
 		//
 		for(Object currentListItem: list) {
 			if(currentListItem instanceof CharSequence) {
-				//System.out.println("for loop in setLists");
 				tmpString = currentListItem.toString();
 				if(tmpString.length() >= 3) {
 					tmpList.add(tmpString);
 				} else {
-					System.out.println("Input too short");
+					LOGGER.log(Level.INFO, "Input too short");
 				}
 			}
 		}
@@ -274,7 +272,7 @@ public class DNDCharacter {
 				featuresTraits.addAll(tmpList);
 				break;
 			default:
-				System.out.println("No lists to return found, wrong parameter?");
+				LOGGER.log(Level.SEVERE, "No lists to return found, wrong parameter?");
 				break;
 		}
 	}
@@ -307,7 +305,6 @@ public class DNDCharacter {
 			while(tmpIterator.hasNext()) {
 				Equipment equip = tmpIterator.next();
 				tmpList.add(equip.getName());
-				//System.out.println("Method getItemKeysList (weapons): " + tmpList);
 				if(!tmpIterator.hasNext()) {
 					return tmpList;
 				}
@@ -318,13 +315,6 @@ public class DNDCharacter {
 		}
 		return tmpList;
 	}
-
-	/*
-	* Armor functionality was removed, but the code has been left in if
-	public String getArmorKey() {
-		return armor.getName();
-	}
-	*/
 
 	public int getStatSavingThrow(String stat, int val){
 		switch(stat){
@@ -346,7 +336,7 @@ public class DNDCharacter {
 	}
 
 	public void print() {
-		System.out.println("Character '" + name + "' has been generated.");
+		LOGGER.log(Level.INFO, "Character '" + name + "' has been generated.");
 	}
 
 	public void setLevel(int level) {

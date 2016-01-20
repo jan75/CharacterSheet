@@ -20,13 +20,11 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.sun.corba.se.spi.orbutil.fsm.Action;
-
 /**
  * Created by Jan on 02.01.2016.
  */
 public class FXMLController implements Initializable{
-    private final static Logger LOGGER = Logger.getLogger("");
+    private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
 
     static Map<String, Equipment> weaponMap = ParserOperationsXML.parseWeapons("src/files/weapons.xml");
     //static Map<String, Armor> armorMap = ParserOperationsXML.parseArmor("src/files/armour.xml"); // Armor has been removed
@@ -49,7 +47,7 @@ public class FXMLController implements Initializable{
     @FXML private Label lblInitiative;
     @FXML private Label lblSpeed;
     @FXML private Label lblPassivePerception;
-	@FXML private Label lblProficencyMod;
+    @FXML private Label lblProficencyMod;
     @FXML private TextField txtCopper;
     @FXML private TextField txtSilver;
     @FXML private TextField txtEterium;
@@ -66,7 +64,7 @@ public class FXMLController implements Initializable{
     @FXML private TextField txtTempHitpoints;
     @FXML private TextField txtHitDie;
     @FXML private TextField txtTotalHitDie;
-	@FXML private Label lblHitDice;
+    @FXML private Label lblHitDice;
     @FXML private CheckBox chkDex;
     @FXML private CheckBox chkCon;
     @FXML private CheckBox chkInt;
@@ -111,7 +109,7 @@ public class FXMLController implements Initializable{
     @FXML private Button btnAddMoney;
     @FXML private ComboBox<String> cbAddSpell;
     @FXML private Button btnDeleteSpells;
-    
+
     List<Labeled> strMods;
     List<Labeled> dexMods;
     List<Labeled> conMods;
@@ -120,184 +118,184 @@ public class FXMLController implements Initializable{
     List<Labeled> chaMods;
     List<Integer> levelRange=Arrays.asList(300,900,2700,6500,14000,23000,34000,48000,64000,85000,100000,120000,140000,165000,195000,225000,265000,305000,355000);
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         openCharacter("src/files/DefaultCharacter.xml");
 
         lblSpeed.setText(CharacterSheetFx.activeCharacter.getSpeed());
 
-		strMods=Arrays.asList(lblStrMod,chkStr,chkAthletics);
-	    dexMods=Arrays.asList(lblDexMod,chkDex,lblInitiative,chkAcrobatics,chkSleightOfHand, chkStealth);
-	    conMods=Arrays.asList(lblConMod,chkCon);
-	    intMods=Arrays.asList(lblIntMod,chkInt,chkArcana, chkHistory, chkInvestigation, chkNature, chkReligion);
-	    wisMods=Arrays.asList(lblWisMod,chkWis,chkAnimalHandling, chkInsight, chkMedicine, chkPerception, chkSurvival);
-	    chaMods=Arrays.asList(lblChaMod,chkCha,chkDeception,chkIntimidation, chkPerformance, chkPersuasion);
-	    updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())));
-	    updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())));
-	    updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())));
-	    updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())));
-	    updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())));
-	    updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())));
-	    updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom()));
-	    
+        strMods=Arrays.asList(lblStrMod,chkStr,chkAthletics);
+        dexMods=Arrays.asList(lblDexMod,chkDex,lblInitiative,chkAcrobatics,chkSleightOfHand, chkStealth);
+        conMods=Arrays.asList(lblConMod,chkCon);
+        intMods=Arrays.asList(lblIntMod,chkInt,chkArcana, chkHistory, chkInvestigation, chkNature, chkReligion);
+        wisMods=Arrays.asList(lblWisMod,chkWis,chkAnimalHandling, chkInsight, chkMedicine, chkPerception, chkSurvival);
+        chaMods=Arrays.asList(lblChaMod,chkCha,chkDeception,chkIntimidation, chkPerformance, chkPersuasion);
+        updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getStrength())));
+        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getDexterity())));
+        updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getConstitution())));
+        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getIntelligence())));
+        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom())));
+        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getCharisma())));
+        updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(CharacterSheetFx.activeCharacter.getWisdom()));
+
         txtStr.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setStrength(z);
-	    });
-	    txtDex.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setDexterity(z);
-	    });
-	    txtCon.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setConstitution(z);
-	    });
-	    txtInt.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(intMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setIntelligence(z);
-	    });
-	    txtWis.textProperty().addListener((observable, oldValue, newValue) -> {
-	    	int z = Integer.parseInt(newValue);
-	        updateMods(wisMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setWisdom(z);
-	        updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(z));
-	    });
-	    txtCha.textProperty().addListener((observable, oldValue, newValue) -> {
+            int z = Integer.parseInt(newValue);
+            updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.setStrength(z);
+        });
+        txtDex.textProperty().addListener((observable, oldValue, newValue) -> {
+            int z = Integer.parseInt(newValue);
+            updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.setDexterity(z);
+        });
+        txtCon.textProperty().addListener((observable, oldValue, newValue) -> {
+            int z = Integer.parseInt(newValue);
+            updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.setConstitution(z);
+        });
+        txtInt.textProperty().addListener((observable, oldValue, newValue) -> {
+            int z = Integer.parseInt(newValue);
+            updateMods(intMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.setIntelligence(z);
+        });
+        txtWis.textProperty().addListener((observable, oldValue, newValue) -> {
+            int z = Integer.parseInt(newValue);
+            updateMods(wisMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.setWisdom(z);
+            updatePerception(CharacterSheetFx.activeCharacter.getStatBonus(z));
+        });
+        txtCha.textProperty().addListener((observable, oldValue, newValue) -> {
             int z = Integer.parseInt(newValue);
             updateMods(chaMods, CharacterSheetFx.activeCharacter.getStatBonus(z) >= 0 ? "+" + Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)) : Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.setCharisma(z);
-	    });
-	    txtExperiencePoints.textProperty().addListener((observable, oldValue, newValue) -> {
+            CharacterSheetFx.activeCharacter.setCharisma(z);
+        });
+        txtExperiencePoints.textProperty().addListener((observable, oldValue, newValue) -> {
             int z = Integer.parseInt(newValue);
             CharacterSheetFx.activeCharacter.setExperiencePoints(z);
             updateLevel(z);
         });
-	    
-	    
-	    chkDex.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getDexterity();
-	        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setDexterity(newValue);
-	    });
+
+
+        chkDex.selectedProperty().addListener((observable,oldValue,newValue)->{
+            int z = CharacterSheetFx.activeCharacter.getDexterity();
+            updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setDexterity(newValue);
+        });
         chkWis.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setWisdom(newValue);
-	    });
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setWisdom(newValue);
+        });
         chkInt.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setIntelligence(newValue);
-	    });
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setIntelligence(newValue);
+        });
         chkStr.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getStrength();
-	        updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setStrength(newValue);
-	    });
+            int z = CharacterSheetFx.activeCharacter.getStrength();
+            updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setStrength(newValue);
+        });
         chkCha.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getCharisma();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setCharisma(newValue);
-	    });
+            int z = CharacterSheetFx.activeCharacter.getCharisma();
+            updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setCharisma(newValue);
+        });
         chkCon.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getConstitution();
-	        updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setConstitution(newValue);
-	    });
-        
+            int z = CharacterSheetFx.activeCharacter.getConstitution();
+            updateMods(conMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setConstitution(newValue);
+        });
+
         chkAcrobatics.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getDexterity();
-	        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setAcrobatics(newValue);
+            int z = CharacterSheetFx.activeCharacter.getDexterity();
+            updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setAcrobatics(newValue);
         });
         chkAnimalHandling.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setAnimalHandling(newValue);
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setAnimalHandling(newValue);
         });
         chkArcana.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setArcana(newValue);
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setArcana(newValue);
         });
         chkAthletics.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getStrength();
-	        updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setAthletics(newValue);
+            int z = CharacterSheetFx.activeCharacter.getStrength();
+            updateMods(strMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setAthletics(newValue);
         });
         chkDeception.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getCharisma();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setDeception(newValue);
+            int z = CharacterSheetFx.activeCharacter.getCharisma();
+            updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setDeception(newValue);
         });
         chkHistory.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setHistory(newValue);
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setHistory(newValue);
         });
         chkInsight.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setInsight(newValue);
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setInsight(newValue);
         });
         chkIntimidation.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getCharisma();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setIntimidation(newValue);
+            int z = CharacterSheetFx.activeCharacter.getCharisma();
+            updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setIntimidation(newValue);
         });
         chkInvestigation.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setInvestigation(newValue);
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setInvestigation(newValue);
         });
         chkMedicine.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setMedicine(newValue);
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setMedicine(newValue);
         });
         chkNature.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setNature(newValue);
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setNature(newValue);
         });
         chkPerception.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setPerception(newValue);
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setPerception(newValue);
         });
         chkPerformance.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getCharisma();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setPerformance(newValue);
+            int z = CharacterSheetFx.activeCharacter.getCharisma();
+            updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setPerformance(newValue);
         });
         chkPersuasion.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getCharisma();
-	        updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setPersuasion(newValue);
+            int z = CharacterSheetFx.activeCharacter.getCharisma();
+            updateMods(chaMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setPersuasion(newValue);
         });
         chkReligion.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getIntelligence();
-	        updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setReligion(newValue);
+            int z = CharacterSheetFx.activeCharacter.getIntelligence();
+            updateMods(intMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setReligion(newValue);
         });
         chkSleightOfHand.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getDexterity();
-	        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setSleightOfHand(newValue);
+            int z = CharacterSheetFx.activeCharacter.getDexterity();
+            updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setSleightOfHand(newValue);
         });
         chkStealth.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getDexterity();
-	        updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setStealth(newValue);
+            int z = CharacterSheetFx.activeCharacter.getDexterity();
+            updateMods(dexMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setStealth(newValue);
         });
         chkSurvival.selectedProperty().addListener((observable,oldValue,newValue)->{
-        	int z = CharacterSheetFx.activeCharacter.getWisdom();
-	        updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
-	        CharacterSheetFx.activeCharacter.getSkills().setSurvival(newValue);
+            int z = CharacterSheetFx.activeCharacter.getWisdom();
+            updateMods(wisMods,CharacterSheetFx.activeCharacter.getStatBonus(z)>=0?"+"+Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)):Integer.toString(CharacterSheetFx.activeCharacter.getStatBonus(z)));
+            CharacterSheetFx.activeCharacter.getSkills().setSurvival(newValue);
         });
 
         //
@@ -362,7 +360,7 @@ public class FXMLController implements Initializable{
         txtFaction.textProperty().addListener(((observable, oldValue, newValue) -> {
             CharacterSheetFx.activeCharacter.setFaction(newValue);
         }));
-        
+
         txtHitPoints.textProperty().addListener(((observable, oldValue, newValue) -> {
             CharacterSheetFx.activeCharacter.setHitPoints(Integer.parseInt(newValue));
         }));
@@ -379,24 +377,24 @@ public class FXMLController implements Initializable{
         txtArmorClass.textProperty().addListener(((observable, oldValue, newValue) -> {
             CharacterSheetFx.activeCharacter.setArmorClass(Integer.parseInt(newValue));
         }));
-        
+
         // ::::: Initiating ComboBoxes :::::
         ObservableList<String> races =
                 FXCollections.observableArrayList(
-                    "Hill Dwarf",
-                    "Mountain Dwarf",
-                    "Drow",
-                    "High Elf",
-                    "Wood Elf",
-                    "Forest Gnome",
-                    "Rock Gnome",
-                    "Lightfoot Halfling",
-                    "Stout Halfling",
-                    "Dragonborn",
-                    "Halfelf",
-                    "Halforc",
-                    "Human",
-                    "Tiefling"
+                        "Hill Dwarf",
+                        "Mountain Dwarf",
+                        "Drow",
+                        "High Elf",
+                        "Wood Elf",
+                        "Forest Gnome",
+                        "Rock Gnome",
+                        "Lightfoot Halfling",
+                        "Stout Halfling",
+                        "Dragonborn",
+                        "Halfelf",
+                        "Halforc",
+                        "Human",
+                        "Tiefling"
                 );
         cbRace.setItems(races);
         //
@@ -431,7 +429,7 @@ public class FXMLController implements Initializable{
         LOGGER.log(Level.INFO, "Initialized functions in GUI");
     }
 
-	@FXML
+    @FXML
     private void createNewCharacter() {
         LOGGER.log(Level.INFO, "Pressed Menubutton 'New'");
         //
@@ -498,8 +496,8 @@ public class FXMLController implements Initializable{
         txtTempHitpoints.setText(Integer.toString(tmpCharacter.getTmpHitPoints()));
         lblHitDice.setText(String.format("d%d",tmpCharacter.getCharacterClass().getHitDie()));
         txtArmorClass.setText((Integer.toString(tmpCharacter.getArmorClass())));
-        
-        
+
+
         ArrayList<String> tmpWeaponKeyList = tmpCharacter.getItemKeysList(true);
         //
         ObservableList<TableWeapon> data = tblAttacks.getItems();
@@ -607,7 +605,7 @@ public class FXMLController implements Initializable{
                 ParserOperationsXML.saveCharacterToXML(CharacterSheetFx.activeCharacter, path);
             }
         } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, e.getMessage());
+            LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
         }
         //
     }
@@ -694,7 +692,6 @@ public class FXMLController implements Initializable{
             ObservableList<TableWeapon> data = tblAttacks.getItems();
             data.clear();
             CharacterSheetFx.activeCharacter.getWeapons().clear();
-            System.out.println(CharacterSheetFx.activeCharacter.getWeapons());
             LOGGER.log(Level.INFO, "Deleted all Weapons");
         }
     }
@@ -727,83 +724,83 @@ public class FXMLController implements Initializable{
 
 
     private void updateMods(List<Labeled> mods, String mod) {
-    	for(Labeled temp: mods){
-    		if(temp.getClass().getName()=="javafx.scene.control.CheckBox"){
-    			CheckBox chkTmp = (CheckBox) temp;
-    			if(chkTmp.isSelected()){
-    				int tmp=Integer.parseInt(mod)+Integer.parseInt(lblProficencyMod.getText());
-            		temp.setText(tmp>=0?"+"+Integer.toString(tmp):"-"+Integer.toString(tmp*-1));
-            		continue;
-    			}
-    		}
-        	temp.setText(mod);
-    	}
-	}
-    
-    private void updateLevel(int z) {
-    	int level=1;
-    	for(Integer tmp: levelRange){
-    		if(z>=tmp.intValue()){
-    			level+=1;
-    		} else{
-    			break;
-    		}
-    	}
-    	CharacterSheetFx.activeCharacter.setLevel(level);
-    	txtLevel.setText(Integer.toString(level));
-    	txtTotalHitDie.setText(Integer.toString(level));
-        updateProficiencyBonus();
-	}
-    
-    private void updateProficiencyBonus(){
-    	String tmp;
-
-    	switch(CharacterSheetFx.activeCharacter.getLevel()){
-    	case 0:
-    	case 1:
-    	case 2:
-    	case 3:
-    	case 4:
-    		tmp="+2";
-            break;
-    	case 5:
-    	case 6:
-    	case 7:
-    	case 8:
-    		tmp="+3";
-    		break;
-    	case 9:
-    	case 10:
-    	case 11:
-    	case 12:
-    		tmp="+4";
-    		break;
-    	case 13:
-    	case 14:
-    	case 15:
-    	case 16:
-    		tmp="+5";
-    		break;
-    	case 17:
-    	case 18:
-    	case 19:
-    	case 20:
-    		tmp="+5";
-    		break;
-    	default:
-    		tmp="+2";
-    	}
-    	lblProficencyMod.setText(tmp);
+        for(Labeled temp: mods){
+            if(temp.getClass().getName()=="javafx.scene.control.CheckBox"){
+                CheckBox chkTmp = (CheckBox) temp;
+                if(chkTmp.isSelected()){
+                    int tmp=Integer.parseInt(mod)+Integer.parseInt(lblProficencyMod.getText());
+                    temp.setText(tmp>=0?"+"+Integer.toString(tmp):"-"+Integer.toString(tmp*-1));
+                    continue;
+                }
+            }
+            temp.setText(mod);
+        }
     }
 
-	private void updatePerception(int statBonus) {
-		int perception = 10 + statBonus;
-		if(chkPerception.isSelected()){
-			perception+=Integer.parseInt(lblProficencyMod.getText());
-		}
-		lblPassivePerception.setText(Integer.toString(perception));
-	}
-	
+    private void updateLevel(int z) {
+        int level=1;
+        for(Integer tmp: levelRange){
+            if(z>=tmp.intValue()){
+                level+=1;
+            } else{
+                break;
+            }
+        }
+        CharacterSheetFx.activeCharacter.setLevel(level);
+        txtLevel.setText(Integer.toString(level));
+        txtTotalHitDie.setText(Integer.toString(level));
+        updateProficiencyBonus();
+    }
+
+    private void updateProficiencyBonus(){
+        String tmp;
+
+        switch(CharacterSheetFx.activeCharacter.getLevel()){
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                tmp="+2";
+                break;
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+                tmp="+3";
+                break;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                tmp="+4";
+                break;
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                tmp="+5";
+                break;
+            case 17:
+            case 18:
+            case 19:
+            case 20:
+                tmp="+5";
+                break;
+            default:
+                tmp="+2";
+        }
+        lblProficencyMod.setText(tmp);
+    }
+
+    private void updatePerception(int statBonus) {
+        int perception = 10 + statBonus;
+        if(chkPerception.isSelected()){
+            perception+=Integer.parseInt(lblProficencyMod.getText());
+        }
+        lblPassivePerception.setText(Integer.toString(perception));
+    }
+
     @FXML
     private void exitApplication() {
         LOGGER.log(Level.INFO, "Exit application");
@@ -821,24 +818,24 @@ public class FXMLController implements Initializable{
             stageMoney.initModality(Modality.WINDOW_MODAL);
             stageMoney.initOwner(tblAttacks.getScene().getWindow());
             stageMoney.setOnHiding((observable)-> {
-                    updateMoney();
-                });
+                updateMoney();
+            });
             stageMoney.show();
         } catch(Exception e) {
-            LOGGER.log(Level.SEVERE, e.getMessage());
+            LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
         }
     }
 
     private void updateMoney() {
-    	Money money = CharacterSheetFx.activeCharacter.getMoney();
+        Money money = CharacterSheetFx.activeCharacter.getMoney();
         txtCopper.setText(Integer.toString(money.getCopper()));
         txtSilver.setText(Integer.toString(money.getSilver()));
         txtEterium.setText(Integer.toString(money.getEterium()));
         txtGold.setText(Integer.toString(money.getGold()));
         txtPlatin.setText(Integer.toString(money.getPlatin()));
-	}
+    }
 
-	@FXML
+    @FXML
     private void subtractExp() {
         int z = Integer.parseInt(txtExperiencePoints.getText());
         if (z > 0) {
@@ -857,7 +854,7 @@ public class FXMLController implements Initializable{
         txtExperiencePoints.setText(Integer.toString(z));
         CharacterSheetFx.activeCharacter.setExperiencePoints(z);
     }
-    
+
     @FXML
     private void subtractStr() {
         int z = Integer.parseInt(txtStr.getText());
@@ -872,13 +869,13 @@ public class FXMLController implements Initializable{
     private void addStr() {
         int z = Integer.parseInt(txtStr.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Strength Point to " + z);
-	        txtStr.setText(Integer.toString(z));
+            txtStr.setText(Integer.toString(z));
         }
     }
 
-	@FXML
+    @FXML
     private void subtractDex() {
         int z = Integer.parseInt(txtDex.getText());
         if (z > 0) {
@@ -892,12 +889,12 @@ public class FXMLController implements Initializable{
     private void addDex() {
         int z = Integer.parseInt(txtDex.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Dexterity Point to " + z);
-	        txtDex.setText(Integer.toString(z));
+            txtDex.setText(Integer.toString(z));
         }
     }
-    
+
     @FXML
     private void subtractCon() {
         int z = Integer.parseInt(txtCon.getText());
@@ -912,12 +909,12 @@ public class FXMLController implements Initializable{
     private void addCon() {
         int z = Integer.parseInt(txtCon.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Constitution Point to " + z);
-	        txtCon.setText(Integer.toString(z));
+            txtCon.setText(Integer.toString(z));
         }
     }
-    
+
     @FXML
     private void subtractInt() {
         int z = Integer.parseInt(txtInt.getText());
@@ -932,12 +929,12 @@ public class FXMLController implements Initializable{
     private void addInt() {
         int z = Integer.parseInt(txtInt.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Intelligence Point to " + z);
-	        txtInt.setText(Integer.toString(z));
+            txtInt.setText(Integer.toString(z));
         }
     }
-    
+
     @FXML
     private void subtractWis() {
         int z = Integer.parseInt(txtWis.getText());
@@ -952,12 +949,12 @@ public class FXMLController implements Initializable{
     private void addWis() {
         int z = Integer.parseInt(txtWis.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Wisdom Point to " + z);
-	        txtWis.setText(Integer.toString(z));
+            txtWis.setText(Integer.toString(z));
         }
     }
-    
+
     @FXML
     private void subtractCha() {
         int z = Integer.parseInt(txtCha.getText());
@@ -972,11 +969,11 @@ public class FXMLController implements Initializable{
     private void addCha() {
         int z = Integer.parseInt(txtCha.getText());
         if( z < 20 ) {
-	        z++;
+            z++;
             LOGGER.log(Level.INFO, "Added 1 Charisma Point to " + z);
-	        txtCha.setText(Integer.toString(z));
+            txtCha.setText(Integer.toString(z));
         }
     }
 
- 
+
 }

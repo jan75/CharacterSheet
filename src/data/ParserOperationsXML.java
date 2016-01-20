@@ -25,7 +25,7 @@ import race.DNDCharacter;
 import race.Race;
 
 public class ParserOperationsXML {
-	private final static Logger LOGGER = Logger.getLogger("");
+	private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
 
 	/**
 	 * The Method "parseWeapons" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Weapon).
@@ -85,7 +85,7 @@ public class ParserOperationsXML {
 				}
 			}
 		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, e.getMessage());
+			LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
 		}
 		//
 		return weaponMap;
@@ -148,7 +148,7 @@ public class ParserOperationsXML {
 				}
 			}
 		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, e.getMessage());
+			LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
 		}
 		//
 		return spellMap;
@@ -236,7 +236,6 @@ public class ParserOperationsXML {
 					Element item = document.createElement("item");
 					equipment.appendChild(item);
 					item.appendChild(document.createTextNode(tmpItem.get(i)));
-					//System.out.println("Method: saveCharacterToXML: " + tmpItem.get(i));
 				}
 				character.appendChild(equipment);
 			}
@@ -596,7 +595,7 @@ public class ParserOperationsXML {
 			transformer.transform(source, result);
 			//
 		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, e.getMessage());
+			LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
 		}
 	}
 
@@ -894,54 +893,8 @@ public class ParserOperationsXML {
 				}
 			}
 		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, e.getMessage());
+			LOGGER.log(Level.SEVERE, "Exception " + e.getMessage(), e);
 		}
 		return tmpCharacter;
 	}
-
-	/*
-	/**
-	 * The Method "parseArmor" parses an input file (XML, specified via parameter "path") and fills its contents into a HashMap (String, Armor).
-	 * @param path
-	 * @return Map
-	public static Map parseArmor(String path) {
-		Map<String, Armor> armorMap = new HashMap<>();
-		//
-		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-		try {
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document document = dBuilder.parse(path);
-			//
-			document.getDocumentElement().normalize(); // http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-			//
-			//
-			NodeList nList = document.getElementsByTagName("name");
-			//
-			for(int i = 0; i < nList.getLength(); i++) {
-				Node nNode = nList.item(i);
-				//
-				if(nNode.getNodeType() == Node.ELEMENT_NODE) {
-					Element eElement = (Element) nNode;
-					//
-					String tmpArmor = eElement.getAttribute("armorname");
-					String tmpPrice = eElement.getElementsByTagName("price").item(0).getTextContent();
-					String tmpModifier = eElement.getElementsByTagName("modifier").item(0).getTextContent();
-					String tmpSpeed = eElement.getElementsByTagName("speed").item(0).getTextContent();
-					String tmpStealth = eElement.getElementsByTagName("stealth").item(0).getTextContent();
-					String tmpWeight = eElement.getElementsByTagName("weight").item(0).getTextContent();
-					String tmpClass = eElement.getElementsByTagName("class").item(0).getTextContent();
-
-					Armor tmpArmorObject = new Armor(tmpArmor, tmpPrice, tmpModifier, tmpSpeed, tmpStealth, tmpWeight, tmpClass);
-					LOGGER.log(Level.INFO, "Parsed armor: " + tmpArmorObject.getKey());
-					armorMap.put(tmpArmor, tmpArmorObject);
-					//
-				}
-			}
-		} catch (Exception e) {
-			LOGGER.log(Level.SEVERE, e.getMessage());
-		}
-		//
-		return armorMap;
-	}
-	*/
 }

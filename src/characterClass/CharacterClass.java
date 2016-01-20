@@ -1,50 +1,58 @@
 package characterClass;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public abstract class CharacterClass {
-   String name;
-   int hitDie;
-   public boolean isStrProf() {
+	private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
+
+
+	String name;
+	int hitDie;
+
+	public boolean isStrProf() {
 	return strProf;
-}
-public void setStrProf(boolean strProf) {
+	}
+	public void setStrProf(boolean strProf) {
 	this.strProf = strProf;
-}
-public boolean isConProf() {
+	}
+	public boolean isConProf() {
 	return conProf;
-}
-public void setConProf(boolean conProf) {
+	}
+	public void setConProf(boolean conProf) {
 	this.conProf = conProf;
-}
-public boolean isIntProf() {
+	}
+	public boolean isIntProf() {
 	return intProf;
-}
-public void setIntProf(boolean intProf) {
+	}
+	public void setIntProf(boolean intProf) {
 	this.intProf = intProf;
-}
-public boolean isChaProf() {
+	}
+	public boolean isChaProf() {
 	return chaProf;
-}
-public void setChaProf(boolean chaProf) {
+	}
+	public void setChaProf(boolean chaProf) {
 	this.chaProf = chaProf;
-}
-public boolean isDexProf() {
+	}
+	public boolean isDexProf() {
 	return dexProf;
-}
-public void setDexProf(boolean dexProf) {
+	}
+	public void setDexProf(boolean dexProf) {
 	this.dexProf = dexProf;
-}
-public boolean isWisProf() {
+	}
+	public boolean isWisProf() {
 	return wisProf;
-}
-public void setWisProf(boolean wisProf) {
+	}
+	public void setWisProf(boolean wisProf) {
 	this.wisProf = wisProf;
-}
-boolean strProf=false;
-   boolean conProf=false;
-   boolean intProf=false;
-   boolean chaProf=false;
-   boolean dexProf=false;
-   boolean wisProf=false;
+	}
+
+	boolean strProf=false;
+	boolean conProf=false;
+	boolean intProf=false;
+	boolean chaProf=false;
+	boolean dexProf=false;
+	boolean wisProf=false;
 
 	public abstract String getName();
 
@@ -76,14 +84,13 @@ boolean strProf=false;
 			case "Wizard": tmpCharClass = new Wizard();
 				break;
 			default:
-				tmpCharClass = new Barbarian(); // to be defined: exception
-				System.out.println("Default CharacterClass!");
+				LOGGER.log(Level.SEVERE, "Character Class not found, wrong parameter?\nUsing default class 'Barbarian'");
+				tmpCharClass = new Barbarian();
 				break;
 		}
 		return tmpCharClass;
 	}
 	public int getHitDie() {
-		// TODO Auto-generated method stub
 		return hitDie;
 	}
 }

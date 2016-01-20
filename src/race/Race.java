@@ -10,8 +10,12 @@ import race.gnome.RockGnome;
 import race.halfling.LightfootHalfling;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public abstract class Race {
+	private final static Logger LOGGER = Logger.getLogger("charSheetLogger");
+
 	protected String name;
 	int speed;
 	List<String> languages;
@@ -48,8 +52,8 @@ public abstract class Race {
 			case "Tiefling": tmpRace = new Tiefling();
 				break;
 			default:
-				tmpRace = new Human(); // to be defined: exception
-				System.out.println("Default Race!");
+				tmpRace = new Human();
+				LOGGER.log(Level.SEVERE, "Race not found, wrong parameter?\nUsing default race 'Human'");
 				break;
 		}
 		return tmpRace;
